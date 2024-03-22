@@ -21,15 +21,19 @@
   font-style: italic;
 }
 
-    body, html {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    .container {
-        display: flex;
-        height: 100%;
-    }
+html, body {
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    position: relative; /* Set positioning context for the glossary */
+    color: #333533;
+}
+
+.container {
+    display: flex;
+    min-height: 100%; /* Set minimum height to ensure the container fills the entire viewport height */
+}
+
+ /* COLUMNS */
     .left-column {
         width: 20%;
         background-color: white;
@@ -41,14 +45,11 @@
         padding: 15px;
         overflow-y: auto; /* Add scrollbars when content overflows */
     }
-    .text-container, .video-container {
-        max-width: 500px; /* Set maximum width for the content container */
+    .text-container {
+        max-width: 500px; /* Set maximum width for the text container */
     }
 
-    .video-container video {
-        width: 100%; /* Make video container take up full width */
-    }
-
+     /* IMAGES IN COLUMN */
     .image-container {
         text-align: center; /* Center the image horizontally */
         margin-bottom: 20px; /* Add some space below the image */
@@ -62,11 +63,24 @@
     h1 {
         margin-top: 0.5px;
         font-family: 'HAL Timezone';
-    font-weight: normal;
-    font-style: normal;
+        font-weight: normal;
+        font-style: normal;
         font-size: 25px;
+        line-height: 1.7rem;
         margin:0;
-    padding:0;
+        padding:0;
+    }
+
+
+         /* GLOSSARY*/
+         h6 {
+        margin-top: 0.5px;
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px;
+        margin:0;
+        padding:0;
     }
 
     /* CAPTION */
@@ -79,10 +93,12 @@
 
     /* TITLES (Table of Content) */
     h4 {
-        font-family: 'HAL Timezone';
+    font-family: 'HAL Timezone';
     font-weight: normal;
     font-style: normal;
-        font-size: 15px;
+    font-size: 12px;
+    margin:0;
+    padding:0;
     }
 
     /* SUBTITLES (Table of Content) */
@@ -98,62 +114,59 @@
 
     /* QUOTES */
     h2 {
-        font-family: 'HAL Timezone';
+    font-family: 'HAL Timezone';
     font-weight: normal;
     font-style: normal;
-        font-size: 13px;
-        margin-left: 50px;
+    font-size: 13px;
+    margin-left: 50px;
     }
 
-    .big-image {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 400px; /* Adjust the width of the image as needed */
-    }
-
+     /* MENU LINKS */
     a#menu:link {
 	  text-decoration: none;
-	  color: black;	
+	  color:#333533;	
 	  cursor: pointer;
 	  }
 
 	  a#menu:visited {
 	  text-decoration: none;
-	  color: black;	
+	  color: #333533;	
 	  cursor: pointer;
 	  }
 
 	  a#menu:hover {
 	  text-decoration: none;
-	  color: black;	
+	  color: #333533;	
 	  cursor: pointer;
 	  font-style: italic
 	  }
 
+       /* DOTS */
       .dot {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: #dac062;
-        border-radius: 50%;
+        position: fixed;
+        width: 15px;
+        height: 15px;
+        background-color: #DAC062;
+        border-radius: 0%;
         cursor: pointer;
+        z-index: 999; /* Ensure dots appear above the glossary */
     }
     .dot-title {
-        position: absolute;
+        position: fixed;
         font-family: 'HAL Timezone';
     font-weight: normal;
     font-style: italic;
         font-size: 15px;
-        color: #dac062;
+        color: #DAC062;
         display: none;
         transform: rotate(-15deg); /* Rotate the text */
+        z-index: 999; /* Ensure dots appear above the glossary */
     }
     .dot:hover + .dot-title {
         display: block;
     }
 
+     /* DOTS LINKS */
     a#dot:link {
 	  text-decoration: none;
 	  color: black;	
@@ -172,6 +185,33 @@
 	  cursor: pointer;
 	  }
 
+        /* SCROLL BAR */
+        ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    } 
+
+    .glossary {
+        position: fixed;
+        bottom: 15px; /* Align glossary to bottom of viewport */
+        left: 0; /* Align glossary to left of viewport */
+        width: 150px; /* Adjust width as needed */
+        height: 100vw; /* Adjust height as needed */
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.5); /* Transparent background */
+        backdrop-filter: blur(5px); /* Apply backdrop filter for blur effect */
+        overflow-y: auto; /* Enable vertical scrolling */
+        transform-origin: bottom left; /* Set rotation origin */
+        transform: rotate(-90deg) translateY(100%); /* Rotate and position glossary */
+        border-left: 2px solid #333533;
+        z-index: 998; 
+    }
+
+    .glossary-content {
+        overflow-y: auto; /* Enable vertical scrolling for glossary content */
+        height: 100%; /* Set height to 100% to allow scrolling */
+    }
+
     @media screen and (max-width: 600px) {
         .dot {
             left: calc(0% - 10px); /* Adjust the percentage value as needed */
@@ -180,17 +220,34 @@
         h1 {
         margin-top: 0.5px;
         font-family: 'HAL Timezone';
-    font-weight: normal;
-    font-style: normal;
+        font-weight: normal;
+        font-style: normal;
         font-size: 20px;
-    }
+        line-height: 1.5rem;
     }
 
-        /* SCROLL BAR */
-        ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-    }  
+    .glossary {
+        -webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+    }
+    } 
+
+    .text-container, .video-container {
+        max-width: 500px; /* Set maximum width for the content container */
+    }
+
+    .video-container video {
+        width: 100%; /* Make video container take up full width */
+    }
+
+    .image-container {
+        text-align: center; /* Center the image horizontally */
+        margin-bottom: 20px; /* Add some space below the image */
+    }
+    .image-container img {
+        width: 500px;
+        max-width: 100%; /* Make sure the image doesn't exceed its container */
+    } 
 
     
     
@@ -198,6 +255,99 @@
 </style>
 </head>
 <body>
+
+     <!-- Glossary  -->
+     <div class="glossary" id="glossary">
+        <div class="glossary-content">
+        <h6>⁽¹⁾ Maghrebi immigrant workers</h6>
+        <h4>
+        France has a long history of immigration, which started long before other European countries. It began towards the end of the 19th century, 
+        after a period of French population decline and [a resulting] need to increase France’s labour force due to industrialisation, or what is called 
+        in French, ‘les grands travaux’. Many migrants came from neighbouring countries like Belgium, Switzerland, Germany, Italy, and Poland. 
+        However, they also came from the Maghreb because of the colonial history of France in Algeria, Morocco and Tunisia.
+        </h4>
+        <br>
+        <h6>⁽²⁾ CSRP</h6>
+        <h4>
+        Comités de Soutien à la Révolution Palestinienne (committees in support of the Palestinian revolution or CSRP), 
+        also known as the ‘Comités Palestine’ (Committees for Palestine). Created in reaction to Black September (1970) 
+        and dissolved in 1972, the Comités Palestine were mostly composed of Arab workers and students. They were part 
+        of the first organisations to stand in solidarity with the Palestine people in France, and the creators of the 
+        Mouvement des travailleurs arabes (Movement of Arab Workers or MTA) in June 1972.
+        </h4>
+        <br>
+        <h6>⁽³⁾ Arab Nationalism</h6>
+        <h4>
+        Within the Arab nationalist movement are three main ideas: that of the Arab nation; Arab nationalism; and pan-Arab unity. 
+        The 1936–1939 Arab revolt in Palestine led to the foundation of the Arab nationalist Ba'ath Party, which asserts that the 
+        Arab nation is the group of people who speak Arabic, inhabit the Arab world, and who feel they belong to the same nation. 
+        Arab nationalism is the "sum total" of the characteristics and qualities exclusive to the Arab nation, whereas pan-Arab 
+        unity is the modern idea that stipulates that the separate Arab countries must unify to form a single state under one political system.
+        </h4>
+        <br>
+        <h6>⁽⁴⁾ Fatah</h6>
+        <h4>
+        Fatah (Arabic: فتح, romanized: Fatḥ), formerly the Palestinian National Liberation Movement 
+        (حركة التحرير الوطني الفلسطيني, Ḥarakat al-Taḥrīr al-Waṭanī l-Filasṭīnī), is a Palestinian 
+        nationalist and social democratic political party. It is the largest faction of the confederated 
+        multi-party Palestine Liberation Organization (PLO) and the second-largest party in the Palestinian Legislative Council (PLC).
+        </h4>
+        <br>
+        <h6>⁽⁵⁾ Yasser Arafat</h6>
+        <h4>
+        Yasser Arafat (August 1929 – 11 November 2004) was a Palestinian political leader. Ideologically an Arab nationalist and a socialist, 
+        Arafat was a founding member of the Fatah political party, which he led from 1959 until 2004. Fatah, which adopted social democracy 
+        and pan-Arabism as its pillars, played a critical role in the Palestinian struggle against Israeli occupation. Arafat saw Zionism as 
+        an aggressive, imperialist and fascist movement with its ideology, methods and organization. For liberating Palestinian lands from 
+        Israeli occupation, armed struggle is a must, he believed. Apart from Israel, the Palestinian resistance he led sometimes was compelled 
+        to fight Arab countries, including Jordan, where he left for Lebanon in 1971.
+        Against this background, he said: “<i>Today, I have come bearing an olive branch and a freedom fighter's gun. Do not let the olive branch 
+            fall from my hand. I repeat do not let the olive branch fall from my hand,</i>” in his speech in 1975 at the UN General Assembly.
+        </h4>
+        <br>
+        <h6>⁽⁶⁾ Khalil Wazir</h6>
+        <h4>
+        Khalil Ibrahim al-Wazir (October 1935 – 16 April 1988) 
+        was a Palestinian leader and co-founder of the nationalist party Fatah. As a top aide of Palestine Liberation Organization (PLO) 
+        Chairman Yasser Arafat, al-Wazir had considerable influence in Fatah's military activities, eventually becoming the commander of 
+        Fatah's armed wing al-Assifa. In October 1959, he edited a periodical called “Call of Life-Our Palestine,” published in Beirut, 
+        which came to reflect the views of Fatah. Khalil Wazir was one of the principal architects of the first popular intifada, 
+        which broke out in December 1987. He took part in leading it and in supporting it right until the time of his martyrdom.
+        </h4>
+        <br>
+        <h6>⁽⁷⁾ LIP</h6>
+        <h4>
+        Five years after May '68, during the summer of 1973, the employees of the Lip watch factory in Besançon led one of the most 
+        significant social struggles of the 20th century. “Lip Affair” designates the course and actions of a strike which took place 
+        in the Lip watch factory in Besançon. Started in the early 1970s, the struggle lasted until mid-1976 and mobilized tens of 
+        thousands of people across France and throughout Europe, notably during the great Lip march of September 29, 1973 which 
+        brings together more than 100,000 demonstrators in a ghost town. The Lip affair marks a radical change in the union tone and 
+        the rise of “spontaneous” movements widely reported in the media. It gives rise to abundant journalistic and cinematographic 
+        production presenting the company manager and the shareholders as “rotten”.
+        </h4>
+        <br>
+        <h6>⁽⁸⁾ Sonacotra</h6>
+        <h4>
+        Sonacotra, presently Adoma, is a mixed economy company, a subsidiary of the CDC Habitat group (Caisse des Dépôts et Consignations) 
+        which was created in 1956 by the French State to accommodate migrant workers. Sonacotral (National Society for the Construction of 
+        Housing for Algerian Workers) was created in 1956 to resolve the problem of unsanitary housing for workers from Algeria 
+        (around 150,000 Algerians living in slums, in particular around Paris, or in other precarious housing). 
+        To cope with the housing shortage, the company built its first foyer in 1959 in Argenteuil.
+        </h4>
+        <br>
+        <h6>⁽⁹⁾ CDVDTI</h6>
+        <h4>
+        The Committee for the Defense of the Lives and Rights of Immigrant Workers (CDVDTI, Comité de défense de 
+        la vie et des droits des travailleurs immigrés) was created jointly by members of the Movement of Arab 
+        Workers (MTA, Mouvement des Travailleurs Arabes) and their allies Geneviève Clancy and Philippe Tancelin, 
+        members of Al Assifa, the MTA's theater troupe. 
+        </h4>
+        <h4>
+        
+        </h4>
+        <br><br><br>
+        </div>
+     </div>
 
     <div class="container">
         <div class="left-column">
@@ -218,7 +368,9 @@
 
         <div class="right-column">
             <div class="text-container">
-                <h1>The Arab Workers Movement (MTA) was founded in 1972 by Maghrebi immigrant workers and students from the Maghreb who found themselves in the Palestine Committee founded after the war in 1967 to support the Palestinian people.
+                <h1>The Arab Workers Movement (MTA) was founded in 1972 by Maghrebi immigrant workers⁽¹⁾ and students from the Maghreb 
+                    who found themselves in the Comités Palestine (CSRP)⁽²⁾ founded after the war in 1967 to support the Palestinian people.
+                    The Committee was close to the Proletarian Left and brought together left activists, Arab students and immigrant workers.
                 </h1>
                 <br>
                 <div class="image-container">
@@ -228,31 +380,41 @@
                 MTA logo, a worker raising his fist in the shape of Palestine. Source: Fonds Saïd Bouziri, La contemporaine. Courtesy of Faouzia Bouziri.</h3>
                 <br>
                 <h1>
-                Influenced by Marxism and Arab nationalism, the MTA (Arab Workers Movement) wanted to build an Arab political organization in France independent of “French” organizations and the authorities of Arab countries. The MTA was particularly committed to the fight against racism and for the rights of immigrant workers but was also one of the first organizations in France in support of the Palestinian people.
+                Influenced by Marxism and Arab nationalism⁽³⁾, the MTA (Arab Workers Movement) wanted to build an Arab political organization in France 
+                independent of “French” organizations and the authorities of Arab countries. The MTA was particularly committed to the fight against racism 
+                and for the rights of immigrant workers but was also one of the first organizations in France in support of the Palestinian people.
                 </h1>
                 <br>
                 <div class="image-container">
                     <img src="images/assifa_2.jpeg" alt="Image">
                 </div>
                 <h3>
-                Protestors carrying Palestinian flags and a banner that reads “Sauvons les condamnés de Marrakesh” (Let’s save the condemned of Marrakesh). Screen shot from Compter sur ses propres forces, directed by Yannis Tritsibidas (1973). Courtesy of Yannis Tritsibidas.                </h3>
+                Protestors carrying Palestinian flags and a banner that reads “Sauvons les condamnés de Marrakesh” (Let’s save the condemned of Marrakesh). 
+                Screenshot from Compter sur ses propres forces, directed by Yannis Tritsibidas (1973). Courtesy of Yannis Tritsibidas.</h3>
                 <br>
                 <h1>
-                The very name of the movement, Committees in Support of the Palestinian Revolution, testifies to the enduring importance of Palestine as a rallying cry for migrant rights, connecting the decolonization of Palestine to the struggle of immigrants (most of them formerly colonized subjects) for equal rights in the postcolonial metropole. 
+                The very name of the movement, Committees in Support of the Palestinian Revolution, testifies to the enduring importance of Palestine as a 
+                rallying cry for migrant rights, connecting the decolonization of Palestine to the struggle of immigrants (most of them formerly colonized subjects)
+                for equal rights in the postcolonial metropole. 
                 </h1>
-                <h2>In the words of activists from the Arab Workers’ Movement, founded in 1972 by CSRP militants, “Oppressed Arab workers have been living in France for years. Formerly colonized peoples, they were torn from their homelands to thin out the ranks of the unemployed in Morocco, Algeria, and Tunisia, and to work in inhumane conditions and in this way increase the profits of the bosses in France.”</h2>
+                <h2>In the words of activists from the Arab Workers’ Movement, founded in 1972 by CSRP militants, 
+                    “Oppressed Arab workers have been living in France for years. Formerly colonized peoples, they were torn from their homelands to thin 
+                    out the ranks of the unemployed in Morocco, Algeria, and Tunisia, and to work in inhumane conditions and in this way increase the profits 
+                    of the higher-ups in France.”</h2>
                 <br>
                 <div class="image-container">
                 <img src="images/assifa_3.jpeg" alt="Image">
                 </div>
                 <h3>
-                Meeting of MTA activists, a Palestine poster visible in the background. Screen shot from Compter sur ses propres forces, directed by Yannis Tritsibidas (1973). Courtesy of Yannis Tritsibidas.
+                Meeting of MTA activists, a Palestine poster visible in the background. Screenshot from Compter sur ses propres forces, 
+                directed by Yannis Tritsibidas (1973). Courtesy of Yannis Tritsibidas.
                 </h3>
                 <br>
                 <h1>
                 The MTA published a bulletin Assifa عاصفة
                 (Storm in Arabic), subtitled The Voice of Arab Workers and with the slogan: “Support the struggles of the Arab masses, in France and elsewhere.”
-                The title acts as a reference for Al-Asifa, which was the mainstream armed wing of the Palestinian political party and militant group Fatah. Al-Asifa was jointly led by Yasser Arafat and Khalil Wazir.
+                The title acts as a reference for Al-Asifa, which was the mainstream armed wing of the Palestinian political party and militant group Fatah⁽⁴⁾. 
+                Al-Asifa was jointly led by Yasser Arafat⁽⁵⁾ and Khalil Wazir⁽⁶⁾.
                 </h1>
                 <br>
                 <div class="image-container">
@@ -270,15 +432,21 @@
                     <h3>
                     Assifa, N°3, March 1976. Courtesy of Odysséo.
                     <br>
-                    [Text in French: Moroccan prisons, surviving while fighting. The Moroccan people do not remain passive to this machine of repression. They fight to take it down. They fight to survive.]
+                    [Text in French: Moroccan prisons, surviving while fighting. The Moroccan people do not remain passive to this machine of repression. 
+                    They fight to take it down. They fight to survive.]
                     </h3>
                     <br>
                     <h1>
-                    In addition to the publication, Radio Assifa was, in 1975, the first sound and activist experience of North African immigration, a true precursor to free immigration radio in the form of cassettes.
-                    The idea of ​​producing this type of cassette comes from previous experiences: in the 1970s, Radio LIP broadcasted cassettes via loudspeaker in demonstrations, and Radio Assifa broadcasted cassettes around the struggles of immigrant workers, notably on the channels of Renault factories or in Sonacotra hostels on rent strike.
+                    In addition to the publication, Radio Assifa was, in 1975, the first sound and activist experience of North African immigration, 
+                    a true precursor to free immigration radio in the form of cassettes.
+                    The idea of ​​producing this type of cassette comes from previous experiences: in the 1970s, Radio LIP⁽⁷⁾ broadcasted cassettes via 
+                    loudspeaker in demonstrations, and Radio Assifa broadcasted cassettes around the struggles of immigrant workers, notably on the 
+                    channels of Renault factories or in Sonacotra⁽⁸⁾ hostels on rent strike.
                     </h1>
                     <h2>
-                    The cassette was rediscovered with the message: "Radio Assifa produced by the Arab workers of the Assifa Theater Troupe and all Arab musicians and journalists grouped together against racism. Radio Assifa gives the right to speech and expression to Arab workers. Radio Assifa is the radio for all Arabs."
+                    The cassette was rediscovered with the message: 
+                    "Radio Assifa produced by the Arab workers of the Assifa Theater Troupe and all Arab musicians and journalists grouped together 
+                    against racism. Radio Assifa gives the right to speech and expression to Arab workers. Radio Assifa is the radio for all Arabs."
                     </h2>
                     <br>
                     <div class="image-container">
@@ -289,10 +457,14 @@
                     </h3>
                     <br>
                     <h1>
-                    Mohamed Mokhtar Bachiri founded with Geneviève Clancy and Philippe Tancelin, also at the origin of the Committee for the Defense of the Life and Rights of Immigrant Workers (CDVDTI), the agit-prop theater troupe Al Assifa. They presented their first play, a theatrical diary titled “It works, it works and it shuts its mouth” in 1979. 
+                    Mohamed Mokhtar Bachiri founded with Geneviève Clancy and Philippe Tancelin, also at the origin of the Committee for the Defense of the Life 
+                    and Rights of Immigrant Workers (CDVDTI)⁽⁹⁾, the agit-prop theater troupe Al Assifa. They presented their first play, a theatrical diary titled 
+                    “It works, it works and it shuts its mouth” in 1979. 
                     </h1>
                     <h2>
-                    Al Assifa does not consider itself a theater troupe: “Al Assifa has never been a “theater troupe”, but a cultural action collective made up of French people and immigrants and whose vocation remains to promote a current of expression and action with immigrants and French people, against slavery, against racism.”
+                    Al Assifa does not consider itself a theater troupe: “Al Assifa has never been a “theater troupe”, but a cultural action collective made 
+                    up of French people and immigrants and whose vocation remains to promote a current of expression and action with immigrants and French people,
+                    against slavery, against racism.”
                     </h2>
                     <br>
                     <div class="image-container">
@@ -302,6 +474,7 @@
                     <h3>
                     Posters announcing the opening of Al Assifa theater pieces. Courtesy of Odysséo.
                     </h3>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     
 
@@ -315,6 +488,11 @@
         function hideDotTitle(dot) {
             dot.nextElementSibling.remove();
         }
+
+        window.addEventListener('scroll', function() {
+            var glossaryContent = document.querySelector('.glossary-content');
+            glossaryContent.scrollTop = window.pageYOffset;
+        });
     </script>
 </body>
 </html>
