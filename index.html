@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ta[kh]zine</title>
+<style>
+        @font-face {
+  font-family: 'HAL Timezone';
+  src: url("fonts/HALTimezone-Regular.ttf") format("truetype"),
+  url("fonts/HALTimezone-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HAL Timezone';
+  src: url("fonts/HALTimezone-Italic.ttf") format("truetype"),
+  url("fonts/HALTimezone-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+
+    body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        display: flex;
+        height: 100%;
+        background-color: black;
+    }
+    .left-column {
+        width: 20%;
+        padding: 15px;
+        color: white;
+    }
+    .right-column {
+        width: 400%;
+        padding: 15px;
+        overflow-y: auto; /* Add scrollbars when content overflows */
+    }
+    .text-container {
+        max-width: 500px; /* Set maximum width for the text container */
+    }
+
+    .image-container {
+        text-align: center; /* Center the image horizontally */
+        margin-bottom: 20px; /* Add some space below the image */
+    }
+    .image-container img {
+        width: 400px;
+        max-width: 100%; /* Make sure the image doesn't exceed its container */
+    }
+
+     /* BIG TEXT */
+    h1 {
+        margin-top: 0.5px;
+        font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: normal;
+        font-size: 25px;
+        line-height: 1.7rem;
+    }
+
+    /* CAPTION */
+    h3 {
+        font-family: "ocr-a-std", monospace;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 13px;
+    }
+
+    /* TITLES (Table of Content) */
+    h4 {
+        font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: normal;
+        font-size: 15px;
+    }
+
+    .draggable-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px; /* Adjust the width of the image as needed */
+        cursor: grab;
+        user-select: none;
+        touch-action: none; /* Prevent mobile browsers from handling touch events */
+    }
+
+    a#menu:link {
+	  text-decoration: none;
+	  color: white;	
+	  cursor: pointer;
+	  }
+
+	  a#menu:visited {
+	  text-decoration: none;
+	  color: white;	
+	  cursor: pointer;
+	  }
+
+	  a#menu:hover {
+	  text-decoration: none;
+	  color: white;	
+	  cursor: pointer;
+	  font-style: italic
+	  }
+
+     /* DOTS */
+     .dot {
+        position: fixed;
+        width: 15px;
+        height: 15px;
+        background-color: #417F63;
+        border-radius: 0%;
+        cursor: pointer;
+        z-index: 999; /* Ensure dots appear above the glossary */
+    }
+    .dot-title {
+        position: fixed;
+        font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: italic;
+        font-size: 15px;
+        color: #417F63;
+        display: none;
+        transform: rotate(-15deg); /* Rotate the text */
+        z-index: 999; /* Ensure dots appear above the glossary */
+    }
+    .dot:hover + .dot-title {
+        display: block;
+    }
+
+      /* DOTS LINKS */
+    a#dot:link {
+	  text-decoration: none;
+	  color: black;	
+	  cursor: pointer;
+	  }
+
+      a#dot:visited {
+	  text-decoration: none;
+	  color: black;	
+	  cursor: pointer;
+	  }
+
+      a#dot:hover {
+	  text-decoration: none;
+	  color: black;	
+	  cursor: pointer;
+	  }
+      
+    @media screen and (max-width: 600px) {
+        .dot {
+            left: calc(0% - 10px); /* Adjust the percentage value as needed */
+        }
+
+        h1 {
+        margin-top: 0.5px;
+        font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: normal;
+        font-size: 20px;
+        line-height: 1.5rem;
+    }
+    }
+
+        /* SCROLL BAR */
+        ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    }  
+
+    
+    
+
+</style>
+</head>
+<body>
+    <img src="images/folder.png" alt="Draggable Image" class="draggable-img">
+    <div class="container">
+        <div class="left-column">
+            <h1><i>Index</i>
+            <br>
+            <a href="preface.html" id="menu">Preface</a>
+            <br>
+            <a href="mailto:timaelkhammas@gmail.com" id="menu">E-mail</a>
+            <br>
+            <a href="https://www.instagram.com/ta5zine/" id="menu" target="_blank">Other</a>
+            </h1>
+        </div>
+
+        <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'Palestine')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="cineclubs.html" id="dot"><div class="dot" style="top: 10%; left: 70%;" onmouseover="showDotTitle(this, 'Cineclubs & the UNEM')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="assifa.html" id="dot"><div class="dot" style="top: 90%; left: 40%;" onmouseover="showDotTitle(this, 'Assifa')" onmouseout="hideDotTitle(this)"></div></a>
+        <div class="dot" style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Political comics')" onmouseout="hideDotTitle(this)"></div>
+
+
+    <script>
+       function showDotTitle(dot, title) {
+            dot.insertAdjacentHTML('afterend', '<div class="dot-title" style="top:' + (dot.offsetTop + 15) +  'px; left:' + (dot.offsetLeft + 20) + 'px;">' + title + '</div>');
+        }
+
+        function hideDotTitle(dot) {
+            dot.nextElementSibling.remove();
+        }
+
+        let draggableImg = document.querySelector('.draggable-img');
+    let initialX, initialY, offsetX = 0, offsetY = 0, isDragging = false;
+
+    // Function to handle mouse/touch down event
+    function startDrag(e) {
+        isDragging = true;
+        if (e.type === 'mousedown') {
+            initialX = e.clientX - offsetX;
+            initialY = e.clientY - offsetY;
+        } else if (e.type === 'touchstart') {
+            initialX = e.touches[0].clientX - offsetX;
+            initialY = e.touches[0].clientY - offsetY;
+        }
+    }
+
+    // Function to handle mouse/touch move event
+    function drag(e) {
+        e.preventDefault(); // Prevent default browser behavior
+        if (isDragging) {
+            let x, y;
+            if (e.type === 'mousemove') {
+                x = e.clientX - initialX;
+                y = e.clientY - initialY;
+            } else if (e.type === 'touchmove') {
+                x = e.touches[0].clientX - initialX;
+                y = e.touches[0].clientY - initialY;
+            }
+            offsetX = x;
+            offsetY = y;
+            draggableImg.style.transform = `translate(${x}px, ${y}px)`;
+        }
+    }
+
+    // Function to handle mouse/touch up event
+    function endDrag() {
+        isDragging = false;
+    }
+
+    // Event listeners for mouse events
+    draggableImg.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', endDrag);
+
+    // Event listeners for touch events
+    draggableImg.addEventListener('touchstart', startDrag);
+    document.addEventListener('touchmove', drag);
+    document.addEventListener('touchend', endDrag);
+    </script>
+</body>
+</html>

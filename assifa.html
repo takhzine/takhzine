@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ta[kh]zine</title>
+<style>
+        @font-face {
+  font-family: 'HAL Timezone';
+  src: url("fonts/HALTimezone-Regular.ttf") format("truetype"),
+  url("fonts/HALTimezone-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HAL Timezone';
+  src: url("fonts/HALTimezone-Italic.ttf") format("truetype"),
+  url("fonts/HALTimezone-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+
+    body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        display: flex;
+        height: 100%;
+    }
+    .left-column {
+        width: 20%;
+        background-color: white;
+        padding: 15px;
+    }
+    .right-column {
+        width: 400%;
+        background-color: white;
+        padding: 15px;
+        overflow-y: auto; /* Add scrollbars when content overflows */
+    }
+    .text-container, .video-container {
+        max-width: 500px; /* Set maximum width for the content container */
+    }
+
+    .video-container video {
+        width: 100%; /* Make video container take up full width */
+    }
+
+    .image-container {
+        text-align: center; /* Center the image horizontally */
+        margin-bottom: 20px; /* Add some space below the image */
+    }
+    .image-container img {
+        width: 500px;
+        max-width: 100%; /* Make sure the image doesn't exceed its container */
+    }
+
+     /* BIG TEXT */
+    h1 {
+        margin-top: 0.5px;
+        font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: normal;
+        font-size: 25px;
+        margin:0;
+    padding:0;
+    }
+
+    /* CAPTION */
+    h3 {
+        font-family: "ocr-a-std", monospace;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 13px;
+    }
+
+    /* TITLES (Table of Content) */
+    h4 {
+        font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: normal;
+        font-size: 15px;
+    }
+
+    /* SUBTITLES (Table of Content) */
+    h5 {
+    font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 12px;
+    margin:0;
+    padding:0;
+    text-indent: 10px;
+    }
+
+    /* QUOTES */
+    h2 {
+        font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: normal;
+        font-size: 13px;
+        margin-left: 50px;
+    }
+
+    .big-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 400px; /* Adjust the width of the image as needed */
+    }
+
+    a#menu:link {
+	  text-decoration: none;
+	  color: black;	
+	  cursor: pointer;
+	  }
+
+	  a#menu:visited {
+	  text-decoration: none;
+	  color: black;	
+	  cursor: pointer;
+	  }
+
+	  a#menu:hover {
+	  text-decoration: none;
+	  color: black;	
+	  cursor: pointer;
+	  font-style: italic
+	  }
+
+      .dot {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #dac062;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .dot-title {
+        position: absolute;
+        font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: italic;
+        font-size: 15px;
+        color: #dac062;
+        display: none;
+        transform: rotate(-15deg); /* Rotate the text */
+    }
+    .dot:hover + .dot-title {
+        display: block;
+    }
+
+    a#dot:link {
+	  text-decoration: none;
+	  color: black;	
+	  cursor: pointer;
+	  }
+
+      a#dot:visited {
+	  text-decoration: none;
+	  color: black;	
+	  cursor: pointer;
+	  }
+
+      a#dot:hover {
+	  text-decoration: none;
+	  color: black;	
+	  cursor: pointer;
+	  }
+
+    @media screen and (max-width: 600px) {
+        .dot {
+            left: calc(0% - 10px); /* Adjust the percentage value as needed */
+        }
+
+        h1 {
+        margin-top: 0.5px;
+        font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: normal;
+        font-size: 20px;
+    }
+    }
+
+        /* SCROLL BAR */
+        ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    }  
+
+    
+    
+
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-column">
+            <h1><a href="index.html" id="menu">Index</a></h1>
+
+            <h1><a href="preface.html" id="menu">Preface</a>
+                <br>
+            <a href="mailto:timaelkhammas@gmail.com" id="menu">E-mail</a>
+            <br>
+            <a href="https://www.instagram.com/ta5zine/" id="menu" target="_blank">Other</a>
+            </h1>
+        </div>
+
+        <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'Palestine')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="cineclubs.html" id="dot"><div class="dot" style="top: 10%; left: 70%;" onmouseover="showDotTitle(this, 'Cineclubs & the UNEM')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="assifa.html" id="dot"><div class="dot" style="top: 90%; left: 40%;" onmouseover="showDotTitle(this, 'Assifa')" onmouseout="hideDotTitle(this)"></div></a>
+        <div class="dot" style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Political comics')" onmouseout="hideDotTitle(this)"></div>
+
+        <div class="right-column">
+            <div class="text-container">
+                <h1>The Arab Workers Movement (MTA) was founded in 1972 by Maghrebi immigrant workers and students from the Maghreb who found themselves in the Palestine Committee founded after the war in 1967 to support the Palestinian people.
+                </h1>
+                <br>
+                <div class="image-container">
+                    <img src="images/assifa_1.jpeg" alt="Image">
+                </div>
+                <h3>
+                MTA logo, a worker raising his fist in the shape of Palestine. Source: Fonds Saïd Bouziri, La contemporaine. Courtesy of Faouzia Bouziri.</h3>
+                <br>
+                <h1>
+                Influenced by Marxism and Arab nationalism, the MTA (Arab Workers Movement) wanted to build an Arab political organization in France independent of “French” organizations and the authorities of Arab countries. The MTA was particularly committed to the fight against racism and for the rights of immigrant workers but was also one of the first organizations in France in support of the Palestinian people.
+                </h1>
+                <br>
+                <div class="image-container">
+                    <img src="images/assifa_2.jpeg" alt="Image">
+                </div>
+                <h3>
+                Protestors carrying Palestinian flags and a banner that reads “Sauvons les condamnés de Marrakesh” (Let’s save the condemned of Marrakesh). Screen shot from Compter sur ses propres forces, directed by Yannis Tritsibidas (1973). Courtesy of Yannis Tritsibidas.                </h3>
+                <br>
+                <h1>
+                The very name of the movement, Committees in Support of the Palestinian Revolution, testifies to the enduring importance of Palestine as a rallying cry for migrant rights, connecting the decolonization of Palestine to the struggle of immigrants (most of them formerly colonized subjects) for equal rights in the postcolonial metropole. 
+                </h1>
+                <h2>In the words of activists from the Arab Workers’ Movement, founded in 1972 by CSRP militants, “Oppressed Arab workers have been living in France for years. Formerly colonized peoples, they were torn from their homelands to thin out the ranks of the unemployed in Morocco, Algeria, and Tunisia, and to work in inhumane conditions and in this way increase the profits of the bosses in France.”</h2>
+                <br>
+                <div class="image-container">
+                <img src="images/assifa_3.jpeg" alt="Image">
+                </div>
+                <h3>
+                Meeting of MTA activists, a Palestine poster visible in the background. Screen shot from Compter sur ses propres forces, directed by Yannis Tritsibidas (1973). Courtesy of Yannis Tritsibidas.
+                </h3>
+                <br>
+                <h1>
+                The MTA published a bulletin Assifa عاصفة
+                (Storm in Arabic), subtitled The Voice of Arab Workers and with the slogan: “Support the struggles of the Arab masses, in France and elsewhere.”
+                The title acts as a reference for Al-Asifa, which was the mainstream armed wing of the Palestinian political party and militant group Fatah. Al-Asifa was jointly led by Yasser Arafat and Khalil Wazir.
+                </h1>
+                <br>
+                <div class="image-container">
+                    <img src="images/assifa_4.jpg" alt="Image">
+                    <img src="images/assifa_5.jpg" alt="Image">
+                    </div>
+                <h3>
+                Celebration card of the 4th Anniversary of Al-Asifa, Palestine, 1965.
+                </h3>
+                <br>
+                <div class="image-container">
+                    <img src="images/assifa_6.jpg" alt="Image">
+                    <img src="images/assifa_7.jpg" alt="Image">
+                    </div>
+                    <h3>
+                    Assifa, N°3, March 1976. Courtesy of Odysséo.
+                    <br>
+                    [Text in French: Moroccan prisons, surviving while fighting. The Moroccan people do not remain passive to this machine of repression. They fight to take it down. They fight to survive.]
+                    </h3>
+                    <br>
+                    <h1>
+                    In addition to the publication, Radio Assifa was, in 1975, the first sound and activist experience of North African immigration, a true precursor to free immigration radio in the form of cassettes.
+                    The idea of ​​producing this type of cassette comes from previous experiences: in the 1970s, Radio LIP broadcasted cassettes via loudspeaker in demonstrations, and Radio Assifa broadcasted cassettes around the struggles of immigrant workers, notably on the channels of Renault factories or in Sonacotra hostels on rent strike.
+                    </h1>
+                    <h2>
+                    The cassette was rediscovered with the message: "Radio Assifa produced by the Arab workers of the Assifa Theater Troupe and all Arab musicians and journalists grouped together against racism. Radio Assifa gives the right to speech and expression to Arab workers. Radio Assifa is the radio for all Arabs."
+                    </h2>
+                    <br>
+                    <div class="image-container">
+                        <img src="images/assifa_8.jpeg" alt="Image">
+                        </div>
+                    <h3>
+                    Cassette audio "Ici Radio Assifa". Courtesy of Agence IM’média.
+                    </h3>
+                    <br>
+                    <h1>
+                    Mohamed Mokhtar Bachiri founded with Geneviève Clancy and Philippe Tancelin, also at the origin of the Committee for the Defense of the Life and Rights of Immigrant Workers (CDVDTI), the agit-prop theater troupe Al Assifa. They presented their first play, a theatrical diary titled “It works, it works and it shuts its mouth” in 1979. 
+                    </h1>
+                    <h2>
+                    Al Assifa does not consider itself a theater troupe: “Al Assifa has never been a “theater troupe”, but a cultural action collective made up of French people and immigrants and whose vocation remains to promote a current of expression and action with immigrants and French people, against slavery, against racism.”
+                    </h2>
+                    <br>
+                    <div class="image-container">
+                        <img src="images/assifa_9.jpg" alt="Image">
+                        <img src="images/assifa_10.jpg" alt="Image">
+                        </div>
+                    <h3>
+                    Posters announcing the opening of Al Assifa theater pieces. Courtesy of Odysséo.
+                    </h3>
+
+    
+
+
+
+    <script>
+       function showDotTitle(dot, title) {
+            dot.insertAdjacentHTML('afterend', '<div class="dot-title" style="top:' + (dot.offsetTop + 15) +  'px; left:' + (dot.offsetLeft + 20) + 'px;">' + title + '</div>');
+        }
+
+        function hideDotTitle(dot) {
+            dot.nextElementSibling.remove();
+        }
+    </script>
+</body>
+</html>
