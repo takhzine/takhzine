@@ -173,6 +173,84 @@
 	  cursor: pointer;
 	  }
 
+    /* Adjust hover image positioning */
+    #hoverImageContainer {
+        display: none;
+        position: fixed;
+        top: 50%;
+        right: 250px;
+        transform: translateY(-50%);
+        width: 300px;
+        text-align: center;
+        z-index: 999;
+    }
+
+    #hoverImageContainer img {
+        width: 100%;
+    }
+
+    #caption {
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    .hover-trigger1 {
+    text-decoration: underline; /* Add underline */
+}
+
+    .hover-trigger1:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #FC5130; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger2 {
+    text-decoration: underline; /* Add underline */
+}
+
+    .hover-trigger2:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #FC5130; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger3 {
+    text-decoration: underline; /* Add underline */
+}
+
+    .hover-trigger3:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #FC5130; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger4 {
+    text-decoration: underline; /* Add underline */
+}
+
+    .hover-trigger4:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #FC5130; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger5 {
+    text-decoration: underline; /* Add underline */
+}
+
+    .hover-trigger5:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #FC5130; /* Change text color on hover */
+        text-decoration: none;
+    }
 
     @media screen and (max-width: 600px) {
 
@@ -194,17 +272,41 @@
         cursor: grab;
         user-select: none;
         touch-action: none; /* Prevent mobile browsers from handling touch events */
+        z-index: 998;
     }
-
-
     }
     
+    @media screen and (min-width: 600px) {
+        /* For screens wider than 600px (desktop) */
+        #hoverImageContainer {
+            right: 250px;
+            transform: translateY(-50%);
+        }
+
+        #hoverImageContainer img {
+        width: 100%;
+    }
+    }
+
+    @media screen and (max-width: 599px) {
+        /* For screens narrower than 600px (mobile) */
+        #hoverImageContainer {
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        #hoverImageContainer img {
+        width: 100%;
+    }
+    }
     
 
 </style>
 </head>
 <body>
-    <img src="images/folder.png" alt="Draggable Image" class="draggable-img">
+
+    <div id="hoverImageContainer" class="hover-image-container"></div>
+
 
     <div class="container">
         <div class="left-column">
@@ -228,8 +330,9 @@
                 <h1>Ta5zine, meaning ta[kh]zine or <span>تخزين,</span> as in saving, memorizing, piling & accumulating, 
                 is a research on archives of political publishing practices in the context of Morocco.
                 <br><br>
-                I first started with the idea of an archive that exists beyond a repository or storage of information and documents or a legitimizing instrument 
-                of power structures and prevailing authorities. In recent years, feminist scholars have suggested that the archive is a space for dwelling and a 
+                I first started with the idea of an archive that exists <span class="hover-trigger1">beyond a repository or storage of information and documents</span>
+                or a legitimizing instrument 
+                of power structures and prevailing authorities. In recent years, <span class="hover-trigger2">feminist scholars</span> have suggested that the archive is a space for dwelling and a 
                 quotidian site for marginalized subjects as well as gendered and erotically charged energies, meanings, and other bodily processes. 
                 </h1>
 
@@ -242,9 +345,9 @@
                 
                 </h2>
                 <h1>
-                During my studies, I have always asked myself the question of why almost all the political revolutions and protests that happened in Morocco 
+                During my studies, I have always asked myself the question of why almost all the <span class="hover-trigger3">political revolutions and protests</span> that happened in Morocco 
                 were never followed suit or paralleled with a visual/graphic design support compared to other MENA countries. It wasn't until three years ago that
-                I found an old magazine in a flea market back home with the title <i>Souffles, Arab cultural publication of the Maghreb.</i>
+                I found an old magazine in a flea market back home with the title <span class="hover-trigger4">Souffles, Arab cultural publication of the Maghreb.</span>
                 </h1>
                 <h2>
                 Souffles: revue maghrébine littéraire et culturelle was an French and Arabic language literary magazine published in Rabat, Morocco, 
@@ -253,67 +356,25 @@
 
                 <h1>To my disappointment, 
                 the publication wasn't for sale but the man in the shop was kind enough to make time and talk to me about the linguistic guerrillas of the 60s and 70s
-                in Morocco. The publication was a manifesto for a new aesthetics in the Maghreb, and became a conduit for a new generation of writers, artists, 
+                in Morocco. The publication was a <span class="hover-trigger5">manifesto for a new aesthetics in the Maghreb</span>, and became a conduit for a new generation of writers, artists, 
                 and intellectuals to stage a revolution against imperialist and colonial cultural domination. The starting point for this revolution was language.
                 <h2>
-                From <i>Kameelah Janan Rasheed on research and archiving</i>, it's fun to not always be in the library, but to be actually out on the streets 
-                talking to people and engaging with people. This is a form of important research that’s not bound by having access to an institution—something 
-                that often prevents people from doing research. You don’t have a university login or you don’t have the right permissions to get into a particular 
-                archive or you don’t even have the cultural capital to understand how to get into these things.
+                "How to decolonize minds? How to decolonize culture? How do we rediscover our autonomy, our freedom of creation, in relation to a culture that 
+                was imposed upon us? But with this paradox: all of that must happen in the language of the colonizer; a paradox, a contradiction. It was necessary 
+                to deal with this paradox and this contradiction. How to produce a literature that would carry this movement for the emancipation of the human 
+                being? We worked with the only language that we had at our disposal. We didn’t choose it. I didn’t choose to write in French—French was imposed 
+                upon me during a history that went beyond me personally. The important thing was to see what I did with this language. What did I succeed in 
+                creating within this language? How did I make this language my own?"
+                <br>
+                – Abdellatif Lâabi
                 </h2>
+                <br><br><br><br>
             </div>
         </div>
 
 
 
     <script>
-let draggableImg = document.querySelector('.draggable-img');
-    let initialX, initialY, offsetX = 0, offsetY = 0, isDragging = false;
-
-    // Function to handle mouse/touch down event
-    function startDrag(e) {
-        isDragging = true;
-        if (e.type === 'mousedown') {
-            initialX = e.clientX - offsetX;
-            initialY = e.clientY - offsetY;
-        } else if (e.type === 'touchstart') {
-            initialX = e.touches[0].clientX - offsetX;
-            initialY = e.touches[0].clientY - offsetY;
-        }
-    }
-
-    // Function to handle mouse/touch move event
-    function drag(e) {
-        e.preventDefault(); // Prevent default browser behavior
-        if (isDragging) {
-            let x, y;
-            if (e.type === 'mousemove') {
-                x = e.clientX - initialX;
-                y = e.clientY - initialY;
-            } else if (e.type === 'touchmove') {
-                x = e.touches[0].clientX - initialX;
-                y = e.touches[0].clientY - initialY;
-            }
-            offsetX = x;
-            offsetY = y;
-            draggableImg.style.transform = `translate(${x}px, ${y}px)`;
-        }
-    }
-
-    // Function to handle mouse/touch up event
-    function endDrag() {
-        isDragging = false;
-    }
-
-    // Event listeners for mouse events
-    draggableImg.addEventListener('mousedown', startDrag);
-    document.addEventListener('mousemove', drag);
-    document.addEventListener('mouseup', endDrag);
-
-    // Event listeners for touch events
-    draggableImg.addEventListener('touchstart', startDrag);
-    document.addEventListener('touchmove', drag);
-    document.addEventListener('touchend', endDrag);
 
 
        function showDotTitle(dot, title) {
@@ -324,6 +385,41 @@ let draggableImg = document.querySelector('.draggable-img');
             dot.nextElementSibling.remove();
         }
 
-    </script>
+
+
+
+  // Define an array to store information about hover images and captions
+  const hoverImages = [
+        { triggerElement: '.hover-trigger1', imagePath: 'images/caption_1.jpeg', caption: 'Paul Otlet, Traité de documentation, 1934.' },
+        { triggerElement: '.hover-trigger2', imagePath: 'images/caption_2.jpeg', caption: 'Dwelling in the Archive: Women Writing House, Home, and History in Late Colonial India. Antoinette Burton, 2003.' },
+        { triggerElement: '.hover-trigger3', imagePath: 'images/caption_3.webp', caption: 'The last issue of Libération, June 20, 1981, before it ceased publication after the "bread" riots in Casablanca, where hundreds of people were injured and killed.' },
+        { triggerElement: '.hover-trigger4', imagePath: 'images/caption_4.jpeg', caption: 'Souffles, N°18, 1970.' },
+        { triggerElement: '.hover-trigger5', imagePath: 'images/caption_5.webp', caption: 'Archives of Krimou Derkaoui, Lamalif magazines, Pro-C magazine and works on Morocco.' },
+    ];
+
+    // Function to show the hover image and caption
+    function showImageOnHover(event) {
+        let hoveredElement = event.target;
+        let hoverData = hoverImages.find(item => hoveredElement.matches(item.triggerElement));
+        
+        if (hoverData) {
+            let hoverImageContainer = document.getElementById('hoverImageContainer');
+            hoverImageContainer.innerHTML = `
+                <img src="${hoverData.imagePath}" alt="Hover Image">
+                <div id="caption">${hoverData.caption}</div>
+            `;
+            hoverImageContainer.style.display = 'block';
+        }
+    }
+
+    // Function to hide the hover image and caption
+    function hideImageOnLeave() {
+        document.getElementById('hoverImageContainer').style.display = 'none';
+    }
+
+    // Add event listeners to the text-container for hovering over words
+    document.querySelector('.text-container').addEventListener('mouseover', showImageOnHover);
+    document.querySelector('.text-container').addEventListener('mouseout', hideImageOnLeave);
+</script>
 </body>
 </html>
