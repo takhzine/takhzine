@@ -262,18 +262,6 @@
         font-size: 18px;
         line-height: 1.4rem;
     }
-
-    .draggable-img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 300px; /* Adjust the width of the image as needed */
-        cursor: grab;
-        user-select: none;
-        touch-action: none; /* Prevent mobile browsers from handling touch events */
-        z-index: 998;
-    }
     }
     
     @media screen and (min-width: 600px) {
@@ -399,8 +387,7 @@
 
 
     <script>
-
-
+        /* TOPIC DOTS */
        function showDotTitle(dot, title) {
             dot.insertAdjacentHTML('afterend', '<div class="dot-title" style="top:' + (dot.offsetTop + 15) +  'px; left:' + (dot.offsetLeft + 20) + 'px;">' + title + '</div>');
         }
@@ -410,9 +397,7 @@
         }
 
 
-
-
-  // Define an array to store information about hover images and captions
+        /* HOVER IMAGES */
   const hoverImages = [
         { triggerElement: '.hover-trigger1', imagePath: 'images/caption_1.jpeg', caption: 'Paul Otlet, Traité de documentation, 1934.' },
         { triggerElement: '.hover-trigger2', imagePath: 'images/caption_2.jpeg', caption: 'Dwelling in the Archive: Women Writing House, Home, and History in Late Colonial India. Antoinette Burton, 2003.' },
@@ -449,8 +434,6 @@ textContainer.addEventListener('mouseout', hideImageOnLeave);
 // Add touch event listeners for mobile devices
 textContainer.addEventListener('touchstart', showImageOnHover);
 textContainer.addEventListener('touchend', hideImageOnLeave);
-
-    
     
 </script>
 </body>

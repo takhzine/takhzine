@@ -195,6 +195,8 @@ html, body {
     background: transparent;
     } 
 
+
+    /* GLOSSARY */
     .glossary {
         position: fixed;
         bottom: 15px; /* Align glossary to bottom of viewport */
@@ -217,9 +219,118 @@ html, body {
         height: 100%; /* Set height to 100% to allow scrolling */
     }
 
+
+    /* HOVER IMAGES */
+ #hoverImageContainer {
+        display: none;
+        position: fixed;
+        top: 50%;
+        right: 250px;
+        transform: translateY(-50%);
+        width: 300px;
+        text-align: center;
+        z-index: 999;
+    }
+
+    #hoverImageContainer img {
+        width: 100%;
+    }
+
+    #caption {
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    .hover-trigger1 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger1:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger2 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger2:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger3 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger3:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger4 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger4:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger5 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger5:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger6 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger6:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger7 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger7:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+
+
+
+
+
+
+    /* MOBILE */
     @media screen and (max-width: 600px) {
         .dot {
-            left: calc(0% - 10px); /* Adjust the percentage value as needed */
+            left: calc(0% - 10px); 
         }
 
         h1 {
@@ -231,14 +342,59 @@ html, body {
         line-height: 1.4rem;
     }
 
-    .glossary {
+        .glossary {
         -webkit-backdrop-filter: blur(10px);
-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
     }
 
-    .three-column {
-    display: none;
+    /* MOBILE */
+    @media screen and (min-width: 600px) {
+        /* For screens wider than 600px (desktop) */
+        #hoverImageContainer {
+            right: 250px;
+            transform: translateY(-50%);
+        }
+
+        #hoverImageContainer img {
+        width: 100%;
     }
+
+       #caption{
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255); /* Background color with transparency */
+        
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Ensure the caption stays within the hover image container */
+       }
+    }
+    
+    /* MOBILE */
+    @media screen and (max-width: 599px) {
+        /* For screens narrower than 600px (mobile) */
+        #hoverImageContainer {
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        #hoverImageContainer img {
+        width: 100%;
+    }
+
+    #caption{
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255); /* Background color with transparency */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Ensure the caption stays within the hover image container */
+       }
     }
     
 </style>
@@ -249,6 +405,7 @@ backdrop-filter: blur(10px);
 
 
 <body>
+    <div id="hoverImageContainer" class="hover-image-container"></div>
 
 
      <!-- Glossary  -->
@@ -314,8 +471,8 @@ backdrop-filter: blur(10px);
 
         <div class="two-column">
             <div class="text-container">
-                <h1>In the context of Morocco, Palestine was a springboard for “cultural decolonization,” reactivating global anticolonial discourses 
-                    in order to articulate a relational, cross-colonial Maghrebi⁽¹⁾ identity focusing on discussions of language, poetic form, and cultural autonomy.
+                <h1>In the context of Morocco, Palestine was a springboard for “cultural decolonization,” reactivating <span class="hover-trigger1">global anticolonial discourses</span>
+                    in order to articulate a relational, cross-colonial Maghrebi⁽¹⁾ identity focusing on discussions of language, poetic form, and <span class="hover-trigger2">cultural autonomy</span>.
                 </h1>
                 <br>
                 <div class="image-container">
@@ -326,15 +483,28 @@ backdrop-filter: blur(10px);
                 </h3>
                 <br>
                 <h1>
-                The Moroccan cultural journal Souffles-Anfas ran between 1966 and 1971, when it was banned by the Moroccan government and its founder Abdellatif Laâbi was arrested, imprisoned, and tortured for sedition⁽²⁾. The journal was published quarterly (with some double-issues) and ran 22 issues over its brief history. Modestly priced at 3 Moroccan Dirhams, distribution averaged 3-5,000 copies an issue. Initially published as Souffles in French, the journal expanded to publish bilingual and Arabic issues titled Anfas in its final years. Souffles-Anfas was primarily distributed in Morocco, but reached subscribers in the Middle East, Africa, Europe, and Latin America.
+                The Moroccan cultural journal Souffles-Anfas ran between 1966 and 1971, when it was banned by the Moroccan government and its founder Abdellatif 
+                Laâbi was arrested, imprisoned, and tortured for sedition⁽²⁾. The journal was published quarterly (with some double-issues) and ran 22 issues over 
+                its brief history. Modestly priced at 3 Moroccan Dirhams, distribution averaged 3-5,000 copies an issue. Initially published as Souffles in French, 
+                the journal expanded to publish bilingual and <span class="hover-trigger3">Arabic issues titled Anfas</span> in its final years. Souffles-Anfas was primarily distributed in Morocco, 
+                but reached subscribers in the Middle East, Africa, Europe, and Latin America.
                 </h1>
                 <br>
                 <h2>
-                In the journal’s earliest issues, Laâbi vehemently rejected the cultural stagnation brought about by colonial acculturation and the subordination of Moroccan arts and culture to the whims of imperial French tastes. Laâbi believed ardently that “political and cultural struggles go hand in hand,” and, as such, saw the reassertion of Moroccan culture as the opening salvo in a political fight against colonialism and its legacies. He called upon the country’s young writers to confront the social and political issues facing their newly independent country and produce a critically grounded Moroccan national culture.
+                In the journal’s earliest issues, Laâbi vehemently rejected the cultural stagnation brought about by colonial acculturation and the subordination 
+                of Moroccan arts and culture to the whims of imperial French tastes. Laâbi believed ardently that “political and cultural struggles go hand in hand,”
+                and, as such, saw the reassertion of Moroccan culture as the opening salvo in a political fight against colonialism and its legacies. He called upon 
+                the country’s young writers to confront the social and political issues facing their newly independent country and produce a critically grounded 
+                Moroccan national culture.
                 </h2>
                 <br>
                 <h1>
-                The ideas and grievances articulated within the pages of Souffles-Anfas foreshadow contemporary progressive movements, from the Arab Spring's⁽³⁾ pro-democracy uprisings to the ongoing struggles for racial equity in Western societies. The journal played a pivotal role in fostering dialogue among writers, artists, and activists from Africa, Asia, and the Americas. It featured groundbreaking works by tricontinental figures such as <i>René Depestre</i> from Haiti, the Syrian poet <i>Adonis</i>, and <i>Amilcar Cabral</i>, a key leader in Guinea-Bissau's fight for independence from Portugal. Additionally, it showcased pivotal revolutionary and postcolonial texts like the <i>Black Panthers' Ten-Point Program</i>⁽⁴⁾ and the Argentine manifesto advocating for a Third Cinema.⁽⁵⁾
+                The ideas and grievances articulated within the pages of Souffles-Anfas foreshadow contemporary progressive movements, from the <span class="hover-trigger4">Arab Spring's</span>⁽³⁾
+                pro-democracy uprisings to the ongoing struggles for racial equity in Western societies. The journal played a pivotal role in fostering dialogue 
+                among writers, artists, and activists from Africa, Asia, and the Americas. It featured groundbreaking works by tricontinental figures such as 
+                <i>René Depestre</i> from Haiti, the Syrian poet <i>Adonis</i>, and <i>Amilcar Cabral</i>, a key leader in Guinea-Bissau's fight for independence 
+                from Portugal. Additionally, it showcased pivotal revolutionary and postcolonial texts like the <i>Black Panthers' Ten-Point Program</i>⁽⁴⁾ and 
+                the Argentine manifesto advocating for a Third Cinema.⁽⁵⁾
                 </h1>
                 <br>
                 <div class="image-container">
@@ -344,9 +514,13 @@ backdrop-filter: blur(10px);
                 Graphic design by Saâd Benseffaj, For A Palestinian Revolution, Souffles 15, 1969.
                 </h3>
                 <h1>
-                As the most visible and enduring symbol of colonial rule and military occupation in the twenty-first century, Palestine has played an important role in popular protests against authoritarian postcolonial regimes, revealing a much longer history of transnational mobilization for Palestine across the region, one that implicates corrupt postcolonial and military regimes in the oppression of nominally sovereign subjects.
+                As the most visible and enduring symbol of colonial rule and military occupation in the twenty-first century, Palestine has played an important 
+                role in popular protests against authoritarian postcolonial regimes, revealing a much longer history of <span class="hover-trigger5">transnational mobilization for Palestine</span> 
+                across the region, one that implicates corrupt postcolonial and military regimes in the oppression of nominally sovereign subjects.
                 <br><br>
-                The late Palestinian American intellectual Edward Said was the first to speculate on the global significance of Palestine in his seminal essay <i>The Question of Palestine</i>, presenting Palestine as exemplary of political subjection in the modern era, particularly the kind practiced by postcolonial regimes. 
+                The late Palestinian American intellectual Edward Said was the first to speculate on the global significance of Palestine in his seminal essay 
+                <span class="hover-trigger6">The Question of Palestine</span>, presenting Palestine as exemplary of political subjection in the modern era, particularly the kind practiced 
+                by postcolonial regimes. 
                 </h1>
                 <br>
                 <h2>
@@ -417,7 +591,7 @@ backdrop-filter: blur(10px);
                 <h1>
                 Abdellatif Laâbi’s “Nous sommes tous des réfugiés palestiniens” (We are all Palestinian refugees) intertextually inscribes Morocco and Palestine 
                 in a transnational history of popular protest and anticolonial struggle, culminating in a call to pan-Arab revolution. In this sense it constitutes 
-                a textbook example of the anticolonial fervor that swept across the Arab world after June 1967⁽⁶⁾. It also perfectly captures the transnational 
+                a textbook example of the <span class="hover-trigger7">anticolonial fervor that swept across the Arab world after June 1967</span>⁽⁶⁾. It also perfectly captures the transnational 
                 character of what has come to be known as May ’68⁽⁷⁾, and the centrality of anticolonial and Third Worldist thought to this event. 
                 </h1>
                 <br>
@@ -432,6 +606,7 @@ backdrop-filter: blur(10px);
 
 
     <script>
+        /* TOPIC DOTS */
            function showDotTitle(dot, title) {
             dot.insertAdjacentHTML('afterend', '<div class="dot-title" style="top:' + (dot.offsetTop + 15) +  'px; left:' + (dot.offsetLeft + 20) + 'px;">' + title + '</div>');
         }
@@ -440,10 +615,55 @@ backdrop-filter: blur(10px);
             dot.nextElementSibling.remove();
         }
 
+
+        /* GLOSSARY */
         window.addEventListener('scroll', function() {
             var glossaryContent = document.querySelector('.glossary-content');
             glossaryContent.scrollTop = window.pageYOffset;
         });
+
+
+
+        /* HOVER IMAGES */
+  const hoverImages = [
+        { triggerElement: '.hover-trigger1', imagePath: 'images/caption_6.jpg', caption: 'Palestine Demonstration in Morocco, 1971. Courtesy of Anfas.'},
+        { triggerElement: '.hover-trigger2', imagePath: 'images/caption_7.jpeg', caption: 'The artists Mohamed Kacimi and Malika Agueznay, discussing during the cultural week of the Berreched psychiatric hospital. Courtesy of Archives Abdellah Ziou Ziou.' },
+        { triggerElement: '.hover-trigger3', imagePath: 'images/caption_8.png', caption: 'Logo of Anfas-Souffles.' },
+        { triggerElement: '.hover-trigger4', imagePath: 'images/caption_9.webp', caption: 'Tripoli, Libya. August 2011. Salma Taghdi, 22, Aseel Tajuri, 22, and Maysam Shebani, 22, created a revolutionary newspaper to provide citizens of Tripoli with daily updates gathered from the radio. Taghdi and her father used a radio to listen in on the movements of Qaddafi’s troops since the start of the Libyan Revolution. Courtesy of Sarah Elliott.' },
+        { triggerElement: '.hover-trigger5', imagePath: 'images/caption_10.jpeg', caption: 'Black Power leader Stokely Carmichael is pictured with aides. In the late 1960s, Carmichael delivered a fiery call for Black support of the Palestinian revolution. Courtesy of Ollie Noonan, Jr./The Boston Globe.' },
+        { triggerElement: '.hover-trigger6', imagePath: 'images/caption_11.jpeg', caption: 'Cover of The Question of Palestine, Edward Said, 1979.' },
+        { triggerElement: '.hover-trigger7', imagePath: 'images/caption_12.webp', caption: 'A group of about 200 Arabs carrying signs and holding a Syrian flag, marched in demonstration near the White House in Washington, D.C., June 8, 1967. Courtesy of AP.' },
+    ];
+
+ // Function to show the hover image and caption
+function showImageOnHover(event) {
+    let hoveredElement = event.target;
+    let hoverData = hoverImages.find(item => hoveredElement.matches(item.triggerElement));
+    
+    if (hoverData) {
+        let hoverImageContainer = document.getElementById('hoverImageContainer');
+        hoverImageContainer.innerHTML = `
+            <img src="${hoverData.imagePath}" alt="Hover Image">
+            <div id="caption">${hoverData.caption}</div>
+        `;
+        hoverImageContainer.style.display = 'block';
+    }
+}
+
+// Function to hide the hover image and caption
+function hideImageOnLeave() {
+    document.getElementById('hoverImageContainer').style.display = 'none';
+}
+
+// Add event listeners to the text-container for hovering over words
+const textContainer = document.querySelector('.text-container');
+textContainer.addEventListener('mouseover', showImageOnHover);
+textContainer.addEventListener('mouseout', hideImageOnLeave);
+
+// Add touch event listeners for mobile devices
+textContainer.addEventListener('touchstart', showImageOnHover);
+textContainer.addEventListener('touchend', hideImageOnLeave);
+
 
     </script>
 </body>
