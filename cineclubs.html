@@ -230,9 +230,113 @@ html, body {
         height: 100%; /* Set height to 100% to allow scrolling */
     }
 
+
+      /* HOVER IMAGES */
+ #hoverImageContainer {
+        display: none;
+        position: fixed;
+        top: 50%;
+        right: 250px;
+        transform: translateY(-50%);
+        width: 300px;
+        text-align: center;
+        z-index: 999;
+    }
+
+    #hoverImageContainer img {
+        width: 100%;
+    }
+
+    #caption {
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    .hover-trigger1 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger1:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger2 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger2:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger3 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger3:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger4 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger4:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger5 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger5:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger6 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger6:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger7 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger7:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+
+   /* MOBILE */
     @media screen and (max-width: 600px) {
         .dot {
-            left: calc(0% - 10px); /* Adjust the percentage value as needed */
+            left: calc(0% - 10px); 
         }
 
         h1 {
@@ -244,23 +348,60 @@ html, body {
         line-height: 1.4rem;
     }
 
-    p{
-        margin-top: 0.5px;
+        .glossary {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+    }
+
+    /* MOBILE */
+    @media screen and (min-width: 600px) {
+        /* For screens wider than 600px (desktop) */
+        #hoverImageContainer {
+            right: 250px;
+            transform: translateY(-50%);
+        }
+
+        #hoverImageContainer img {
+        width: 100%;
+    }
+
+       #caption{
         font-family: 'HAL Timezone';
         font-weight: normal;
         font-style: normal;
-        font-size: 18px;
-        line-height: 1.4rem;
-        margin:0;
-        padding:0;
-        text-align:center; 
+        font-size: 13px;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255); /* Background color with transparency */
+        
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Ensure the caption stays within the hover image container */
+       }
+    }
+    
+    /* MOBILE */
+    @media screen and (max-width: 599px) {
+        /* For screens narrower than 600px (mobile) */
+        #hoverImageContainer {
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        #hoverImageContainer img {
+        width: 100%;
     }
 
-    .glossary {
-        -webkit-backdrop-filter: blur(10px);
-backdrop-filter: blur(10px);
+    #caption{
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255); /* Background color with transparency */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Ensure the caption stays within the hover image container */
+       }
     }
-    } 
 
     
     
@@ -268,6 +409,7 @@ backdrop-filter: blur(10px);
 </style>
 </head>
 <body>
+    <div id="hoverImageContainer" class="hover-image-container"></div>
 
      <!-- Glossary  -->
      <div class="glossary" id="glossary">
@@ -345,7 +487,9 @@ backdrop-filter: blur(10px);
 
         <div class="two-column">
             <div class="text-container">
-                <h1>In the 1970s and 80s, Moroccan ciné-clubs⁽¹⁾ played a major role in film education. However, as they were closely linked to leftist opposition groups at the time, cine-clubs began to recede alongside these political organisations after the collapse of the Soviet Union.
+                <h1>In the 1970s and 80s, Moroccan ciné-clubs⁽¹⁾ played a major role in film education. However, as they were closely linked to 
+                    <span class="hover-trigger1">leftist opposition groups</span> at the time, cine-clubs began to recede alongside these political 
+                    organisations after the collapse of the Soviet Union.
                 </h1>
                 <h2>
                 Today, with the multiplicity of film festivals and the growth experienced by Moroccan cinema, these cinematographic institutions no longer have 
@@ -366,11 +510,14 @@ backdrop-filter: blur(10px);
                     <img src="images/Cine_5.jpg" alt="Image">
                 </div>
                 <h3>
-                National Union of Students of Morocco, Nancy section, Metz, Strasbourg. Friday, December 11, USHS, Room 14 at 7:30 p.m. [Text in Arabic: UNEM organizes a conference on the Maghrebi student movement].
+                National Union of Students of Morocco, Nancy section, Metz, Strasbourg. Friday, December 11, USHS, Room 14 at 7:30 p.m. 
+                [Text in Arabic: UNEM organizes a conference on the Maghrebi student movement].
                 </h3>
                 <br>
                 <h1>
-                The phenomenon of cine-clubs had, for many years, mobilized a number of students with different backgrounds, across a number of regions of the country. At the time, the student bodies of universities also hosted Halaqiat⁽²⁾ within university campuses, at a time when the National Union of Moroccan Students (UNEM)⁽³⁾ was still flourishing.
+                The phenomenon of cine-clubs had, for many years, <span class="hover-trigger2">mobilized a number of students with different backgrounds</span>, across a number of regions of the country. 
+                At the time, the student bodies of universities also hosted Halaqiat⁽²⁾ within university campuses, at a time when the 
+                <span class="hover-trigger3">National Union of Moroccan Students (UNEM)</span>⁽³⁾ was still flourishing.
             </h1>
             </div>
             <br>
@@ -383,8 +530,10 @@ backdrop-filter: blur(10px);
                 Excerpt from an archival video published by INA from a film report in 1963 at the Moroccan pavillion in the university campus of Paris.
                 </h3>
                 <h1>
-                Indeed, during the 70s and 80s, liberation movements flourished and resonated in countries in the process of democratization. 
-                Morocco was hardly an exception to the rule, where people calling for democracy and progress loudly expressed these incessant needs. 
+                Indeed, during the 70s and 80s, liberation movements flourished and resonated in countries in the process of 
+                democratization. 
+                Morocco was hardly an exception to the rule, where <span class="hover-trigger4">people calling for democracy and progress loudly expressed 
+                these incessant needs.</span> 
                 The film clubs, based on the productions of Eisenstein, Lelouch, Chabrol, Godard and many others who embodied the new wave⁽⁴⁾, provided 
                 the ideal pretext for discussing the proposed text, but also the overall context, taking into account the simulation⁽⁵⁾ effects which 
                 sometimes unconsciously infiltrated the debates. In this regard, people were much more concerned with the content of the films than 
@@ -403,7 +552,8 @@ backdrop-filter: blur(10px);
                 Archives Hassan Rachik, Ciné-club Al Azaim, Casablanca.
                 </h3>
                 <h1>
-                While pioneering filmmakers and film enthusiasts in Morocco are organizing ciné-clubs and trying to define cinema in the context of Morocco, 
+                While pioneering filmmakers and film enthusiasts in Morocco are organizing ciné-clubs and <span class="hover-trigger5">trying to define cinema 
+                in the context of Morocco</span>, 
                 Moroccan film students in Łódź⁽⁶⁾, Poland are part of the same conversation. There were seven Moroccans in the 1960s–70s in Łódź, most of them 
                 studying film directing: Mohamed Ben Soude arrived in 1961, Abdellah Drissi arrived in 1964, Mostafa Derkaoui and his brother Abdelkrim 
                 (studying cinematography) in 1965, Abdelkader Lagtaa in 1966, as well as Idriss Karim and Hamid Bensaïd.
@@ -477,6 +627,47 @@ backdrop-filter: blur(10px);
             var glossaryContent = document.querySelector('.glossary-content');
             glossaryContent.scrollTop = window.pageYOffset;
         });
+
+
+               /* HOVER IMAGES */
+  const hoverImages = [
+        { triggerElement: '.hover-trigger1', imagePath: 'images/caption_13.jpeg', caption: 'A trial of activists of the Moroccan Marxist-Leninist movement, in Casablanca in 1973.'},
+        { triggerElement: '.hover-trigger2', imagePath: 'images/caption_14.jpeg', caption: 'The constitutive congress of the UNFP at the Al Kawakib cinema in Casablanca in 1959.' },
+        { triggerElement: '.hover-trigger3', imagePath: 'images/caption_15.jpg', caption: 'Poster for the lifting of the dissolution of the UNEM. [Text in Arabic: Long live the National Union of Moroccan Students]. Courtesy of Odysseo.' },
+        { triggerElement: '.hover-trigger4', imagePath: 'images/caption_16.jpeg', caption: 'During a press conference on September 9, 1959, in Casablanca, Mehdi Ben Barka announces the formation of the left-wing National Union of Popular Forces (UNFP). Courtesy of AFP.' },
+        { triggerElement: '.hover-trigger5', imagePath: 'images/caption_17.png', caption: 'Screenshot of a digital file from the film On Some Meaningless Events (Mostafa Derkaoui, 1974). Courtesy of Filmoteca de Catalunya.' },
+    ];
+
+   // Function to show the hover image and caption
+   function showImageOnHover(event) {
+        let hoveredElement = event.target;
+        let hoverData = hoverImages.find(item => hoveredElement.matches(item.triggerElement));
+        
+        if (hoverData) {
+            let hoverImageContainer = document.getElementById('hoverImageContainer');
+            hoverImageContainer.innerHTML = `
+                <img src="${hoverData.imagePath}" alt="Hover Image">
+                <div id="caption">${hoverData.caption}</div>
+            `;
+            hoverImageContainer.style.display = 'block';
+        }
+    }
+
+    // Function to hide the hover image and caption
+    function hideImageOnLeave() {
+        document.getElementById('hoverImageContainer').style.display = 'none';
+    }
+
+    // Add event listeners to all hover-trigger elements
+    const hoverTriggerElements = document.querySelectorAll('.hover-trigger1, .hover-trigger2, .hover-trigger3, .hover-trigger4, .hover-trigger5');
+    hoverTriggerElements.forEach(element => {
+        element.addEventListener('mouseover', showImageOnHover);
+        element.addEventListener('mouseout', hideImageOnLeave);
+        // Add touch event listeners for mobile devices
+        element.addEventListener('touchstart', showImageOnHover);
+        element.addEventListener('touchend', hideImageOnLeave);
+    });
+
     </script>
 </body>
 </html>
