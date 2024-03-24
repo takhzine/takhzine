@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ta[kh]zine</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.png">
 <style>
     @font-face {
   font-family: 'HAL Timezone';
@@ -38,13 +39,14 @@
         padding: 15px;
     }
     .right-column {
-        width: 400%;
+        width: 500%;
         background-color: white;
         padding: 15px;
         overflow-y: auto; /* Add scrollbars when content overflows */
+        margin-left: auto; /* Push the right column further to the right */
     }
     .text-container {
-        max-width: 500px; /* Set maximum width for the text container */
+        max-width: 600px; /* Set maximum width for the text container */
     }
 
     .image-container {
@@ -52,7 +54,7 @@
         margin-bottom: 20px; /* Add some space below the image */
     }
     .image-container img {
-        width: 500px;
+        width: 600px;
         max-width: 100%; /* Make sure the image doesn't exceed its container */
     }
 
@@ -64,6 +66,15 @@
     font-style: normal;
         font-size: 25px;
         line-height: 1.7rem;
+    }
+
+    /* QUOTES */
+    h2 {
+    font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 13px;
+    margin-left: 70px;
     }
 
     /* CAPTION */
@@ -117,15 +128,6 @@
     width: 0px;
     background: transparent;
     } 
-
-        /* QUOTES */
-        h2 {
-    font-family: 'HAL Timezone';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 13px;
-    margin-left: 50px;
-    }
 
       /* DOTS */
       .dot {
@@ -219,7 +221,7 @@
         <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'Palestine')" onmouseout="hideDotTitle(this)"></div></a>
         <a href="cineclubs.html" id="dot"><div class="dot" style="top: 10%; left: 70%;" onmouseover="showDotTitle(this, 'Cineclubs & the UNEM')" onmouseout="hideDotTitle(this)"></div></a>
         <a href="assifa.html" id="dot"><div class="dot" style="top: 90%; left: 40%;" onmouseover="showDotTitle(this, 'Assifa')" onmouseout="hideDotTitle(this)"></div></a>
-        <div class="dot" style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Political comics')" onmouseout="hideDotTitle(this)"></div>
+        <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Prison literature')" onmouseout="hideDotTitle(this)"></div></a>
 
         <div class="right-column">
             <div class="text-container">
@@ -239,16 +241,6 @@
                 a way to think more broadly about political acts, aspirations, and stances?
                 
                 </h2>
-                <br>
-                <div class="image-container">
-                    <img src="images/Paul Otlet.jpeg" alt="Image">
-                </div>
-
-                <h3>
-                Paul Otlet’s conceptual model of how human knowledge is recorded. 
-                The universal catalogue transcends the limitations of individual books and other physical “carriers” of information.
-                </h3>
-                <br>
                 <h1>
                 During my studies, I have always asked myself the question of why almost all the political revolutions and protests that happened in Morocco 
                 were never followed suit or paralleled with a visual/graphic design support compared to other MENA countries. It wasn't until three years ago that
@@ -276,7 +268,6 @@
                 </h2>
             </div>
         </div>
-    </div>
 
 
 

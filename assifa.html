@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ta[kh]zine</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.png">
 <style>
         @font-face {
   font-family: 'HAL Timezone';
@@ -33,31 +34,35 @@ html, body {
     min-height: 100%; /* Set minimum height to ensure the container fills the entire viewport height */
 }
 
- /* COLUMNS */
-    .left-column {
+  /* COLUMNS */
+  .one-column {
         width: 20%;
         background-color: white;
         padding: 15px;
     }
-    .right-column {
-        width: 400%;
-        background-color: white;
-        padding: 15px;
-        overflow-y: auto; /* Add scrollbars when content overflows */
-    }
-    .text-container {
-        max-width: 500px; /* Set maximum width for the text container */
+    .two-column {
+    width: 400%;
+    background-color: white;
+    padding: 15px;
+    overflow-y: auto; /* Add scrollbars when content overflows */
     }
 
-     /* IMAGES IN COLUMN */
+    .text-container, .video-container {
+        max-width: 600px; /* Set maximum width for the content container */
+    }
+
+    .video-container video {
+        width: 100%; /* Make video container take up full width */
+    }
+
     .image-container {
         text-align: center; /* Center the image horizontally */
         margin-bottom: 20px; /* Add some space below the image */
     }
     .image-container img {
-        width: 500px;
+        width: 600px;
         max-width: 100%; /* Make sure the image doesn't exceed its container */
-    }
+    } 
 
      /* BIG TEXT */
     h1 {
@@ -203,7 +208,8 @@ html, body {
         overflow-y: auto; /* Enable vertical scrolling */
         transform-origin: bottom left; /* Set rotation origin */
         transform: rotate(-90deg) translateY(100%); /* Rotate and position glossary */
-        border-left: 2px solid #333533;
+        border-left: 3px solid #333533;
+        border-right: 1px solid #333533;
         z-index: 998; 
     }
 
@@ -232,22 +238,6 @@ backdrop-filter: blur(10px);
     }
     } 
 
-    .text-container, .video-container {
-        max-width: 500px; /* Set maximum width for the content container */
-    }
-
-    .video-container video {
-        width: 100%; /* Make video container take up full width */
-    }
-
-    .image-container {
-        text-align: center; /* Center the image horizontally */
-        margin-bottom: 20px; /* Add some space below the image */
-    }
-    .image-container img {
-        width: 500px;
-        max-width: 100%; /* Make sure the image doesn't exceed its container */
-    } 
 
     
     
@@ -350,7 +340,7 @@ backdrop-filter: blur(10px);
      </div>
 
     <div class="container">
-        <div class="left-column">
+        <div class="one-column">
             <h1><a href="index.html" id="menu">Index</a></h1>
 
             <h1><a href="preface.html" id="menu">Preface</a>
@@ -364,9 +354,9 @@ backdrop-filter: blur(10px);
         <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'Palestine')" onmouseout="hideDotTitle(this)"></div></a>
         <a href="cineclubs.html" id="dot"><div class="dot" style="top: 10%; left: 70%;" onmouseover="showDotTitle(this, 'Cineclubs & the UNEM')" onmouseout="hideDotTitle(this)"></div></a>
         <a href="assifa.html" id="dot"><div class="dot" style="top: 90%; left: 40%;" onmouseover="showDotTitle(this, 'Assifa')" onmouseout="hideDotTitle(this)"></div></a>
-        <div class="dot" style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Political comics')" onmouseout="hideDotTitle(this)"></div>
+        <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Prison literature')" onmouseout="hideDotTitle(this)"></div></a>
 
-        <div class="right-column">
+        <div class="two-column">
             <div class="text-container">
                 <h1>The Arab Workers Movement (MTA) was founded in 1972 by Maghrebi immigrant workers⁽¹⁾ and students from the Maghreb 
                     who found themselves in the Comités Palestine (CSRP)⁽²⁾ founded after the war in 1967 to support the Palestinian people.

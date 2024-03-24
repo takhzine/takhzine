@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ta[kh]zine – palestine</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.png">
 <style>
         @font-face {
   font-family: 'HAL Timezone';
@@ -30,34 +31,36 @@ html, body {
 
 .container {
     display: flex;
-    min-height: 100%; /* Set minimum height to ensure the container fills the entire viewport height */
+
 }
 
  /* COLUMNS */
-    .left-column {
+    .one-column {
         width: 20%;
         background-color: white;
         padding: 15px;
     }
-    .right-column {
-        width: 400%;
-        background-color: white;
-        padding: 15px;
-        overflow-y: auto; /* Add scrollbars when content overflows */
-    }
-    .text-container {
-        max-width: 500px; /* Set maximum width for the text container */
+    .two-column {
+    width: 400%;
+    background-color: white;
+    padding: 15px;
+    overflow-y: auto; /* Add scrollbars when content overflows */
     }
 
-     /* IMAGES IN COLUMN */
+    .text-container {
+        max-width: 600px; /* Set maximum width for the text container */
+    }
+
+     /* IMAGES IN COLUMN ONE+TWO */
     .image-container {
         text-align: center; /* Center the image horizontally */
         margin-bottom: 20px; /* Add some space below the image */
     }
     .image-container img {
-        width: 500px;
+        width: 600px;
         max-width: 100%; /* Make sure the image doesn't exceed its container */
     }
+
 
      /* BIG TEXT */
     h1 {
@@ -84,6 +87,7 @@ html, body {
 
     /* CAPTION */
     h3 {
+        margin-top: 0.5px;
         font-family: "ocr-a-std", monospace;
         font-weight: 400;
         font-style: normal;
@@ -113,11 +117,12 @@ html, body {
 
     /* QUOTES */
     h2 {
+    margin-top: 0.5px;
     font-family: 'HAL Timezone';
     font-weight: normal;
     font-style: normal;
     font-size: 13px;
-    margin-left: 50px;
+    margin-left: 70px;
     }
 
      /* MENU LINKS */
@@ -202,7 +207,8 @@ html, body {
         overflow-y: auto; /* Enable vertical scrolling */
         transform-origin: bottom left; /* Set rotation origin */
         transform: rotate(-90deg) translateY(100%); /* Rotate and position glossary */
-        border-left: 2px solid #333533;
+        border-left: 3px solid #333533;
+        border-right: 1px solid #333533;
         z-index: 998; 
     }
 
@@ -221,7 +227,7 @@ html, body {
         font-family: 'HAL Timezone';
     font-weight: normal;
     font-style: normal;
-        font-size: 20px;
+        font-size: 19px;
         line-height: 1.5rem;
     }
 
@@ -229,7 +235,12 @@ html, body {
         -webkit-backdrop-filter: blur(10px);
 backdrop-filter: blur(10px);
     }
+
+    .three-column {
+    display: none;
     }
+    }
+    
 </style>
 </head>
 
@@ -238,6 +249,8 @@ backdrop-filter: blur(10px);
 
 
 <body>
+
+
      <!-- Glossary  -->
      <div class="glossary" id="glossary">
         <div class="glossary-content">
@@ -283,7 +296,7 @@ backdrop-filter: blur(10px);
        
 
     <div class="container">
-        <div class="left-column">
+        <div class="one-column">
             <h1><a href="index.html" id="menu">Index</a></h1>
                 <h1>
                 <a href="preface.html" id="menu">Preface</a>
@@ -297,9 +310,9 @@ backdrop-filter: blur(10px);
         <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'Palestine')" onmouseout="hideDotTitle(this)"></div></a>
         <a href="cineclubs.html" id="dot"><div class="dot" style="top: 10%; left: 70%;" onmouseover="showDotTitle(this, 'Cineclubs & the UNEM')" onmouseout="hideDotTitle(this)"></div></a>
         <a href="assifa.html" id="dot"><div class="dot" style="top: 90%; left: 40%;" onmouseover="showDotTitle(this, 'Assifa')" onmouseout="hideDotTitle(this)"></div></a>
-        <div class="dot" style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Political comics')" onmouseout="hideDotTitle(this)"></div>
+        <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Prison literature')" onmouseout="hideDotTitle(this)"></div></a>
 
-        <div class="right-column">
+        <div class="two-column">
             <div class="text-container">
                 <h1>In the context of Morocco, Palestine was a springboard for “cultural decolonization,” reactivating global anticolonial discourses 
                     in order to articulate a relational, cross-colonial Maghrebi⁽¹⁾ identity focusing on discussions of language, poetic form, and cultural autonomy.
@@ -315,9 +328,11 @@ backdrop-filter: blur(10px);
                 <h1>
                 The Moroccan cultural journal Souffles-Anfas ran between 1966 and 1971, when it was banned by the Moroccan government and its founder Abdellatif Laâbi was arrested, imprisoned, and tortured for sedition⁽²⁾. The journal was published quarterly (with some double-issues) and ran 22 issues over its brief history. Modestly priced at 3 Moroccan Dirhams, distribution averaged 3-5,000 copies an issue. Initially published as Souffles in French, the journal expanded to publish bilingual and Arabic issues titled Anfas in its final years. Souffles-Anfas was primarily distributed in Morocco, but reached subscribers in the Middle East, Africa, Europe, and Latin America.
                 </h1>
+                <br>
                 <h2>
                 In the journal’s earliest issues, Laâbi vehemently rejected the cultural stagnation brought about by colonial acculturation and the subordination of Moroccan arts and culture to the whims of imperial French tastes. Laâbi believed ardently that “political and cultural struggles go hand in hand,” and, as such, saw the reassertion of Moroccan culture as the opening salvo in a political fight against colonialism and its legacies. He called upon the country’s young writers to confront the social and political issues facing their newly independent country and produce a critically grounded Moroccan national culture.
                 </h2>
+                <br>
                 <h1>
                 The ideas and grievances articulated within the pages of Souffles-Anfas foreshadow contemporary progressive movements, from the Arab Spring's⁽³⁾ pro-democracy uprisings to the ongoing struggles for racial equity in Western societies. The journal played a pivotal role in fostering dialogue among writers, artists, and activists from Africa, Asia, and the Americas. It featured groundbreaking works by tricontinental figures such as <i>René Depestre</i> from Haiti, the Syrian poet <i>Adonis</i>, and <i>Amilcar Cabral</i>, a key leader in Guinea-Bissau's fight for independence from Portugal. Additionally, it showcased pivotal revolutionary and postcolonial texts like the <i>Black Panthers' Ten-Point Program</i>⁽⁴⁾ and the Argentine manifesto advocating for a Third Cinema.⁽⁵⁾
                 </h1>
@@ -333,6 +348,7 @@ backdrop-filter: blur(10px);
                 <br><br>
                 The late Palestinian American intellectual Edward Said was the first to speculate on the global significance of Palestine in his seminal essay <i>The Question of Palestine</i>, presenting Palestine as exemplary of political subjection in the modern era, particularly the kind practiced by postcolonial regimes. 
                 </h1>
+                <br>
                 <h2>
                 For Said, there is an awareness in the non-white world that the tendency of modern politics to rule over masses of people as transferable, silent, and politically neutral populations has a specific illustration in what has happened to Palestinians—and what in different ways is happening to citizens of newly independent, formerly colonial territories ruled over by antidemocratic army regimes.
                 </h2>
@@ -404,15 +420,19 @@ backdrop-filter: blur(10px);
                 a textbook example of the anticolonial fervor that swept across the Arab world after June 1967⁽⁶⁾. It also perfectly captures the transnational 
                 character of what has come to be known as May ’68⁽⁷⁾, and the centrality of anticolonial and Third Worldist thought to this event. 
                 </h1>
+                <br>
                 <h2>
                 The poem appropriates “we are all German Jews,” the famous French slogan of May ’68, for Palestine, while the final tribute to Ernesto Che Guevara’s call to “create two, three . . . many Vietnams” places Palestine at the vanguard of world struggles for social and political justice.
                 </h2>
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+
 
 
 
     <script>
-       function showDotTitle(dot, title) {
+           function showDotTitle(dot, title) {
             dot.insertAdjacentHTML('afterend', '<div class="dot-title" style="top:' + (dot.offsetTop + 15) +  'px; left:' + (dot.offsetLeft + 20) + 'px;">' + title + '</div>');
         }
 
@@ -424,7 +444,6 @@ backdrop-filter: blur(10px);
             var glossaryContent = document.querySelector('.glossary-content');
             glossaryContent.scrollTop = window.pageYOffset;
         });
-    </script>
 
     </script>
 </body>

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ta[kh]zine</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.png">
 <style>
         @font-face {
   font-family: 'HAL Timezone';
@@ -34,28 +35,32 @@ html, body {
 }
 
  /* COLUMNS */
-    .left-column {
+ .one-column {
         width: 20%;
         background-color: white;
         padding: 15px;
     }
-    .right-column {
-        width: 400%;
-        background-color: white;
-        padding: 15px;
-        overflow-y: auto; /* Add scrollbars when content overflows */
-    }
-    .text-container {
-        max-width: 500px; /* Set maximum width for the text container */
+    .two-column {
+    width: 400%;
+    background-color: white;
+    padding: 15px;
+    overflow-y: auto; /* Add scrollbars when content overflows */
     }
 
-     /* IMAGES IN COLUMN */
+    .text-container, .video-container {
+        max-width: 600px; /* Set maximum width for the content container */
+    }
+
+    .video-container video {
+        width: 100%; /* Make video container take up full width */
+    }
+
     .image-container {
         text-align: center; /* Center the image horizontally */
         margin-bottom: 20px; /* Add some space below the image */
     }
     .image-container img {
-        width: 500px;
+        width: 600px;
         max-width: 100%; /* Make sure the image doesn't exceed its container */
     }
 
@@ -69,6 +74,18 @@ html, body {
         line-height: 1.7rem;
         margin:0;
         padding:0;
+    }
+
+    p{
+        margin-top: 0.5px;
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 25px;
+        line-height: 1.7rem;
+        margin:0;
+        padding:0;
+        text-align:center; 
     }
 
 
@@ -203,7 +220,8 @@ html, body {
         overflow-y: auto; /* Enable vertical scrolling */
         transform-origin: bottom left; /* Set rotation origin */
         transform: rotate(-90deg) translateY(100%); /* Rotate and position glossary */
-        border-left: 2px solid #333533;
+        border-left: 3px solid #333533;
+        border-right: 1px solid #333533;
         z-index: 998; 
     }
 
@@ -226,28 +244,24 @@ html, body {
         line-height: 1.5rem;
     }
 
+    p{
+        margin-top: 0.5px;
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 1.7rem;
+        margin:0;
+        padding:0;
+        text-align:center; 
+    }
+
     .glossary {
         -webkit-backdrop-filter: blur(10px);
 backdrop-filter: blur(10px);
     }
     } 
 
-    .text-container, .video-container {
-        max-width: 500px; /* Set maximum width for the content container */
-    }
-
-    .video-container video {
-        width: 100%; /* Make video container take up full width */
-    }
-
-    .image-container {
-        text-align: center; /* Center the image horizontally */
-        margin-bottom: 20px; /* Add some space below the image */
-    }
-    .image-container img {
-        width: 500px;
-        max-width: 100%; /* Make sure the image doesn't exceed its container */
-    }
     
     
 
@@ -313,7 +327,7 @@ backdrop-filter: blur(10px);
 
 
     <div class="container">
-        <div class="left-column">
+        <div class="one-column">
             <h1><a href="index.html" id="menu">Index</a></h1>
             
             <h1><a href="preface.html" id="menu">Preface</a>
@@ -327,9 +341,9 @@ backdrop-filter: blur(10px);
         <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'Palestine')" onmouseout="hideDotTitle(this)"></div></a>
         <a href="cineclubs.html" id="dot"><div class="dot" style="top: 10%; left: 70%;" onmouseover="showDotTitle(this, 'Cineclubs & the UNEM')" onmouseout="hideDotTitle(this)"></div></a>
         <a href="assifa.html" id="dot"><div class="dot" style="top: 90%; left: 40%;" onmouseover="showDotTitle(this, 'Assifa')" onmouseout="hideDotTitle(this)"></div></a>
-        <div class="dot" style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Political comics')" onmouseout="hideDotTitle(this)"></div>
+        <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Prison literature')" onmouseout="hideDotTitle(this)"></div></a>
 
-        <div class="right-column">
+        <div class="two-column">
             <div class="text-container">
                 <h1>In the 1970s and 80s, Moroccan ciné-clubs⁽¹⁾ played a major role in film education. However, as they were closely linked to leftist opposition groups at the time, cine-clubs began to recede alongside these political organisations after the collapse of the Soviet Union.
                 </h1>
@@ -402,28 +416,42 @@ backdrop-filter: blur(10px);
                 Karim Idriss, Abdelkader Lagtaa and Aziz Sayed at the Łódź African Club, during a meeting in support of the Vietnamese people organised 
                 by the Polish branch of the Moroccan National Students’ Union, May 1967, Abdelkrim Derkaoui. Courtesy of CINIMA3.
                 </h3>
-                <h1>
+                <p>
                 KARIM:
+                </p>
                 <br>
+                <h1>
                 We have not yet defined a national cinema. What we defined could be craft or something else. 
                 Cinema is, after all, an art and it is a question of knowing if we have something to contribute to our society. 
                 We cannot stop at the description, at the anecdotal. We have to show our people their culture, their sensitivity, their civilization.
-                <br><br>
+                </h1>
+                <br>
+                <p>
                 ZEROUALI:
+                </p>
                 <br>
+                <h1>
                 No task should be underestimated. You should not limit your horizons. We are an underdeveloped country. We must start at the beginning.
-                <br><br>
-                KARIM:
+                </h1>
                 <br>
+                <p>
+                KARIM:
+                </p>
+                <br>
+                <h1>
                 What is important is to translate the problems of the society in which we live. There are no recipes. We can bring something to the world. 
                 Personally I question certain civilizations and sometimes I spit on this foreign culture that is imposed on me daily. 
                 There are men in Africa who have something to say, more than Mr. Sartre. I want to say once again that audiovisual means are not cinema. 
                 These are only techniques at the service of education and we could multiply them, just as we can invent something more effective than cinema. 
                 The art of film, like technique in its highest sense, must serve man, his desires, his talent, and his development in general. 
                 Art that does not serve this purpose means nothing to me.
-                <br><br>
-                BOUANANI:
+                </h1>
                 <br>
+                <p>
+                BOUANANI:
+                </p>
+                <br>
+                <h1>
                 For our cinema to be an instrument of culture, of information, a mirror of Moroccan civilization, it would have to have its characteristics, 
                 for that it would be necessary for those who make cinema to know their heritage, their traditions, their civilization in general. 
                 So it’s a first job that they should do before practicing cinema.

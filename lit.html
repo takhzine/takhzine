@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ta[kh]zine</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.png">
+<style>
+        @font-face {
+  font-family: 'HAL Timezone';
+  src: url("fonts/HALTimezone-Regular.ttf") format("truetype"),
+  url("fonts/HALTimezone-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HAL Timezone';
+  src: url("fonts/HALTimezone-Italic.ttf") format("truetype"),
+  url("fonts/HALTimezone-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+
+html, body {
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    position: relative; /* Set positioning context for the glossary */
+    color: #333533;
+}
+
+.container {
+    display: flex;
+    min-height: 100%; /* Set minimum height to ensure the container fills the entire viewport height */
+}
+
+ /* COLUMNS */
+ .one-column {
+        width: 20%;
+        background-color: white;
+        padding: 15px;
+    }
+    .two-column {
+    width: 400%;
+    background-color: white;
+    padding: 15px;
+    overflow-y: auto; /* Add scrollbars when content overflows */
+    }
+
+    .text-container, .video-container {
+        max-width: 600px; /* Set maximum width for the content container */
+    }
+
+    .video-container video {
+        width: 100%; /* Make video container take up full width */
+    }
+
+    .image-container {
+        text-align: center; /* Center the image horizontally */
+        margin-bottom: 20px; /* Add some space below the image */
+    }
+    .image-container img {
+        width: 600px;
+        max-width: 100%; /* Make sure the image doesn't exceed its container */
+    }
+
+     /* BIG TEXT */
+    h1 {
+        margin-top: 0.5px;
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 1.5rem;
+        margin:0;
+        padding:0;
+    }
+
+    p{
+        margin-top: 0.5px;
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 1.5rem;
+        margin:0;
+        padding:0;
+        text-align:center; 
+    }
+
+
+         /* GLOSSARY*/
+         h6 {
+        margin-top: 0.5px;
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px;
+        margin:0;
+        padding:0;
+    }
+
+    /* CAPTION */
+    h3 {
+        font-family: "ocr-a-std", monospace;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 13px;
+    }
+
+    /* TITLES (Table of Content) */
+    h4 {
+    font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 12px;
+    margin:0;
+    padding:0;
+    }
+
+    /* SUBTITLES (Table of Content) */
+    h5 {
+    font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 12px;
+    margin:0;
+    padding:0;
+    text-indent: 10px;
+    }
+
+    /* QUOTES */
+    h2 {
+    font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 13px;
+    margin-left: 50px;
+    }
+
+     /* MENU LINKS */
+    a#menu:link {
+	  text-decoration: none;
+	  color:#333533;	
+	  cursor: pointer;
+	  }
+
+	  a#menu:visited {
+	  text-decoration: none;
+	  color: #333533;	
+	  cursor: pointer;
+	  }
+
+	  a#menu:hover {
+	  text-decoration: none;
+	  color: #333533;	
+	  cursor: pointer;
+	  font-style: italic
+	  }
+
+       /* DOTS */
+      .dot {
+        position: fixed;
+        width: 15px;
+        height: 15px;
+        background-color: #DAC062;
+        border-radius: 0%;
+        cursor: pointer;
+        z-index: 999; /* Ensure dots appear above the glossary */
+    }
+    .dot-title {
+        position: fixed;
+        font-family: 'HAL Timezone';
+    font-weight: normal;
+    font-style: italic;
+        font-size: 15px;
+        color: #DAC062;
+        display: none;
+        transform: rotate(-15deg); /* Rotate the text */
+        z-index: 999; /* Ensure dots appear above the glossary */
+    }
+    .dot:hover + .dot-title {
+        display: block;
+    }
+
+     /* DOTS LINKS */
+    a#dot:link {
+	  text-decoration: none;
+	  color: black;	
+	  cursor: pointer;
+	  }
+
+      a#dot:visited {
+	  text-decoration: none;
+	  color: black;	
+	  cursor: pointer;
+	  }
+
+      a#dot:hover {
+	  text-decoration: none;
+	  color: black;	
+	  cursor: pointer;
+	  }
+
+        /* SCROLL BAR */
+        ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    } 
+
+    .glossary {
+        position: fixed;
+        bottom: 15px; /* Align glossary to bottom of viewport */
+        left: 0; /* Align glossary to left of viewport */
+        width: 150px; /* Adjust width as needed */
+        height: 100vw; /* Adjust height as needed */
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.5); /* Transparent background */
+        backdrop-filter: blur(5px); /* Apply backdrop filter for blur effect */
+        overflow-y: auto; /* Enable vertical scrolling */
+        transform-origin: bottom left; /* Set rotation origin */
+        transform: rotate(-90deg) translateY(100%); /* Rotate and position glossary */
+        border-left: 3px solid #333533;
+        border-right: 1px solid #333533;
+        z-index: 998; 
+    }
+
+    .glossary-content {
+        overflow-y: auto; /* Enable vertical scrolling for glossary content */
+        height: 100%; /* Set height to 100% to allow scrolling */
+    }
+
+    @media screen and (max-width: 600px) {
+        .dot {
+            left: calc(0% - 10px); /* Adjust the percentage value as needed */
+        }
+
+        h1 {
+        margin-top: 0.5px;
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 1.5rem;
+        }
+
+        p{
+        margin-top: 0.5px;
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 1.5rem;
+        margin:0;
+        padding:0;
+        text-align:center; 
+        }
+    
+
+    .glossary {
+        -webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+    }
+    } 
+
+    
+    
+
+</style>
+</head>
+<body>
+
+     <!-- Glossary  -->
+     <div class="glossary" id="glossary">
+        <div class="glossary-content">
+        <h6>⁽¹⁾ Lead Years</h6>
+        <h4>
+        The Years of Lead (Arabic: سنوات الرصاص, romanized: Sanawāt ar-Raṣāṣ) (Tamazight: ⵢⵉⵙⴳⴳⵯⴰⵙⵏ ⵏ ⵜⴰⵢⴰⵣⴰⵡⵜ, romanized: Yissgwasen n Tayarzawt) 
+        was a period of the rule of King Hassan II of Morocco, from roughly the 1960s through the 1980s, marked by state violence and repression 
+        against political dissidents and democracy activists.
+        </h4>
+        <br>
+        <h6>⁽²⁾ Hassan II</h6>
+        <h4>
+        Hassan II was king from 1961 until his death in 1999. His reign was marked by political unrest and a heavy-handed government response to criticism 
+        and opposition. Political repression increased dramatically upon Hassan's ascent to the throne of the country in 1961, and this repressive political 
+        climate would last for nearly three decades.
+        Due to strong popular mobilization from the Moroccan democracy and human rights activists and pressure from the general Moroccan population, as well 
+        as pressure from the wider international community, Morocco experienced a slow but notable improvement in its political climate and human rights situation. 
+        The pace of reform accelerated with Hassan II's death and the accession of his son Mohammed VI to the throne in 1999.
+        </h4>
+        <br>
+        <h6>⁽³⁾ MRE</h6>
+        <h4>
+        Moroccans living abroad, who have set up committees to fight repression in Morocco in the 1970s in France, Belgium and the Netherlands, 
+        with correspondence in other countries in Europe and the rest of the world. Their role was to inform about the repression, to materially 
+        support the victims, to ensure their defense by sending legal and medical missions and to popularize the fight against these repressions.
+        </h4>
+        <br>
+        <h6>⁽⁴⁾ Ahd Jadid (New Era)</h6>
+        <h4>
+        Morocco’s years of lead ended with the release of remaining political prisoners in 1991. There followed a period of optimism, with the King’s 
+        allowing the formation of civil society groups, more political freedoms, and the formation of the country’s first opposition government in 1998. 
+        Another era of optimism began after Hassan II’s death and the ascendency to the throne of his son Mohammed VI in 1999. The sense of optimism was 
+        palpable as opposition leaders and former political prisoners spoke freely of a new era in Morocco and praised the young king for being “quite 
+        different from his father.”
+        </h4>
+        <br>
+        <h6>⁽⁵⁾ Moroccan Observatory of Prisons (OMP)</h6>
+        <h4>
+        An independent non-governmental organization created in 1999 by human rights activists to protect and promote the rights of detainees.
+        It acts as an observatory of penitentiary conditions in Morocco, as a unit of legal assistant to the detainees and of treatment of the grievances, 
+        as a center of research, information, training and advocacy for a more humane prison and to improve the legislative framework in accordance with 
+        international standards in this area.
+        </h4>
+        <br>
+        <h6>⁽⁶⁾ Oukacha Penitentiary</h6>
+        <h4>
+        Oukacha has been at the center of controversy for its overcrowding, physical and sexual violence, trafficking, etc.
+        The prison, designed for 5800 prisoners, actually accommodates 7856 prisoners. This makes it 1.2m2 per person, 
+        instead of the minimum international standard which is 9m2. Worse, the bulk of the troops are made up of detainees 
+        in pre-trial detention at 39% (still decreasing; in 2008, they represented 46%). 
+        Waiting times for judgment can range from 1 to 5 years in many cases so many prisoners sleep on the floor, under beds and on shelves.
+        </h4>
+        <br>
+        <h6>⁽⁷⁾ Hchouma</h6>
+        <h4>
+        Literally translated, hchouma means shame, although it holds far more weight than does its English equivalent. 
+        It is an element of everyday Moroccan life that is entrenched in society but never discussed or defined; as such, 
+        it has become one word that encompasses myriad meanings and beliefs. According to CultureShock! Morocco, it is the 
+        response to behavior that “contravenes social norms, breaks Islamic precepts, and abrogates personal obligations 
+        inside or outside of the family” (Hargraves 2006: 53); it is a tool of socialization and control that teaches people 
+        not to engage in such kind of behavior. Some see hchouma as a force that preserves one’s public image. Others believe 
+        it is no more than a question of respect for yourself and others. Soumaya Naamane-Guessous, the feminist author of 
+        <i>Au-delà de toute pudeur</i>, sums up the multifaceted nature of hchouma quite simply: “<i>La hchouma de l’un 
+        n’est-elle pas la hchouma de l’autre</i>” (Guessous 1992: 6). Hchouma means something different depending on your 
+        gender, upbringing and age.  
+        </h4>
+        <br><br><br>
+    </div>
+</div>
+
+
+    <div class="container">
+        <div class="one-column">
+            <h1><a href="index.html" id="menu">Index</a></h1>
+            
+            <h1><a href="preface.html" id="menu">Preface</a>
+                <br>
+            <a href="mailto:timaelkhammas@gmail.com" id="menu">E-mail</a>
+            <br>
+            <a href="https://www.instagram.com/ta5zine/" id="menu" target="_blank">Other</a>
+            </h1>
+        </div>
+
+        <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'Palestine')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="cineclubs.html" id="dot"><div class="dot" style="top: 10%; left: 70%;" onmouseover="showDotTitle(this, 'Cineclubs & the UNEM')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="assifa.html" id="dot"><div class="dot" style="top: 90%; left: 40%;" onmouseover="showDotTitle(this, 'Assifa')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Prison literature')" onmouseout="hideDotTitle(this)"></div></a>
+
+        <div class="two-column">
+            <div class="text-container">
+                <h1>
+                Since the late 1990s, following the conclusion of the period referred to as "les années de plomb" (the Lead Years)⁽¹⁾, 
+                Moroccan women have been vocal in both French and Arabic, addressing a range of issues, including historical socio-political 
+                injustices and human rights violations in Morocco.
+                </h1>
+                <h2>
+                Since the early 1980s, a few prisoners have published in foreign countries their poetry, fiction and personal accounts about prison and torture.
+                The majority, however, published prison testimonies in Morocco after Hassan II’s⁽²⁾ death. The political transition, far from being simply a top-down 
+                process, also resulted from the struggle of human rights activists, former prisoners and their families. Beginning in the 1970s, Moroccans residing
+                abroad (MRE)⁽³⁾ created associations to denounce state repression and abuses. In Morocco in the 1970s and the 1980s, activists founded human rights associations.
+                </h2>
+                <br>
+                <div class="image-container">
+                    <img src="images/lit_1.jpeg" alt="Image">
+                </div>
+                <h3>
+                From left to right: Fatima Oukacha, Nguia Bouda and Fatna El Bouih in Fatna and Nguia's cell at Kenitra prison. Courtesy of Fatna El Bouih.
+                </h3>
+                <br>
+                <h1>
+                Prison literature, although overwhelmingly written by men, includes several notable testimonies by women incarcerated during the most 
+                repressive period of the Lead Years (1973–1988). These include: <i>Femmes–Prisons: Parcours croisés</i> (Women–prisons: traveled journeys, 2001), 
+                which is a collection of letters mothers wrote to their sons and husbands in prison, and <i>Saïda Menebhi: poems, letters, écrits de prison</i> 
+                (Saïda Menebhi : Poems, Letters and Writing from Prison, 2000), a compilation of prison writings by the Marxist-Leninist Saïda Menebhi. 
+                Additionally, Hadit al-‘atama by Fatna El Bouih was translated into French as <i>Une femme nommée Rachid</i> (A woman named Rachid, 2002) 
+                and affirms the resistance of women even as they were tortured in prisons across Morocco.
+                </h1>
+                <br>
+                <div class="image-container">
+                    <img src="images/lit_2.jpg" alt="Image">
+                </div>
+                <h3>
+                Noureddine Saoudi, Femmes-prison: Parcours croisés, Éditions Marsam, 181 pages.
+                </h3>
+                <h2>
+                Imagine the face of the prison guard reading the letter burning with passion that the wife of one of the political prisoners had just given him: 
+                "<i>Lover of my soul, gemini of my psyche, my poet and noble husband Mohamed Ibn al Arbi al-Assafi. My love, I feel the insistent urgency of 
+                expressing to you in the columns of this letter my stormy desire and my irresistible tenderness to see you again, even if it is only through 
+                the prison bars.</i>" (Touria Sekkat "Letters from prison", Dar an-Nachr al-Maghribia. Casablanca, 1988.)
+                Such letters, written during the Years of Lead are an introduction to the underground universe of the unspeakable, that of the wives, 
+                mothers and sisters of political prisoners, as it has the merit of capturing fragments of flickering memories of the female crowds swirling 
+                around the distressing prison doors. It is these women, called illiterate, who have dug, by dint of harassing police and torturers, the furrows 
+                of democracy in Morocco as in the rest of the countries. Arab countries. They were the actors of a profound social change both at the level of 
+                the family and at the level of society in general. Their role, however, remained hidden. Tribute is paid here to these women builders of 
+                democratic Morocco, to their courage and their stubbornness because they admirably symbolize the emergence of new forms of women's participation 
+                in civic action.
+                </h2>
+                <br>
+                <div class="image-container">
+                    <img src="images/lit_3.jpg" alt="Image">
+                </div>
+                <h3>
+                Prison, poetry, martyrdom: Saida Menebhi and the Moroccan Years of Lead. Red Press. 
+                </h3>
+                <h2>
+                Saida Menebhi (1952 in Marrakesh – 11 December 1977 in Casablanca) was a Moroccan poet, high school teacher, and activist with the Marxist 
+                revolutionary movement Ila al-Amam. In 1975, she, together with five other members of the movement, was sentenced for seven years of imprisonment 
+                for anti-state activity. On November 8, 1977, inside the jail in Casablanca, she participated in a collective hunger strike, and died on the 35th 
+                day of the strike at Avicenne Hospital.
+
+                Her poetry, collected and published first in 1978, and later again in 2000, is considered a prime example of Moroccan revolutionary and feminist 
+                literature. She wrote in French. Translations of a selection of her poems to English were published for the first time in 2021 by See Red Press.
+                </h2>
+                <br>
+                <div class="image-container">
+                    <img src="images/lit_4.jpg" alt="Image">
+                </div>
+                <h3>
+                Fatna El Bouih, Une femme nommée Rachid, Éditions Le Fennec.
+                </h3>
+                <h2>
+                Fatna El Bouih (born 1956) is a Moroccan human rights activist and writer. As a student during the Years of Lead, she became an activist with 
+                the leftist youth protest movement, calling for democracy as a member of the National Union of High School Students. She was arrested in 1974 
+                as a leader of a high school student strike, but she was released after a night in jail. She became a leader of Harakat 23 Mars. In 1977, she 
+                was arrested again during the mass arrests of members of the "23 Mars" Marxist group. This time, she spent five years in prison, during which 
+                she was tortured at Derb Moulay Cherif. However, thanks to a solidarity movement among the inmates, she was able to gain better detention 
+                conditions, political prisoner status, and the opportunity to continue her studies. She earned a bachelor's and master's degree while in prison.
+                El Bouih has written several books and other publications on the Years of Lead, the fate of political prisoners, and violence against women. 
+                She is the first woman, after the series of books written by men, to provide her own testimony on the human crushing machine that is political 
+                detention and the tyranny of the years of lead.
+                </h2>
+                <br>
+                <div class="video-container" id="videoContainer">
+                    <video controls>
+                      <source src="images/lit_5.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                <h3>
+                Fatna, A woman named Rachid. 
+                A film by Hélène Harder.
+                Produced by Abel Aflam (Morocco), Wendigo Films (France), White Boat Pictures (Belgium).
+                </h3>
+                <br>
+                <p>
+                MER:
+                </p>
+                <br>
+                <h1>
+                How do you see the transition in Morocco?
+                </h1>
+                <br>
+                <p>
+                EL BOUIH:
+                </p>
+                <br>
+                <h1>
+                As a former political prisoner, I feel this enormous psychological relief and unburdening since the death of King Hassan II and note the 
+                changes in me and in Morocco. It is only during this "new era" (Ahd Jadid)⁽⁴⁾ that I became really active. Before I just wrote, now I feel 
+                useful. For example, my husband and I are among the founding members of the Moroccan Observatory of Prisons (OMP)⁽⁵⁾ officially organized 
+                November 13, 1999. I experienced prison, I wanted to help other prisoners, and I found a way to do so through the NGO movement. We write 
+                reports, visit prisons, and last Ramadan, we organized festivities first in the women's and then in the men's sections of Oukacha 
+                Penitentiary⁽⁶⁾. We are working to establish programs to help prisoners reintegrate into society by paying attention to their individual 
+                familial and social contexts, and we work to change laws concerning current prison sentencing practices. The prison authorities have 
+                been receptive.
+                </h1>
+                <br>
+                <p>
+                MER:
+                </p>
+                <br>
+                <h1>
+                So now you are back in prison?
+                </h1>
+                <br>
+                <p>
+                EL BOUIH:
+                </p>
+                <br>
+                <h1>
+                Yes, but this time I choose when to go and when to leave.
+                </h1>
+                <h3>
+                This Time I Choose When to Leave, An Interview with Fatna El Bouih, Middle East Report, Spring 2001.
+                </h3>
+                <br>
+                <div class="image-container">
+                    <img src="images/lit_6.jpg" alt="Image">
+                </div>
+                <h3>
+                Fatna El Bouih, center, flanked by prison guards during an OMP Ramadan party, Oukacha Prison, Casablanca, December 29, 1999.
+                </h3>
+                <h1>
+                Initially, Fatna El Bouih's desire to bear witness and make her personal experience public clashed with the socially imposed silence, 
+                shame and social stigma surrounding political violence against women. In an interview, El Bouih said that a sense of hchouma⁽⁷⁾ prevented 
+                her from talking about her personal experience. The term hchouma translates as “shame” and “decency”, but evokes a complex set of meanings, 
+                sentiments and bodily dispositions connected with the values of female modesty, deference and propriety, especially in relation to sexuality 
+                (<i>see Namaane-Guessous 1991</i>). 
+                </h1>
+                <br>
+                <div class="image-container">
+                    <img src="images/lit_7.jpg" alt="Image">
+                </div>
+                <h3>
+                Poster in solidarity with Saida Menebhi. [Text in French: In Morocco, equality is far from being achieved between men and women.
+                However, the death of Saida Menebhi shows that the fight of women and their determination is making the powerful tremble.
+                Committees of the fight against repression in Morocco.]
+                </h3>
+                <h1>
+                Political violence against women was a taboo topic in Morocco and has remained a sensitive issue among 
+                former political prisoners. When El Bouih became involved in the feminist movement in the early 1990s, she realised that even feminists 
+                had difficulty addressing political violence: “<i>I worked in reception centres for battered women. Violence is always assumed to be conjugal 
+                and domestic, but political, state violence is a silent violence, nobody talks about it.</i>” To break the silence surrounding political 
+                violence against women, since 1994 El Bouih has been sharing her personal experience in newspaper articles and television interviews.
+                </h1>
+                <br>
+                <div class="image-container">
+                    <img src="images/lit_8.jpg" alt="Image">
+                </div>
+                <h3>
+                Poster in solidarity with Saida Menebhi. [Text in Arabic & French: What is hidden from us about Morocco?
+                Saida Menebhi, 25, died in prison after 32 days of hunger strike. 
+                Several dozen political prisoners continue their fight for recognition of their most basic rights. 
+                Here, there, elsewhere, what will happen tomorrow for us?]
+                </h3>
+                <h1>
+                In El Bouih’s opinion, women activists were submitted to sexualised violence to erase their gendered subjectivity. 
+                “<i>They didn’t want to recognise that we were women. They gave us a number and a man’s name. The woman is haram, is silence.</i>” 
+                While denouncing the specific forms of gendered violence that women endured, El Bouih wanted at the same time to de-naturalise 
+                the dominant image of Moroccan women as passive or weak subjects: “<i>I wanted to address a Moroccan public primarily to say that in 
+                Morocco there are women who contributed to the creation of democracy, to human rights; they were tortured and proved their courage</i>”.
+                </h1>
+                <br>
+                <div class="image-container">
+                    <img src="images/lit_9.jpg" alt="Image">
+                </div>
+                <h3>
+                Publication Saïda, les femmes marocaines luttent (Saïda, Moroccan women resist). 1980s.
+                <br>
+                The publication provides information on the Moroccan Women's Group as well as on the condition of women in France and Morocco. 
+                Published in the form of testimonies from immigrant women, advocacy platforms, political appeals.
+                </h3>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            </div>
+        </div>
+
+
+
+    <script>
+       function showDotTitle(dot, title) {
+            dot.insertAdjacentHTML('afterend', '<div class="dot-title" style="top:' + (dot.offsetTop + 15) +  'px; left:' + (dot.offsetLeft + 20) + 'px;">' + title + '</div>');
+        }
+
+        function hideDotTitle(dot) {
+            dot.nextElementSibling.remove();
+        }
+
+        window.addEventListener('scroll', function() {
+            var glossaryContent = document.querySelector('.glossary-content');
+            glossaryContent.scrollTop = window.pageYOffset;
+        });
+    </script>
+</body>
+</html>
