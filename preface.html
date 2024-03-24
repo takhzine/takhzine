@@ -204,7 +204,7 @@
     .hover-trigger1:hover {
         font-size: 25px; /* Increase font size on hover */
         transition: font-size 0.3s ease; /* Smooth transition */
-        color: #FC5130; /* Change text color on hover */
+        color: #DAC062; /* Change text color on hover */
         text-decoration: none;
     }
 
@@ -215,7 +215,7 @@
     .hover-trigger2:hover {
         font-size: 25px; /* Increase font size on hover */
         transition: font-size 0.3s ease; /* Smooth transition */
-        color: #FC5130; /* Change text color on hover */
+        color: #DAC062; /* Change text color on hover */
         text-decoration: none;
     }
 
@@ -226,7 +226,7 @@
     .hover-trigger3:hover {
         font-size: 25px; /* Increase font size on hover */
         transition: font-size 0.3s ease; /* Smooth transition */
-        color: #FC5130; /* Change text color on hover */
+        color: #DAC062; /* Change text color on hover */
         text-decoration: none;
     }
 
@@ -237,7 +237,7 @@
     .hover-trigger4:hover {
         font-size: 25px; /* Increase font size on hover */
         transition: font-size 0.3s ease; /* Smooth transition */
-        color: #FC5130; /* Change text color on hover */
+        color: #DAC062; /* Change text color on hover */
         text-decoration: none;
     }
 
@@ -248,7 +248,7 @@
     .hover-trigger5:hover {
         font-size: 25px; /* Increase font size on hover */
         transition: font-size 0.3s ease; /* Smooth transition */
-        color: #FC5130; /* Change text color on hover */
+        color: #DAC062; /* Change text color on hover */
         text-decoration: none;
     }
 
@@ -421,29 +421,37 @@
         { triggerElement: '.hover-trigger5', imagePath: 'images/caption_5.webp', caption: 'Archives of Krimou Derkaoui, Lamalif magazines, Pro-C magazine and works on Morocco.' },
     ];
 
-    // Function to show the hover image and caption
-    function showImageOnHover(event) {
-        let hoveredElement = event.target;
-        let hoverData = hoverImages.find(item => hoveredElement.matches(item.triggerElement));
-        
-        if (hoverData) {
-            let hoverImageContainer = document.getElementById('hoverImageContainer');
-            hoverImageContainer.innerHTML = `
-                <img src="${hoverData.imagePath}" alt="Hover Image">
-                <div id="caption">${hoverData.caption}</div>
-            `;
-            hoverImageContainer.style.display = 'block';
-        }
+ // Function to show the hover image and caption
+function showImageOnHover(event) {
+    let hoveredElement = event.target;
+    let hoverData = hoverImages.find(item => hoveredElement.matches(item.triggerElement));
+    
+    if (hoverData) {
+        let hoverImageContainer = document.getElementById('hoverImageContainer');
+        hoverImageContainer.innerHTML = `
+            <img src="${hoverData.imagePath}" alt="Hover Image">
+            <div id="caption">${hoverData.caption}</div>
+        `;
+        hoverImageContainer.style.display = 'block';
     }
+}
 
-    // Function to hide the hover image and caption
-    function hideImageOnLeave() {
-        document.getElementById('hoverImageContainer').style.display = 'none';
-    }
+// Function to hide the hover image and caption
+function hideImageOnLeave() {
+    document.getElementById('hoverImageContainer').style.display = 'none';
+}
 
-    // Add event listeners to the text-container for hovering over words
-    document.querySelector('.text-container').addEventListener('mouseover', showImageOnHover);
-    document.querySelector('.text-container').addEventListener('mouseout', hideImageOnLeave);
+// Add event listeners to the text-container for hovering over words
+const textContainer = document.querySelector('.text-container');
+textContainer.addEventListener('mouseover', showImageOnHover);
+textContainer.addEventListener('mouseout', hideImageOnLeave);
+
+// Add touch event listeners for mobile devices
+textContainer.addEventListener('touchstart', showImageOnHover);
+textContainer.addEventListener('touchend', hideImageOnLeave);
+
+    
+    
 </script>
 </body>
 </html>
