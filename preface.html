@@ -286,7 +286,20 @@
         #hoverImageContainer img {
         width: 100%;
     }
+
+       #caption{
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255); /* Background color with transparency */
+        
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Ensure the caption stays within the hover image container */
+       }
     }
+    
 
     @media screen and (max-width: 599px) {
         /* For screens narrower than 600px (mobile) */
@@ -298,6 +311,17 @@
         #hoverImageContainer img {
         width: 100%;
     }
+
+    #caption{
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255); /* Background color with transparency */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Ensure the caption stays within the hover image container */
+       }
     }
     
 
