@@ -230,9 +230,122 @@ html, body {
         height: 100%; /* Set height to 100% to allow scrolling */
     }
 
-    @media screen and (max-width: 600px) {
+         /* HOVER IMAGES */
+         #hoverImageContainer {
+        display: none;
+        position: fixed;
+        top: 50%;
+        right: 250px;
+        transform: translateY(-50%);
+        width: 300px;
+        text-align: center;
+        z-index: 999;
+    }
+
+    #hoverImageContainer img {
+        width: 100%;
+    }
+
+    #caption {
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    .hover-trigger1 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger1:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger2 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger2:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger3 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger3:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger4 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger4:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger5 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger5:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger6 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger6:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger7 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger7:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger8 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger8:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+      /* MOBILE */
+      @media screen and (max-width: 600px) {
         .dot {
-            left: calc(0% - 10px); /* Adjust the percentage value as needed */
+            left: calc(0% - 10px); 
         }
 
         h1 {
@@ -244,24 +357,61 @@ html, body {
         line-height: 1.4rem;
     }
 
-        p{
-        margin-top: 0.5px;
+        .glossary {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+    }
+
+
+/* MOBILE */
+@media screen and (min-width: 600px) {
+        /* For screens wider than 600px (desktop) */
+        #hoverImageContainer {
+            right: 250px;
+            transform: translateY(-50%);
+        }
+
+        #hoverImageContainer img {
+        width: 100%;
+    }
+
+       #caption{
         font-family: 'HAL Timezone';
         font-weight: normal;
         font-style: normal;
-        font-size: 18px;
-        line-height: 1.4rem;
-        margin:0;
-        padding:0;
-        text-align:center; 
-        }
-    
-
-    .glossary {
-        -webkit-backdrop-filter: blur(10px);
-backdrop-filter: blur(10px);
+        font-size: 13px;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255); /* Background color with transparency */
+        
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Ensure the caption stays within the hover image container */
+       }
     }
-    } 
+    
+    /* MOBILE */
+    @media screen and (max-width: 599px) {
+        /* For screens narrower than 600px (mobile) */
+        #hoverImageContainer {
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        #hoverImageContainer img {
+        width: 100%;
+    }
+
+    #caption{
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255); /* Background color with transparency */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Ensure the caption stays within the hover image container */
+       }
+    }
 
     
     
@@ -269,6 +419,8 @@ backdrop-filter: blur(10px);
 </style>
 </head>
 <body>
+    <div id="hoverImageContainer" class="hover-image-container"></div>
+
 
      <!-- Glossary  -->
      <div class="glossary" id="glossary">
@@ -361,7 +513,7 @@ backdrop-filter: blur(10px);
         <div class="two-column">
             <div class="text-container">
                 <h1>
-                Since the late 1990s, following the conclusion of the period referred to as "les années de plomb" (the Lead Years)⁽¹⁾, 
+                Since the late 1990s, following the conclusion of the period referred to as "<span class="hover-trigger1">Les années de plomb (the Lead Years)</span>"⁽¹⁾, 
                 Moroccan women have been vocal in both French and Arabic, addressing a range of issues, including historical socio-political 
                 injustices and human rights violations in Morocco.
                 </h1>
@@ -369,7 +521,8 @@ backdrop-filter: blur(10px);
                 Since the early 1980s, a few prisoners have published in foreign countries their poetry, fiction and personal accounts about prison and torture.
                 The majority, however, published prison testimonies in Morocco after Hassan II’s⁽²⁾ death. The political transition, far from being simply a top-down 
                 process, also resulted from the struggle of human rights activists, former prisoners and their families. Beginning in the 1970s, Moroccans residing
-                abroad (MRE)⁽³⁾ created associations to denounce state repression and abuses. In Morocco in the 1970s and the 1980s, activists founded human rights associations.
+                abroad (MRE)⁽³⁾ created associations to denounce state repression and abuses. In Morocco in the 1970s and the 1980s, activists founded human rights 
+                associations.
                 </h2>
                 <br>
                 <div class="image-container">
@@ -382,7 +535,8 @@ backdrop-filter: blur(10px);
                 <h1>
                 Prison literature, although overwhelmingly written by men, includes several notable testimonies by women incarcerated during the most 
                 repressive period of the Lead Years (1973–1988). These include: <i>Femmes–Prisons: Parcours croisés</i> (Women–prisons: traveled journeys, 2001), 
-                which is a collection of letters mothers wrote to their sons and husbands in prison, and <i>Saïda Menebhi: poems, letters, écrits de prison</i> 
+                which is a <span class="hover-trigger2">collection of letters mothers wrote to their sons and husbands in prison</span>, and 
+                <i>Saïda Menebhi: poems, letters, écrits de prison</i> 
                 (Saïda Menebhi : Poems, Letters and Writing from Prison, 2000), a compilation of prison writings by the Marxist-Leninist Saïda Menebhi. 
                 Additionally, Hadit al-‘atama by Fatna El Bouih was translated into French as <i>Une femme nommée Rachid</i> (A woman named Rachid, 2002) 
                 and affirms the resistance of women even as they were tortured in prisons across Morocco.
@@ -472,7 +626,8 @@ backdrop-filter: blur(10px);
                 November 13, 1999. I experienced prison, I wanted to help other prisoners, and I found a way to do so through the NGO movement. We write 
                 reports, visit prisons, and last Ramadan, we organized festivities first in the women's and then in the men's sections of Oukacha 
                 Penitentiary⁽⁶⁾. We are working to establish programs to help prisoners reintegrate into society by paying attention to their individual 
-                familial and social contexts, and we work to change laws concerning current prison sentencing practices. The prison authorities have 
+                familial and social contexts, and <span class="hover-trigger3">we work to change laws concerning current prison sentencing practices.</span> 
+                The prison authorities have 
                 been receptive.
                 </h1>
                 <br>
@@ -503,9 +658,10 @@ backdrop-filter: blur(10px);
                 </h3>
                 <h1>
                 Initially, Fatna El Bouih's desire to bear witness and make her personal experience public clashed with the socially imposed silence, 
-                shame and social stigma surrounding political violence against women. In an interview, El Bouih said that a sense of hchouma⁽⁷⁾ prevented 
-                her from talking about her personal experience. The term hchouma translates as “shame” and “decency”, but evokes a complex set of meanings, 
-                sentiments and bodily dispositions connected with the values of female modesty, deference and propriety, especially in relation to sexuality 
+                shame and social stigma surrounding political violence against women. In an interview, El Bouih said that <span class="hover-trigger4">a 
+                sense of hchouma⁽⁷⁾ prevented her from talking about her personal experience</span>. The term hchouma translates as “shame” and “decency”, 
+                but evokes a complex set of meanings, sentiments and bodily dispositions connected with the values of female modesty, deference and propriety, 
+                especially in relation to sexuality 
                 (<i>see Namaane-Guessous 1991</i>). 
                 </h1>
                 <br>
@@ -537,8 +693,8 @@ backdrop-filter: blur(10px);
                 <h1>
                 In El Bouih’s opinion, women activists were submitted to sexualised violence to erase their gendered subjectivity. 
                 “<i>They didn’t want to recognise that we were women. They gave us a number and a man’s name. The woman is haram, is silence.</i>” 
-                While denouncing the specific forms of gendered violence that women endured, El Bouih wanted at the same time to de-naturalise 
-                the dominant image of Moroccan women as passive or weak subjects: “<i>I wanted to address a Moroccan public primarily to say that in 
+                While denouncing the specific forms of gendered violence that women endured, El Bouih wanted at the same time to <span class="hover-trigger5">
+                de-naturalise the dominant image of Moroccan women as passive or weak subjects</span>: “<i>I wanted to address a Moroccan public primarily to say that in 
                 Morocco there are women who contributed to the creation of democracy, to human rights; they were tortured and proved their courage</i>”.
                 </h1>
                 <br>
@@ -559,6 +715,7 @@ backdrop-filter: blur(10px);
 
 
     <script>
+        /* DOT TOPICS */
        function showDotTitle(dot, title) {
             dot.insertAdjacentHTML('afterend', '<div class="dot-title" style="top:' + (dot.offsetTop + 15) +  'px; left:' + (dot.offsetLeft + 20) + 'px;">' + title + '</div>');
         }
@@ -567,10 +724,54 @@ backdrop-filter: blur(10px);
             dot.nextElementSibling.remove();
         }
 
+         /* GLOSSARY */
         window.addEventListener('scroll', function() {
             var glossaryContent = document.querySelector('.glossary-content');
             glossaryContent.scrollTop = window.pageYOffset;
         });
+
+        /* HOVER IMAGES */
+  const hoverImages = [
+        { triggerElement: '.hover-trigger1', imagePath: 'images/caption_26.jpeg', caption: 'Cover of Anfas, 1972. [Text in Arabic: Who are the detainees in Casablanca? The youth are in a fight for change.]'},
+        { triggerElement: '.hover-trigger2', imagePath: 'images/caption_27.jpeg', caption: 'Screenshot from De Sas en Sas, "Visiting Ours", directed by Rachida Brak. Courtesy of Rachida Brakni.'},
+        { triggerElement: '.hover-trigger3', imagePath: 'images/caption_28.jpg', caption: 'Screenshot of Fatna El Bouih in front of her jail cell. Women on the Frontline, produced by UNFPA with support from UN Women.' },
+        { triggerElement: '.hover-trigger4', imagePath: 'images/caption_29.png', caption: 'Excerpt from Hchouma Alik!: A Look at the Evolution of Hchouma in Contemporary Moroccan Society, Eden Dotan.' },
+        { triggerElement: '.hover-trigger5', imagePath: 'images/caption_30.jpg', caption: 'Screenshot from Women on the Frontline, produced by UNFPA with support from UN Women.' },
+        { triggerElement: '.hover-trigger7', imagePath: 'images/caption_20.jpeg', caption: '' },
+        { triggerElement: '.hover-trigger6', imagePath: 'images/caption_24.jpeg', caption: '' },
+        { triggerElement: '.hover-trigger8', imagePath: 'images/caption_25.jpeg', caption: '' },
+
+    ];
+
+   // Function to show the hover image and caption
+   function showImageOnHover(event) {
+        let hoveredElement = event.target;
+        let hoverData = hoverImages.find(item => hoveredElement.matches(item.triggerElement));
+        
+        if (hoverData) {
+            let hoverImageContainer = document.getElementById('hoverImageContainer');
+            hoverImageContainer.innerHTML = `
+                <img src="${hoverData.imagePath}" alt="Hover Image">
+                <div id="caption">${hoverData.caption}</div>
+            `;
+            hoverImageContainer.style.display = 'block';
+        }
+    }
+
+    // Function to hide the hover image and caption
+    function hideImageOnLeave() {
+        document.getElementById('hoverImageContainer').style.display = 'none';
+    }
+
+    // Add event listeners to all hover-trigger elements
+    const hoverTriggerElements = document.querySelectorAll('.hover-trigger1, .hover-trigger2, .hover-trigger3, .hover-trigger4, .hover-trigger5, .hover-trigger6, .hover-trigger7, .hover-trigger8');
+    hoverTriggerElements.forEach(element => {
+        element.addEventListener('mouseover', showImageOnHover);
+        element.addEventListener('mouseout', hideImageOnLeave);
+        // Add touch event listeners for mobile devices
+        element.addEventListener('touchstart', showImageOnHover);
+        element.addEventListener('touchend', hideImageOnLeave);
+    });
     </script>
 </body>
 </html>

@@ -196,6 +196,8 @@ html, body {
     background: transparent;
     } 
 
+
+    /* GLOSSARY */
     .glossary {
         position: fixed;
         bottom: 15px; /* Align glossary to bottom of viewport */
@@ -218,9 +220,124 @@ html, body {
         height: 100%; /* Set height to 100% to allow scrolling */
     }
 
-    @media screen and (max-width: 600px) {
+
+     /* HOVER IMAGES */
+     #hoverImageContainer {
+        display: none;
+        position: fixed;
+        top: 50%;
+        right: 250px;
+        transform: translateY(-50%);
+        width: 300px;
+        text-align: center;
+        z-index: 999;
+    }
+
+    #hoverImageContainer img {
+        width: 100%;
+    }
+
+    #caption {
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    .hover-trigger1 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger1:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger2 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger2:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger3 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger3:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger4 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger4:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger5 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger5:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger6 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger6:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger7 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger7:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger8 {
+    text-decoration: underline; /* Add underline */
+    }
+
+    .hover-trigger8:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+
+   /* MOBILE */
+   @media screen and (max-width: 600px) {
         .dot {
-            left: calc(0% - 10px); /* Adjust the percentage value as needed */
+            left: calc(0% - 10px); 
         }
 
         h1 {
@@ -232,11 +349,61 @@ html, body {
         line-height: 1.4rem;
     }
 
-    .glossary {
+        .glossary {
         -webkit-backdrop-filter: blur(10px);
-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
     }
-    } 
+    }
+
+
+/* MOBILE */
+@media screen and (min-width: 600px) {
+        /* For screens wider than 600px (desktop) */
+        #hoverImageContainer {
+            right: 250px;
+            transform: translateY(-50%);
+        }
+
+        #hoverImageContainer img {
+        width: 100%;
+    }
+
+       #caption{
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255); /* Background color with transparency */
+        
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Ensure the caption stays within the hover image container */
+       }
+    }
+    
+    /* MOBILE */
+    @media screen and (max-width: 599px) {
+        /* For screens narrower than 600px (mobile) */
+        #hoverImageContainer {
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        #hoverImageContainer img {
+        width: 100%;
+    }
+
+    #caption{
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255); /* Background color with transparency */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Ensure the caption stays within the hover image container */
+       }
+    }
 
 
     
@@ -244,9 +411,12 @@ backdrop-filter: blur(10px);
 
 </style>
 </head>
-<body>
 
-     <!-- Glossary  -->
+
+
+<body>
+    <div id="hoverImageContainer" class="hover-image-container"></div>
+     <!-- GLOSSARY  -->
      <div class="glossary" id="glossary">
         <div class="glossary-content">
         <h6>⁽¹⁾ Maghrebi immigrant workers</h6>
@@ -332,9 +502,6 @@ backdrop-filter: blur(10px);
         Workers (MTA, Mouvement des Travailleurs Arabes) and their allies Geneviève Clancy and Philippe Tancelin, 
         members of Al Assifa, the MTA's theater troupe. 
         </h4>
-        <h4>
-        
-        </h4>
         <br><br><br>
         </div>
      </div>
@@ -359,8 +526,8 @@ backdrop-filter: blur(10px);
         <div class="two-column">
             <div class="text-container">
                 <h1>The Arab Workers Movement (MTA) was founded in 1972 by Maghrebi immigrant workers⁽¹⁾ and students from the Maghreb 
-                    who found themselves in the Comités Palestine (CSRP)⁽²⁾ founded after the war in 1967 to support the Palestinian people.
-                    The Committee was close to the Proletarian Left and brought together left activists, Arab students and immigrant workers.
+                    who found themselves in the <span class="hover-trigger1">Comités Palestine (CSRP)</span>⁽²⁾ founded after the war in 1967 to support the Palestinian people.
+                    The Committee was close to the Proletarian Left and brought together left activists, <span class="hover-trigger2">Arab students and immigrant workers.</span>
                 </h1>
                 <br>
                 <div class="image-container">
@@ -370,9 +537,11 @@ backdrop-filter: blur(10px);
                 MTA logo, a worker raising his fist in the shape of Palestine. Source: Fonds Saïd Bouziri, La contemporaine. Courtesy of Faouzia Bouziri.</h3>
                 <br>
                 <h1>
-                Influenced by Marxism and Arab nationalism⁽³⁾, the MTA (Arab Workers Movement) wanted to build an Arab political organization in France 
-                independent of “French” organizations and the authorities of Arab countries. The MTA was particularly committed to the fight against racism 
-                and for the rights of immigrant workers but was also one of the first organizations in France in support of the Palestinian people.
+                Influenced by <span class="hover-trigger3">Marxism and Arab nationalism</span>⁽³⁾, the MTA (Arab Workers Movement) wanted to build an Arab political 
+                organization in France 
+                independent of “French” organizations and the authorities of Arab countries. The MTA was particularly committed to the <span class="hover-trigger4">
+                fight against racism
+                and for the rights of immigrant workers</span> but was also one of the first organizations in France in support of the Palestinian people.
                 </h1>
                 <br>
                 <div class="image-container">
@@ -384,7 +553,8 @@ backdrop-filter: blur(10px);
                 <br>
                 <h1>
                 The very name of the movement, Committees in Support of the Palestinian Revolution, testifies to the enduring importance of Palestine as a 
-                rallying cry for migrant rights, connecting the decolonization of Palestine to the struggle of immigrants (most of them formerly colonized subjects)
+                rallying cry for migrant rights, connecting the <span class="hover-trigger5">decolonization of Palestine to the struggle of immigrants</span> 
+                (most of them formerly colonized subjects)
                 for equal rights in the postcolonial metropole. 
                 </h1>
                 <h2>In the words of activists from the Arab Workers’ Movement, founded in 1972 by CSRP militants, 
@@ -403,7 +573,8 @@ backdrop-filter: blur(10px);
                 <h1>
                 The MTA published a bulletin Assifa عاصفة
                 (Storm in Arabic), subtitled The Voice of Arab Workers and with the slogan: “Support the struggles of the Arab masses, in France and elsewhere.”
-                The title acts as a reference for Al-Asifa, which was the mainstream armed wing of the Palestinian political party and militant group Fatah⁽⁴⁾. 
+                The title acts as a reference for <span class="hover-trigger6">Al-Asifa, which was the mainstream armed wing of the Palestinian political party 
+                and militant group Fatah</span>⁽⁴⁾. 
                 Al-Asifa was jointly led by Yasser Arafat⁽⁵⁾ and Khalil Wazir⁽⁶⁾.
                 </h1>
                 <br>
@@ -431,7 +602,7 @@ backdrop-filter: blur(10px);
                     a true precursor to free immigration radio in the form of cassettes.
                     The idea of ​​producing this type of cassette comes from previous experiences: in the 1970s, Radio LIP⁽⁷⁾ broadcasted cassettes via 
                     loudspeaker in demonstrations, and Radio Assifa broadcasted cassettes around the struggles of immigrant workers, notably on the 
-                    channels of Renault factories or in Sonacotra⁽⁸⁾ hostels on rent strike.
+                    channels of <span class="hover-trigger7">Renault factories or in Sonacotra⁽⁸⁾ hostels on rent strike</span>.
                     </h1>
                     <h2>
                     The cassette was rediscovered with the message: 
@@ -449,20 +620,19 @@ backdrop-filter: blur(10px);
                     <h1>
                     Mohamed Mokhtar Bachiri founded with Geneviève Clancy and Philippe Tancelin, also at the origin of the Committee for the Defense of the Life 
                     and Rights of Immigrant Workers (CDVDTI)⁽⁹⁾, the agit-prop theater troupe Al Assifa. They presented their first play, a theatrical diary titled 
-                    “It works, it works and it shuts its mouth” in 1979. 
+                    “<span class="hover-trigger8">It works and it shuts its mouth</span>” in 1979. 
                     </h1>
                     <h2>
                     Al Assifa does not consider itself a theater troupe: “Al Assifa has never been a “theater troupe”, but a cultural action collective made 
                     up of French people and immigrants and whose vocation remains to promote a current of expression and action with immigrants and French people,
-                    against slavery, against racism.”
+                    against slavery, against racism.” 
                     </h2>
                     <br>
                     <div class="image-container">
-                        <img src="images/assifa_9.jpg" alt="Image">
                         <img src="images/assifa_10.jpg" alt="Image">
                         </div>
                     <h3>
-                    Posters announcing the opening of Al Assifa theater pieces. Courtesy of Odysséo.
+                    Poster announcing the opening of Al Assifa theater pieces. Courtesy of Odysséo.
                     </h3>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
@@ -471,6 +641,7 @@ backdrop-filter: blur(10px);
 
 
     <script>
+        /* DOT TOPICS */
        function showDotTitle(dot, title) {
             dot.insertAdjacentHTML('afterend', '<div class="dot-title" style="top:' + (dot.offsetTop + 15) +  'px; left:' + (dot.offsetLeft + 20) + 'px;">' + title + '</div>');
         }
@@ -479,10 +650,59 @@ backdrop-filter: blur(10px);
             dot.nextElementSibling.remove();
         }
 
+
+
+        /* GLOSSARY */
         window.addEventListener('scroll', function() {
             var glossaryContent = document.querySelector('.glossary-content');
             glossaryContent.scrollTop = window.pageYOffset;
         });
+
+
+
+
+        /* HOVER IMAGES */
+  const hoverImages = [
+        { triggerElement: '.hover-trigger1', imagePath: 'images/caption_18.jpg', caption: '[Text in French: Golda Meir, assassin subservient to US imperialism, comes to France! Golda Meir assassin, Pompidou Mitterand accomplices, down with Zionism. Palestine will win !] / Committee to Support the Palestinian Resistance (CSRP), Union of French Communists (UCF). Courtesy of Odysseo.'},
+        { triggerElement: '.hover-trigger2', imagePath: 'images/caption_19.jpg', caption: 'Poster of “Mohamed take your suitcase.” Courtesy of Kateb Yacine Fund, Institute of Memories of Contemporary Edition.' },
+        { triggerElement: '.hover-trigger3', imagePath: 'images/caption_21.jpeg', caption: 'Nasser cheered by crowds after announcing nationalisation of Suez Canal, August 1956.' },
+        { triggerElement: '.hover-trigger4', imagePath: 'images/caption_22.jpeg', caption: 'The struggles led by North African workers emerged at the end of 1971 and during 1972, and announced the themes of the mobilizations to come: struggles of the poorly housed, struggles for papers, struggles in factories.' },
+        { triggerElement: '.hover-trigger5', imagePath: 'images/caption_23.webp', caption: 'In 1967, the Student Non-Violent Coordinating Committee (SNCC) ran a newsletter entitled Third World Roundup: The Palestinian Problem: Test Your Knowledge, in which it listed 32 factual claims about the history of colonialism in Palestine and the impact of Israeli aggression against the Palestinians during the 1967 Arab-Israeli war.' },
+        { triggerElement: '.hover-trigger7', imagePath: 'images/caption_20.jpeg', caption: 'The Arab Workers Movement (MTA) was created in June 1972, and served as the basis for organizing support for Palestine. The MTA was involved in the Sonacotra home strike in 1976, as shown in the image in the Saint-Denis foyer.' },
+        { triggerElement: '.hover-trigger6', imagePath: 'images/caption_24.jpeg', caption: '"Revolution Until Victory", a Photograph of a Calander by Fatah Movement, 1977. Courtesy of The Palestinian Museum Digital Archive.' },
+        { triggerElement: '.hover-trigger8', imagePath: 'images/caption_25.jpeg', caption: 'Poster of "It works and it shouts its mouth, a theater piece by the agit-prop theater troupe Al Assifa.' },
+
+    ];
+
+   // Function to show the hover image and caption
+   function showImageOnHover(event) {
+        let hoveredElement = event.target;
+        let hoverData = hoverImages.find(item => hoveredElement.matches(item.triggerElement));
+        
+        if (hoverData) {
+            let hoverImageContainer = document.getElementById('hoverImageContainer');
+            hoverImageContainer.innerHTML = `
+                <img src="${hoverData.imagePath}" alt="Hover Image">
+                <div id="caption">${hoverData.caption}</div>
+            `;
+            hoverImageContainer.style.display = 'block';
+        }
+    }
+
+    // Function to hide the hover image and caption
+    function hideImageOnLeave() {
+        document.getElementById('hoverImageContainer').style.display = 'none';
+    }
+
+    // Add event listeners to all hover-trigger elements
+    const hoverTriggerElements = document.querySelectorAll('.hover-trigger1, .hover-trigger2, .hover-trigger3, .hover-trigger4, .hover-trigger5, .hover-trigger6, .hover-trigger7, .hover-trigger8');
+    hoverTriggerElements.forEach(element => {
+        element.addEventListener('mouseover', showImageOnHover);
+        element.addEventListener('mouseout', hideImageOnLeave);
+        // Add touch event listeners for mobile devices
+        element.addEventListener('touchstart', showImageOnHover);
+        element.addEventListener('touchend', hideImageOnLeave);
+    });
     </script>
 </body>
 </html>
