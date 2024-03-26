@@ -23,6 +23,7 @@
 }
 
 html, body {
+    height:100%;
     margin: 0; /* Reset margin */
     padding: 0; /* Reset padding */
     position: relative; /* Set positioning context for the glossary */
@@ -31,16 +32,17 @@ html, body {
 
 .container {
     display: flex;
-
+    height: 100%;
 }
 
  /* COLUMNS */
-    .one-column {
+    .left-column {
         width: 20%;
         background-color: white;
         padding: 15px;
     }
-    .two-column {
+
+    .right-column {
     width: 400%;
     background-color: white;
     padding: 15px;
@@ -361,6 +363,20 @@ html, body {
         text-decoration: none;
     }
 
+    .hover-trigger10 {
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger10:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+
 
 
 
@@ -503,7 +519,7 @@ html, body {
        
 
     <div class="container">
-        <div class="one-column">
+        <div class="left-column">
             <h1><a href="index.html" id="menu">Index</a></h1>
                 <h1>
                 <a href="preface.html" id="menu">Preface</a>
@@ -521,7 +537,7 @@ html, body {
 
 
 
-        <div class="two-column">
+        <div class="right-column">
             <div class="text-container">
                 <h1>In the context of Morocco, Palestine was a springboard for “cultural decolonization,” reactivating <span class="hover-trigger1">global anticolonial discourses</span>
                     in order to articulate a relational, cross-colonial Maghrebi⁽¹⁾ identity focusing on discussions of language, poetic form, and <span class="hover-trigger2">cultural autonomy</span>.
@@ -645,15 +661,10 @@ html, body {
                 <br>
                 PALESTINES
                 </h1>
-                <div class="image-container">
-                    <img src="images/Palestine_3.jpg" alt="Image">
-                </div>
-                <h3>
-                Abdellatif Lâabi, We are all Palestinian refugees, For A Palestinian Revolution, Souffles 15, 1969.
-                </h3>
                 <br>
-                <h1>
-                Abdellatif Laâbi’s “Nous sommes tous des réfugiés palestiniens” (We are all Palestinian refugees) intertextually inscribes Morocco and Palestine 
+                <h1><br>
+                Abdellatif Laâbi’s <span class="hover-trigger10">“Nous sommes tous des réfugiés palestiniens” (We are all Palestinian refugees)</span> 
+                intertextually inscribes Morocco and Palestine 
                 in a transnational history of popular protest and anticolonial struggle, culminating in a call to pan-Arab revolution. In this sense it constitutes 
                 a textbook example of the <span class="hover-trigger7">anticolonial fervor that swept across the Arab world after June 1967</span>⁽⁶⁾. It also perfectly captures the transnational 
                 character of what has come to be known as May 1968⁽⁷⁾, and the centrality of anticolonial and Third Worldist thought to this event. 
@@ -699,6 +710,7 @@ html, body {
         { triggerElement: '.hover-trigger7', imagePath: 'images/caption_12.jpg', caption: 'Cover page of the 15th issue of Fedaï: Journal de soutien à la révolution palestinienne, 1972. Courtesy of Fonds Saïd Bouziri, La contemporaine.' },
         { triggerElement: '.hover-trigger8', imagePath: 'images/caption_.jpeg', caption: 'Farid Belkahia, Mohammed Chabâa and Mohamed Melehi surrounded by students and their guest Augusto Bonalumi at the Casablanca Art School, 1966. Courtesy of M. Melehi.' },
         { triggerElement: '.hover-trigger9', imagePath: 'images/caption__.jpeg', caption: 'Exhibition opening of Souffles Magazine, Alhamriyah studios, Sharjah Art Foundation, 2024.' },
+        { triggerElement: '.hover-trigger10', imagePath: 'images/Palestine_3.jpg', caption: 'Abdellatif Lâabi, “Nous sommes tous des réfugiés palestiniens”, For A Palestinian Revolution, Souffles 15, 1969.' },
     ];
 
  // Function to show the hover image and caption
