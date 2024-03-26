@@ -176,7 +176,7 @@ html, body {
         font-size: 15px;
         color: #DAC062;
         display: none;
-        transform: rotate(-15deg); /* Rotate the text */
+        transform: rotate(-6deg); /* Rotate the text */
         z-index: 999; /* Ensure dots appear above the glossary */
     }
     .dot:hover + .dot-title {
@@ -255,7 +255,9 @@ html, body {
     }
 
     .hover-trigger1 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger1:hover {
@@ -266,7 +268,9 @@ html, body {
     }
 
     .hover-trigger2 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger2:hover {
@@ -277,7 +281,9 @@ html, body {
     }
 
     .hover-trigger3 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger3:hover {
@@ -288,7 +294,9 @@ html, body {
     }
 
     .hover-trigger4 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger4:hover {
@@ -299,7 +307,9 @@ html, body {
     }
 
     .hover-trigger5 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger5:hover {
@@ -310,7 +320,9 @@ html, body {
     }
 
     .hover-trigger6 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger6:hover {
@@ -321,7 +333,9 @@ html, body {
     }
 
     .hover-trigger7 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger7:hover {
@@ -332,7 +346,9 @@ html, body {
     }
 
     .hover-trigger8 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger8:hover {
@@ -387,6 +403,11 @@ html, body {
         box-sizing: border-box; /* Include padding and border in element's total width and height */
     position: relative; /* Ensure the caption stays within the hover image container */
        }
+
+       .glossary {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
     }
     
     /* MOBILE */
@@ -411,6 +432,11 @@ html, body {
         box-sizing: border-box; /* Include padding and border in element's total width and height */
     position: relative; /* Ensure the caption stays within the hover image container */
        }
+
+       .glossary {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
     }
 
     
@@ -505,15 +531,16 @@ html, body {
             </h1>
         </div>
 
-        <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'Palestine')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'The Palestinian Struggle for Liberation')" onmouseout="hideDotTitle(this)"></div></a>
         <a href="cineclubs.html" id="dot"><div class="dot" style="top: 10%; left: 70%;" onmouseover="showDotTitle(this, 'Cineclubs & the UNEM')" onmouseout="hideDotTitle(this)"></div></a>
-        <a href="assifa.html" id="dot"><div class="dot" style="top: 70%; left: 30%;" onmouseover="showDotTitle(this, 'Assifa')" onmouseout="hideDotTitle(this)"></div></a>
-        <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Prison literature')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="assifa.html" id="dot"><div class="dot" style="top: 70%; left: 20%;" onmouseover="showDotTitle(this, 'Assifa & the MTA')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 80%;" onmouseover="showDotTitle(this, 'Female prison literature')" onmouseout="hideDotTitle(this)"></div></a>
+
 
         <div class="two-column">
             <div class="text-container">
                 <h1>
-                Since the late 1990s, following the conclusion of the period referred to as "<span class="hover-trigger1">Les années de plomb (the Lead Years)</span>"⁽¹⁾, 
+                Since the late 1990s, following the conclusion of the period referred to as "<span class="hover-trigger1">Les années de plomb (the Years of Lead)</span>"⁽¹⁾, 
                 Moroccan women have been vocal in both French and Arabic, addressing a range of issues, including historical socio-political 
                 injustices and human rights violations in Morocco.
                 </h1>
@@ -549,14 +576,15 @@ html, body {
                 Noureddine Saoudi, Femmes-prison: Parcours croisés, Éditions Marsam, 181 pages.
                 </h3>
                 <h2>
-                Imagine the face of the prison guard reading the letter burning with passion that the wife of one of the political prisoners had just given him: 
+                Fatema Mernissi, writes about the face of the prison guard reading the letter burning with passion that the wife of one of the political prisoners 
+                had just given him: 
                 "<i>Lover of my soul, gemini of my psyche, my poet and noble husband Mohamed Ibn al Arbi al-Assafi. My love, I feel the insistent urgency of 
                 expressing to you in the columns of this letter my stormy desire and my irresistible tenderness to see you again, even if it is only through 
                 the prison bars.</i>" (Touria Sekkat "Letters from prison", Dar an-Nachr al-Maghribia. Casablanca, 1988.)
                 Such letters, written during the Years of Lead are an introduction to the underground universe of the unspeakable, that of the wives, 
                 mothers and sisters of political prisoners, as it has the merit of capturing fragments of flickering memories of the female crowds swirling 
                 around the distressing prison doors. It is these women, called illiterate, who have dug, by dint of harassing police and torturers, the furrows 
-                of democracy in Morocco as in the rest of the countries. Arab countries. They were the actors of a profound social change both at the level of 
+                of democracy in Morocco as in the rest of the countries, Arab countries. They were the actors of a profound social change both at the level of 
                 the family and at the level of society in general. Their role, however, remained hidden. Tribute is paid here to these women builders of 
                 democratic Morocco, to their courage and their stubbornness because they admirably symbolize the emergence of new forms of women's participation 
                 in civic action.
@@ -732,9 +760,9 @@ html, body {
 
         /* HOVER IMAGES */
   const hoverImages = [
-        { triggerElement: '.hover-trigger1', imagePath: 'images/caption_26.jpeg', caption: 'Cover of Anfas, 1972. [Text in Arabic: Who are the detainees in Casablanca? The youth are in a fight for change.]'},
-        { triggerElement: '.hover-trigger2', imagePath: 'images/caption_27.jpeg', caption: 'Screenshot from De Sas en Sas, "Visiting Ours", directed by Rachida Brak. Courtesy of Rachida Brakni.'},
-        { triggerElement: '.hover-trigger3', imagePath: 'images/caption_28.jpg', caption: 'Screenshot of Fatna El Bouih in front of her jail cell. Women on the Frontline, produced by UNFPA with support from UN Women.' },
+        { triggerElement: '.hover-trigger1', imagePath: 'images/caption_26.jpg', caption: 'Cover of Anfas, 1972. [Text in Arabic: Who are the detainees in Casablanca? The youth are in a fight for change. The working class between bureaucracy and capitalism.]'},
+        { triggerElement: '.hover-trigger2', imagePath: 'images/caption_27.jpeg', caption: 'Screenshot from "Nos lieux interdits", Leila Kilani, 2008.'},
+        { triggerElement: '.hover-trigger3', imagePath: 'images/caption_28.jpg', caption: 'Screenshot of Fatna El Bouih returning to her jail cell. Women on the Frontline, produced by UNFPA with support from UN Women.' },
         { triggerElement: '.hover-trigger4', imagePath: 'images/caption_29.png', caption: 'Excerpt from Hchouma Alik!: A Look at the Evolution of Hchouma in Contemporary Moroccan Society, Eden Dotan.' },
         { triggerElement: '.hover-trigger5', imagePath: 'images/caption_30.jpg', caption: 'Screenshot from Women on the Frontline, produced by UNFPA with support from UN Women.' },
         { triggerElement: '.hover-trigger7', imagePath: 'images/caption_20.jpeg', caption: '' },

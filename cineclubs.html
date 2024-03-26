@@ -176,7 +176,7 @@ html, body {
         font-size: 15px;
         color: #DAC062;
         display: none;
-        transform: rotate(-15deg); /* Rotate the text */
+        transform: rotate(-6deg); /* Rotate the text */
         z-index: 999; /* Ensure dots appear above the glossary */
     }
     .dot:hover + .dot-title {
@@ -236,7 +236,7 @@ html, body {
         display: none;
         position: fixed;
         top: 50%;
-        right: 250px;
+        right: 150px;
         transform: translateY(-50%);
         width: 300px;
         text-align: center;
@@ -256,7 +256,9 @@ html, body {
     }
 
     .hover-trigger1 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger1:hover {
@@ -267,7 +269,9 @@ html, body {
     }
 
     .hover-trigger2 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger2:hover {
@@ -278,7 +282,9 @@ html, body {
     }
 
     .hover-trigger3 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger3:hover {
@@ -289,7 +295,9 @@ html, body {
     }
 
     .hover-trigger4 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger4:hover {
@@ -300,7 +308,9 @@ html, body {
     }
 
     .hover-trigger5 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger5:hover {
@@ -311,7 +321,9 @@ html, body {
     }
 
     .hover-trigger6 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger6:hover {
@@ -322,7 +334,9 @@ html, body {
     }
 
     .hover-trigger7 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger7:hover {
@@ -377,6 +391,11 @@ html, body {
         box-sizing: border-box; /* Include padding and border in element's total width and height */
     position: relative; /* Ensure the caption stays within the hover image container */
        }
+
+       .glossary {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
     }
     
     /* MOBILE */
@@ -401,6 +420,11 @@ html, body {
         box-sizing: border-box; /* Include padding and border in element's total width and height */
     position: relative; /* Ensure the caption stays within the hover image container */
        }
+
+       .glossary {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
     }
 
     
@@ -480,10 +504,12 @@ html, body {
             </h1>
         </div>
 
-        <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'Palestine')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'The Palestinian Struggle for Liberation')" onmouseout="hideDotTitle(this)"></div></a>
         <a href="cineclubs.html" id="dot"><div class="dot" style="top: 10%; left: 70%;" onmouseover="showDotTitle(this, 'Cineclubs & the UNEM')" onmouseout="hideDotTitle(this)"></div></a>
-        <a href="assifa.html" id="dot"><div class="dot" style="top: 70%; left: 30%;" onmouseover="showDotTitle(this, 'Assifa')" onmouseout="hideDotTitle(this)"></div></a>
-        <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Prison literature')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="assifa.html" id="dot"><div class="dot" style="top: 70%; left: 20%;" onmouseover="showDotTitle(this, 'Assifa & the MTA')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 80%;" onmouseover="showDotTitle(this, 'Female prison literature')" onmouseout="hideDotTitle(this)"></div></a>
+
+
 
         <div class="two-column">
             <div class="text-container">

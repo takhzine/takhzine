@@ -163,7 +163,7 @@ html, body {
         font-size: 15px;
         color: #DAC062;
         display: none;
-        transform: rotate(-15deg); /* Rotate the text */
+        transform: rotate(-6deg); /* Rotate the text */
         z-index: 999; /* Ensure dots appear above the glossary */
     }
     .dot:hover + .dot-title {
@@ -245,7 +245,9 @@ html, body {
     }
 
     .hover-trigger1 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger1:hover {
@@ -256,7 +258,9 @@ html, body {
     }
 
     .hover-trigger2 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger2:hover {
@@ -267,7 +271,9 @@ html, body {
     }
 
     .hover-trigger3 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger3:hover {
@@ -278,7 +284,9 @@ html, body {
     }
 
     .hover-trigger4 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger4:hover {
@@ -289,7 +297,9 @@ html, body {
     }
 
     .hover-trigger5 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger5:hover {
@@ -300,7 +310,9 @@ html, body {
     }
 
     .hover-trigger6 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger6:hover {
@@ -311,10 +323,38 @@ html, body {
     }
 
     .hover-trigger7 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger7:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger8 {
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger8:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger9 {
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger9:hover {
         font-size: 25px; /* Increase font size on hover */
         transition: font-size 0.3s ease; /* Smooth transition */
         color: #DAC062; /* Change text color on hover */
@@ -371,6 +411,11 @@ html, body {
         box-sizing: border-box; /* Include padding and border in element's total width and height */
     position: relative; /* Ensure the caption stays within the hover image container */
        }
+
+       .glossary {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
     }
     
     /* MOBILE */
@@ -395,6 +440,11 @@ html, body {
         box-sizing: border-box; /* Include padding and border in element's total width and height */
     position: relative; /* Ensure the caption stays within the hover image container */
        }
+
+       .glossary {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
     }
     
 </style>
@@ -443,7 +493,7 @@ html, body {
             of Arab states (primarily Egypt, Syria, and Jordan) from 5 to 10 June 1967. Six days that entrenched imperialism in the Middle East 
             and led to misery for Palestinians in the Occupied Territories.</h4>
         <br>
-        <h6>⁽⁷⁾ May ’68</h6>
+        <h6>⁽⁷⁾ May 1968</h6>
         <h4>Beginning in May 1968, a period of civil unrest occurred throughout France, lasting seven weeks and punctuated by demonstrations, 
             general strikes, and the occupation of universities and factories. At the height of events, which have since become known as May 68, 
             the economy of France came to a halt due to what is now known as the biggest protest in the history of the country.</h4>
@@ -464,10 +514,12 @@ html, body {
             </h1>
         </div>
 
-        <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'Palestine')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'The Palestinian Struggle for Liberation')" onmouseout="hideDotTitle(this)"></div></a>
         <a href="cineclubs.html" id="dot"><div class="dot" style="top: 10%; left: 70%;" onmouseover="showDotTitle(this, 'Cineclubs & the UNEM')" onmouseout="hideDotTitle(this)"></div></a>
-        <a href="assifa.html" id="dot"><div class="dot" style="top: 70%; left: 30%;" onmouseover="showDotTitle(this, 'Assifa')" onmouseout="hideDotTitle(this)"></div></a>
-        <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Prison literature')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="assifa.html" id="dot"><div class="dot" style="top: 70%; left: 20%;" onmouseover="showDotTitle(this, 'Assifa & the MTA')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 80%;" onmouseover="showDotTitle(this, 'Female prison literature')" onmouseout="hideDotTitle(this)"></div></a>
+
+
 
         <div class="two-column">
             <div class="text-container">
@@ -499,6 +551,18 @@ html, body {
                 </h2>
                 <br>
                 <h1>
+                Laâbi, in an interview explaining the beginnings of Souffles, says: “I discovered that there was a group of young poets in Casablanca publishing 
+                some small reviews called Poésie toute and Eaux vives. And they also published in the automobile magazine of Casablanca. That gives you an idea 
+                of the limited options at the time when it came to literary reviews. When we met — or rather — I was curious enough to seek them out, and at the 
+                same time we met <span class="hover-trigger8">a group of painters in Casablanca: Mohamed Melehi, Mohamed Chebaa, and Farid Belkahia.</span>” 
+                <br><br>
+                … 
+                <br><br>
+                “I think it’s very important to note 
+                that Souffles began with a group of poets and artists/painters, which is something that gave it a completely original character, perhaps unique 
+                in the history of Moroccan literary reviews up to that time. There were not just new texts compared with the literature of the time, but also 
+                <span class="hover-trigger9">a plastic and graphic conception that was unprecedented.</span>”
+                <br><br>
                 The ideas and grievances articulated within the pages of Souffles-Anfas foreshadow contemporary progressive movements, from the <span class="hover-trigger4">Arab Spring's</span>⁽³⁾
                 pro-democracy uprisings to the ongoing struggles for racial equity in Western societies. The journal played a pivotal role in fostering dialogue 
                 among writers, artists, and activists from Africa, Asia, and the Americas. It featured groundbreaking works by tricontinental figures such as 
@@ -519,8 +583,8 @@ html, body {
                 across the region, one that implicates corrupt postcolonial and military regimes in the oppression of nominally sovereign subjects.
                 <br><br>
                 The late Palestinian American intellectual Edward Said was the first to speculate on the global significance of Palestine in his seminal essay 
-                <span class="hover-trigger6">The Question of Palestine</span>, presenting Palestine as exemplary of political subjection in the modern era, particularly the kind practiced 
-                by postcolonial regimes. 
+                "The Question of Palestine", presenting <span class="hover-trigger6">Palestine as exemplary of political subjection in the modern era, particularly the kind 
+                practiced by postcolonial regimes.</span>
                 </h1>
                 <br>
                 <h2>
@@ -592,7 +656,7 @@ html, body {
                 Abdellatif Laâbi’s “Nous sommes tous des réfugiés palestiniens” (We are all Palestinian refugees) intertextually inscribes Morocco and Palestine 
                 in a transnational history of popular protest and anticolonial struggle, culminating in a call to pan-Arab revolution. In this sense it constitutes 
                 a textbook example of the <span class="hover-trigger7">anticolonial fervor that swept across the Arab world after June 1967</span>⁽⁶⁾. It also perfectly captures the transnational 
-                character of what has come to be known as May ’68⁽⁷⁾, and the centrality of anticolonial and Third Worldist thought to this event. 
+                character of what has come to be known as May 1968⁽⁷⁾, and the centrality of anticolonial and Third Worldist thought to this event. 
                 </h1>
                 <br>
                 <h2>
@@ -626,13 +690,15 @@ html, body {
 
         /* HOVER IMAGES */
   const hoverImages = [
-        { triggerElement: '.hover-trigger1', imagePath: 'images/caption_6.jpg', caption: 'Palestine Demonstration in Morocco, 1971. Courtesy of Anfas.'},
-        { triggerElement: '.hover-trigger2', imagePath: 'images/caption_7.jpeg', caption: 'The artists Mohamed Kacimi and Malika Agueznay, discussing during the cultural week of the Berreched psychiatric hospital. Courtesy of Archives Abdellah Ziou Ziou.' },
-        { triggerElement: '.hover-trigger3', imagePath: 'images/caption_8.png', caption: 'Logo of Anfas-Souffles.' },
+        { triggerElement: '.hover-trigger1', imagePath: 'images/caption_6.jpeg', caption: 'Anti-colonial march of strikers towards the Casablanca city center on December 8, 1952.'},
+        { triggerElement: '.hover-trigger2', imagePath: 'images/caption_5.webp', caption: 'Archives of Krimou Derkaoui, Lamalif magazines, Pro-C magazine and works on Morocco.' },
+        { triggerElement: '.hover-trigger3', imagePath: 'images/caption_8.jpg', caption: 'Page from an issue of Souffles with the Arabic logo, "Anfas".' },
         { triggerElement: '.hover-trigger4', imagePath: 'images/caption_9.jpg', caption: 'Tripoli, Libya. August 2011. Salma Taghdi, 22, Aseel Tajuri, 22, and Maysam Shebani, 22, created a revolutionary newspaper to provide citizens of Tripoli with daily updates gathered from the radio. Taghdi and her father used a radio to listen in on the movements of Qaddafi’s troops since the start of the Libyan Revolution. Courtesy of Sarah Elliott.' },
-        { triggerElement: '.hover-trigger5', imagePath: 'images/caption_10.jpeg', caption: 'Black Power leader Stokely Carmichael is pictured with aides. In the late 1960s, Carmichael delivered a fiery call for Black support of the Palestinian revolution. Courtesy of Ollie Noonan, Jr./The Boston Globe.' },
-        { triggerElement: '.hover-trigger6', imagePath: 'images/caption_11.jpeg', caption: 'Cover of The Question of Palestine, Edward Said, 1979.' },
-        { triggerElement: '.hover-trigger7', imagePath: 'images/caption_12.webp', caption: 'A group of about 200 Arabs carrying signs and holding a Syrian flag, marched in demonstration near the White House in Washington, D.C., June 8, 1967. Courtesy of AP.' },
+        { triggerElement: '.hover-trigger5', imagePath: 'images/caption_10.jpeg', caption: 'The Black Panthers and a Palestinian delegation at the Pan-African Cultural Festival held in Algiers, 1969.' },
+        { triggerElement: '.hover-trigger6', imagePath: 'images/caption_11.jpg', caption: 'Edward Said on Frantz Fanon, 1993.' },
+        { triggerElement: '.hover-trigger7', imagePath: 'images/caption_12.jpg', caption: 'Cover page of the 15th issue of Fedaï: Journal de soutien à la révolution palestinienne, 1972. Courtesy of Fonds Saïd Bouziri, La contemporaine.' },
+        { triggerElement: '.hover-trigger8', imagePath: 'images/caption_.jpeg', caption: 'Farid Belkahia, Mohammed Chabâa and Mohamed Melehi surrounded by students and their guest Augusto Bonalumi at the Casablanca Art School, 1966. Courtesy of M. Melehi.' },
+        { triggerElement: '.hover-trigger9', imagePath: 'images/caption__.jpeg', caption: 'Exhibition opening of Souffles Magazine, Alhamriyah studios, Sharjah Art Foundation, 2024.' },
     ];
 
  // Function to show the hover image and caption

@@ -164,7 +164,7 @@ html, body {
         font-size: 15px;
         color: #DAC062;
         display: none;
-        transform: rotate(-15deg); /* Rotate the text */
+        transform: rotate(-6deg); /* Rotate the text */
         z-index: 999; /* Ensure dots appear above the glossary */
     }
     .dot:hover + .dot-title {
@@ -246,7 +246,9 @@ html, body {
     }
 
     .hover-trigger1 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger1:hover {
@@ -257,7 +259,9 @@ html, body {
     }
 
     .hover-trigger2 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger2:hover {
@@ -268,7 +272,9 @@ html, body {
     }
 
     .hover-trigger3 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger3:hover {
@@ -279,7 +285,9 @@ html, body {
     }
 
     .hover-trigger4 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger4:hover {
@@ -290,7 +298,9 @@ html, body {
     }
 
     .hover-trigger5 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger5:hover {
@@ -301,7 +311,9 @@ html, body {
     }
 
     .hover-trigger6 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger6:hover {
@@ -312,7 +324,9 @@ html, body {
     }
 
     .hover-trigger7 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger7:hover {
@@ -323,7 +337,9 @@ html, body {
     }
 
     .hover-trigger8 {
-    text-decoration: underline; /* Add underline */
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
     }
 
     .hover-trigger8:hover {
@@ -379,7 +395,13 @@ html, body {
         box-sizing: border-box; /* Include padding and border in element's total width and height */
     position: relative; /* Ensure the caption stays within the hover image container */
        }
+
+       .glossary {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
     }
+    }
+
     
     /* MOBILE */
     @media screen and (max-width: 599px) {
@@ -403,6 +425,11 @@ html, body {
         box-sizing: border-box; /* Include padding and border in element's total width and height */
     position: relative; /* Ensure the caption stays within the hover image container */
        }
+
+       .glossary {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
     }
 
 
@@ -518,10 +545,12 @@ html, body {
             </h1>
         </div>
 
-        <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'Palestine')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="palestine.html" id="dot"><div class="dot" style="top: 40%; left: 5%;" onmouseover="showDotTitle(this, 'The Palestinian Struggle for Liberation')" onmouseout="hideDotTitle(this)"></div></a>
         <a href="cineclubs.html" id="dot"><div class="dot" style="top: 10%; left: 70%;" onmouseover="showDotTitle(this, 'Cineclubs & the UNEM')" onmouseout="hideDotTitle(this)"></div></a>
-        <a href="assifa.html" id="dot"><div class="dot" style="top: 70%; left: 30%;" onmouseover="showDotTitle(this, 'Assifa')" onmouseout="hideDotTitle(this)"></div></a>
-        <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 70%;" onmouseover="showDotTitle(this, 'Prison literature')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="assifa.html" id="dot"><div class="dot" style="top: 70%; left: 20%;" onmouseover="showDotTitle(this, 'Assifa & the MTA')" onmouseout="hideDotTitle(this)"></div></a>
+        <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 80%;" onmouseover="showDotTitle(this, 'Female prison literature')" onmouseout="hideDotTitle(this)"></div></a>
+
+
 
         <div class="two-column">
             <div class="text-container">
@@ -632,7 +661,7 @@ html, body {
                         <img src="images/assifa_10.jpg" alt="Image">
                         </div>
                     <h3>
-                    Poster announcing the opening of Al Assifa theater pieces. Courtesy of Odysséo.
+                    Poster announcing the opening of Al Assifa theater piece "La vie de château". Courtesy of Odysséo.
                     </h3>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
@@ -664,13 +693,13 @@ html, body {
         /* HOVER IMAGES */
   const hoverImages = [
         { triggerElement: '.hover-trigger1', imagePath: 'images/caption_18.jpg', caption: '[Text in French: Golda Meir, assassin subservient to US imperialism, comes to France! Golda Meir assassin, Pompidou Mitterand accomplices, down with Zionism. Palestine will win !] / Committee to Support the Palestinian Resistance (CSRP), Union of French Communists (UCF). Courtesy of Odysseo.'},
-        { triggerElement: '.hover-trigger2', imagePath: 'images/caption_19.jpg', caption: 'Poster of “Mohamed take your suitcase.” Courtesy of Kateb Yacine Fund, Institute of Memories of Contemporary Edition.' },
-        { triggerElement: '.hover-trigger3', imagePath: 'images/caption_21.jpeg', caption: 'Nasser cheered by crowds after announcing nationalisation of Suez Canal, August 1956.' },
-        { triggerElement: '.hover-trigger4', imagePath: 'images/caption_22.jpeg', caption: 'The struggles led by North African workers emerged at the end of 1971 and during 1972, and announced the themes of the mobilizations to come: struggles of the poorly housed, struggles for papers, struggles in factories.' },
-        { triggerElement: '.hover-trigger5', imagePath: 'images/caption_23.webp', caption: 'In 1967, the Student Non-Violent Coordinating Committee (SNCC) ran a newsletter entitled Third World Roundup: The Palestinian Problem: Test Your Knowledge, in which it listed 32 factual claims about the history of colonialism in Palestine and the impact of Israeli aggression against the Palestinians during the 1967 Arab-Israeli war.' },
-        { triggerElement: '.hover-trigger7', imagePath: 'images/caption_20.jpeg', caption: 'The Arab Workers Movement (MTA) was created in June 1972, and served as the basis for organizing support for Palestine. The MTA was involved in the Sonacotra home strike in 1976, as shown in the image in the Saint-Denis foyer.' },
-        { triggerElement: '.hover-trigger6', imagePath: 'images/caption_24.jpeg', caption: '"Revolution Until Victory", a Photograph of a Calander by Fatah Movement, 1977. Courtesy of The Palestinian Museum Digital Archive.' },
-        { triggerElement: '.hover-trigger8', imagePath: 'images/caption_25.jpeg', caption: 'Poster of "It works and it shouts its mouth, a theater piece by the agit-prop theater troupe Al Assifa.' },
+        { triggerElement: '.hover-trigger2', imagePath: 'images/caption_19.jpg', caption: 'Poster of “Mohamed take your suitcase”, Théâtre de la mer d‘Algérie. Courtesy of Kateb Yacine Fund, Institute of Memories of Contemporary Edition.' },
+        { triggerElement: '.hover-trigger3', imagePath: 'images/caption_21.jpg', caption: 'Tricontinental Bulletin n°42, 1969, OSPAAAL. Courtesy of Léa Morin.' },
+        { triggerElement: '.hover-trigger4', imagePath: 'images/caption_22.png', caption: 'Scene from "Mohamed take your suitcase". Courtesy of Kateb Yacine.'},
+        { triggerElement: '.hover-trigger5', imagePath: 'images/caption_23.jpg', caption: 'Poster in solidarity with Mohamed Laribi, activist serving Arab workers and the Palestinian people, who was kidnapped and expelled from France. Courtesy of Arab Workers Movement (MTA), 1970-1979.'},
+        { triggerElement: '.hover-trigger7', imagePath: 'images/caption_20.jpeg', caption: 'The Arab Workers Movement (MTA) not only served as the basis for organizing support for Palestine in France but was also involved in the Sonacotra home strike in 1976, as shown in the image in the Saint-Denis foyer.' },
+        { triggerElement: '.hover-trigger6', imagePath: 'images/caption_24.jpg', caption: '"Revolution Until Victory", a Photograph of a Calander by Fatah Movement, 1977. Courtesy of The Palestinian Museum Digital Archive.' },
+        { triggerElement: '.hover-trigger8', imagePath: 'images/caption_25.jpg', caption: 'Poster of "It works and it shouts its mouth, a theater piece by the agit-prop theater troupe Al Assifa.' },
 
     ];
 
