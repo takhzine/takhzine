@@ -23,7 +23,7 @@
 }
 
 html, body {
-    height:100%;
+    height: 100%;
     margin: 0; /* Reset margin */
     padding: 0; /* Reset padding */
     position: relative; /* Set positioning context for the glossary */
@@ -32,14 +32,14 @@ html, body {
 
 .container {
     display: flex;
-    height: 100%;
 }
 
  /* COLUMNS */
-    .left-column {
-        width: 20%;
-        background-color: white;
-        padding: 15px;
+    .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px;
     }
 
     .right-column {
@@ -47,6 +47,7 @@ html, body {
     background-color: white;
     padding: 15px;
     overflow-y: auto; /* Add scrollbars when content overflows */
+    margin-left: 90px;
     }
 
     .text-container {
@@ -200,7 +201,7 @@ html, body {
 
     /* GLOSSARY */
     .glossary {
-        position: fixed;
+        position: fixed; 
         bottom: 15px; /* Align glossary to bottom of viewport */
         left: 0; /* Align glossary to left of viewport */
         width: 150px; /* Adjust width as needed */
@@ -220,6 +221,29 @@ html, body {
         overflow-y: auto; /* Enable vertical scrolling for glossary content */
         height: 100%; /* Set height to 100% to allow scrolling */
     }
+
+          /* LINK */
+          a#link:link {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+      overflow-wrap: break-word;
+	  }
+
+	  a#link:visited {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+      overflow-wrap: break-word;
+	  }
+
+	  a#link:hover {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+	  font-style: italic
+      overflow-wrap: break-word;
+	  }
 
 
     /* HOVER IMAGES */
@@ -518,8 +542,8 @@ html, body {
 </div>
        
 
-    <div class="container">
-        <div class="left-column">
+
+        <div class="menu">
             <h1><a href="index.html" id="menu">Index</a></h1>
                 <h1>
                 <a href="preface.html" id="menu">Preface</a>
@@ -536,12 +560,18 @@ html, body {
         <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 80%;" onmouseover="showDotTitle(this, 'Female prison literature')" onmouseout="hideDotTitle(this)"></div></a>
 
 
-
+    <div class="container">
         <div class="right-column">
             <div class="text-container">
-                <h1>In the context of Morocco, Palestine was a springboard for “cultural decolonization,” reactivating <span class="hover-trigger1">global anticolonial discourses</span>
-                    in order to articulate a relational, cross-colonial Maghrebi⁽¹⁾ identity focusing on discussions of language, poetic form, and <span class="hover-trigger2">cultural autonomy</span>.
+                <h1>In the context of Morocco, Palestine was a springboard for “cultural decolonization,” reactivating <span class="hover-trigger1">
+                    global anticolonial discourses</span>
+                    in order to articulate a relational, cross-colonial Maghrebi⁽¹⁾ identity focusing on discussions of language, poetic form, and 
+                    <span class="hover-trigger2">cultural autonomy</span>.
                 </h1>
+                <br>
+                <h2>
+                <a href="https://www.degruyter.com/document/doi/10.1515/9780804796859-004/html?lang=en" id="link" target="_blank">https://www.degruyter.com/document/doi/10.1515/9780804796859-004/html?lang=en</a>
+                </h2>
                 <br>
                 <div class="image-container">
                     <img src="images/Palestine_1.jpg" alt="Image">
@@ -571,14 +601,22 @@ html, body {
                 some small reviews called Poésie toute and Eaux vives. And they also published in the automobile magazine of Casablanca. That gives you an idea 
                 of the limited options at the time when it came to literary reviews. When we met — or rather — I was curious enough to seek them out, and at the 
                 same time we met <span class="hover-trigger8">a group of painters in Casablanca: Mohamed Melehi, Mohamed Chebaa, and Farid Belkahia.</span>” 
-                <br><br>
-                … 
-                <br><br>
+                </h1>
+                <br>
+                <h2>
+                <a href="https://dafbeirut.org/en/articles/The-Making-of-the-Moroccan-National-Culture" id="link" target="_blank">https://dafbeirut.org/en/articles/The-Making-of-the-Moroccan-National-Culture</a>
+                </h2>
+                <h1>
                 “I think it’s very important to note 
                 that Souffles began with a group of poets and artists/painters, which is something that gave it a completely original character, perhaps unique 
                 in the history of Moroccan literary reviews up to that time. There were not just new texts compared with the literature of the time, but also 
-                <span class="hover-trigger9">a plastic and graphic conception that was unprecedented.</span>”
-                <br><br>
+                <span class="hover-trigger9">a plastic and graphic conception that was unprecedented."</span>
+                </h1>
+                <br>
+                <h2>
+                <a href="https://www.lawrieshabibi.com/viewing-room/23-mohamed-melehi-and-the-casablanca-arts-school/" id="link" target="_blank">https://www.lawrieshabibi.com/viewing-room/23-mohamed-melehi-and-the-casablanca-arts-school/</a>
+                </h2>
+                <h1>
                 The ideas and grievances articulated within the pages of Souffles-Anfas foreshadow contemporary progressive movements, from the <span class="hover-trigger4">Arab Spring's</span>⁽³⁾
                 pro-democracy uprisings to the ongoing struggles for racial equity in Western societies. The journal played a pivotal role in fostering dialogue 
                 among writers, artists, and activists from Africa, Asia, and the Americas. It featured groundbreaking works by tricontinental figures such as 
@@ -676,6 +714,7 @@ html, body {
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             </div>
         </div>
+    </div>
 
 
 
@@ -693,9 +732,9 @@ html, body {
 
         /* GLOSSARY */
         window.addEventListener('scroll', function() {
-            var glossaryContent = document.querySelector('.glossary-content');
-            glossaryContent.scrollTop = window.pageYOffset;
-        });
+    var glossaryContent = document.querySelector('.glossary-content');
+    glossaryContent.scrollTop = window.pageYOffset;
+});
 
 
 

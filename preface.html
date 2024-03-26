@@ -23,29 +23,34 @@
 }
 
 
-    body, html {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        color: #333533;
+html, body {
+    height: 100%;
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    position: relative; /* Set positioning context for the glossary */
+    color: #333533;
+}
+
+.container {
+    display: flex;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px;
     }
-    .container {
-        display: flex;
-        height: 100%;
+
+.right-column {
+    width: 400%;
+    background-color: white;
+    padding: 15px;
+    overflow-y: auto; /* Add scrollbars when content overflows */
+    margin-left: 90px;
     }
-    .left-column {
-        width: 20%;
-        background-color: white;
-        padding: 15px;
-    }
-    .right-column {
-        width: 500%;
-        background-color: white;
-        padding: 15px;
-        overflow-y: auto; /* Add scrollbars when content overflows */
-        margin-left: auto; /* Push the right column further to the right */
-    }
-    .text-container {
+
+.text-container {
         max-width: 600px; /* Set maximum width for the text container */
     }
 
@@ -93,16 +98,6 @@
         font-size: 15px;
     }
 
-    .draggable-img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 500px; /* Adjust the width of the image as needed */
-        cursor: grab;
-        user-select: none;
-        touch-action: none; /* Prevent mobile browsers from handling touch events */
-    }
 
     a#menu:link {
 	  text-decoration: none;
@@ -123,11 +118,37 @@
 	  font-style: italic
 	  }
 
+
+      /* LINK */
+      a#link:link {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+      overflow-wrap: break-word;
+	  }
+
+	  a#link:visited {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+      overflow-wrap: break-word;
+	  }
+
+	  a#link:hover {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+      overflow-wrap: break-word;
+      font-style: italic
+	  }
+
+
     /* SCROLL BAR */
     ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
     } 
+
 
       /* DOTS */
       .dot {
@@ -279,8 +300,8 @@
     <div id="hoverImageContainer" class="hover-image-container"></div>
 
 
-    <div class="container">
-        <div class="left-column">
+
+        <div class="menu">
             <h1><a href="index.html" id="menu">Index</a>
             <br>
             <i>Preface</i>
@@ -297,56 +318,44 @@
         <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 80%;" onmouseover="showDotTitle(this, 'Female prison literature')" onmouseout="hideDotTitle(this)"></div></a>
 
 
-
+     <div class="container">
         <div class="right-column">
             <div class="text-container">
                 <h1>Ta5zine, meaning ta[kh]zine or <span>تخزين,</span> as in saving, memorizing, piling & accumulating, 
                 is a research on archives of political publishing practices in the context of Morocco.
-                <br><br>
-                I first started with the idea of an archive that exists <span class="hover-trigger">beyond a repository or storage of information and documents</span>
-                or a legitimizing instrument 
-                of power structures and prevailing authorities. In recent years, feminist scholars have suggested that <span class="hover-trigger">the archive is 
-                a space for dwelling and a quotidian site for marginalized subjects as well as gendered and erotically charged energies, meanings, and other bodily 
-                processes. </span>
-                </h1>
-
-                <h2>
-                From <i>The “Stuff” of Archives Mess, Migration, and Queer Lives</i>,
-                the ideal archive is about the management of the morass of memory. But what happens when disorder and chaos are the elements that make up the 
-                archival space? What happens when, instead of orderly catalogs, makeshift arrangements teetering on the brink of anarchy become the “disorder” 
-                of things? What kinds of value get attached to persons and things that dwell in mess and disorder, and how can they be dynamically reframed as 
-                a way to think more broadly about political acts, aspirations, and stances?
-                
-                </h2>
+                <br>
                 <h1>
-                During my studies, I have always asked myself the question of why almost all the <span class="hover-trigger">political revolutions and protests</span> that happened in Morocco 
+                During my studies, I have always asked myself the question of why almost all the <span class="hover-trigger">political revolutions and protests
+                that happened in Morocco</span> 
                 were never followed suit or paralleled with a visual/graphic design support compared to other MENA countries. It wasn't until three years ago that
-                I found an old magazine in a flea market back home with the title <span class="hover-trigger">Souffles, Arab cultural publication of the Maghreb.</span>
+                I found an old Moroccan review conserved on Clicnet as an HTML directory with different hyperlinks to each issue. The title of the publication was 
+                Souffles, Arab cultural publication of the Maghreb.
+                The publication was a manifesto for a new aesthetics in the Maghreb, and became a conduit for a new generation of writers, artists, 
+                and intellectuals to stage a revolution against imperialist and colonial cultural domination. 
+                <span class="hover-trigger">The starting point for this revolution was language.</span>
                 </h1>
                 <h2>
                 Souffles: revue maghrébine littéraire et culturelle was an French and Arabic language literary magazine published in Rabat, Morocco, 
                 between 1966 and 1971. Twenty-two numbers appeared.
-                </h2>
-
-                <h1>To my disappointment, 
-                the publication wasn't for sale but the man in the shop was kind enough to make time and talk to me about the linguistic guerrillas of the 60s and 70s
-                in Morocco. The publication was a manifesto for a new aesthetics in the Maghreb, and became a conduit for a new 
-                generation of writers, artists, 
-                and intellectuals to stage a revolution against imperialist and colonial cultural domination. <span class="hover-trigger">The starting point for 
-                this revolution was language</span>.
-                <h2>
-                "How do we rediscover our autonomy, our freedom of creation, in relation to a culture that 
-                was imposed upon us? But with this paradox: all of that must happen in the language of the colonizer; a paradox, a contradiction. It was necessary 
-                to deal with this paradox and this contradiction. How to produce a literature that would carry this movement for the emancipation of the human 
-                being? We worked with the only language that we had at our disposal. We didn’t choose it. I didn’t choose to write in French—French was imposed 
-                upon me during a history that went beyond me personally. The important thing was to see what I did with this language. What did I succeed in 
-                creating within this language? How did I make this language my own?"
                 <br>
-                – Abdellatif Lâabi
+                <a href="http://clicnet.swarthmore.edu/souffles/sommaire.html" id="link" target="_blank">http://clicnet.swarthmore.edu/souffles/sommaire.html</a>
+                </h2>
+                <h1>
+                Abdellatif Lâabi, founder, editor, and publisher of Souffles: "How do we rediscover our autonomy, our freedom of creation, in relation to a culture that 
+                was imposed upon us? But with this paradox: <span class="hover-trigger">all of that must happen in the language of the colonizer;</span> 
+                a paradox, a contradiction. It was necessary to deal with this paradox and this contradiction. How to produce a literature that would carry 
+                this movement for the emancipation of the human being? We worked with the only language that we had at our disposal. We didn’t choose it. 
+                I didn’t choose to write in French—French was imposed upon me during a history that went beyond me personally. <span class="hover-trigger">
+                The important thing was to see what I did with this language. What did I succeed in creating within this language? How did I make this 
+                language my own?"</span>
+                </h1>
+                <h2>
+                <a href="https://www.bidoun.org/articles/in-the-beginning-there-was-souffles" id="link" target="_blank">https://www.bidoun.org/articles/in-the-beginning-there-was-souffles</a>
                 </h2>
                 <br><br><br><br>
             </div>
         </div>
+     </div>
 
 
 

@@ -23,7 +23,7 @@
 }
 
 html, body {
-    height:100%;
+    height: 100%;
     margin: 0; /* Reset margin */
     padding: 0; /* Reset padding */
     position: relative; /* Set positioning context for the glossary */
@@ -32,20 +32,22 @@ html, body {
 
 .container {
     display: flex;
-    height: 100%;
 }
 
  /* COLUMNS */
- .one-column {
-        width: 20%;
-        background-color: white;
-        padding: 15px;
+ .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px;
     }
-    .two-column {
+
+    .right-column {
     width: 400%;
     background-color: white;
     padding: 15px;
     overflow-y: auto; /* Add scrollbars when content overflows */
+    margin-left: 90px;
     }
 
     .text-container, .video-container {
@@ -232,6 +234,30 @@ html, body {
     }
 
 
+          /* LINK */
+          a#link:link {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+      overflow-wrap: break-word;
+	  }
+
+	  a#link:visited {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+      overflow-wrap: break-word;
+	  }
+
+	  a#link:hover {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+	  font-style: italic
+      overflow-wrap: break-word;
+	  }
+
+
       /* HOVER IMAGES */
  #hoverImageContainer {
         display: none;
@@ -341,6 +367,19 @@ html, body {
     }
 
     .hover-trigger7:hover {
+        font-size: 25px; /* Increase font size on hover */
+        transition: font-size 0.3s ease; /* Smooth transition */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger8 {
+        font-size: 20px; /* Increase font size on hover */
+        color: #DAC062; /* Change text color on hover */
+        text-decoration: none;
+    }
+
+    .hover-trigger8:hover {
         font-size: 25px; /* Increase font size on hover */
         transition: font-size 0.3s ease; /* Smooth transition */
         color: #DAC062; /* Change text color on hover */
@@ -493,8 +532,8 @@ html, body {
 </div>
 
 
-    <div class="container">
-        <div class="one-column">
+
+        <div class="menu">
             <h1><a href="index.html" id="menu">Index</a></h1>
             
             <h1><a href="preface.html" id="menu">Preface</a>
@@ -511,8 +550,8 @@ html, body {
         <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 80%;" onmouseover="showDotTitle(this, 'Female prison literature')" onmouseout="hideDotTitle(this)"></div></a>
 
 
-
-        <div class="two-column">
+    <div class="container">
+        <div class="right-column">
             <div class="text-container">
                 <h1>In the 1970s and 80s, Moroccan ciné-clubs⁽¹⁾ played a major role in film education. However, as they were closely linked to 
                     <span class="hover-trigger1">leftist opposition groups</span> at the time, cine-clubs began to recede alongside these political 
@@ -563,12 +602,16 @@ html, body {
                 these incessant needs.</span> 
                 The film clubs, based on the productions of Eisenstein, Lelouch, Chabrol, Godard and many others who embodied the new wave⁽⁴⁾, provided 
                 the ideal pretext for discussing the proposed text, but also the overall context, taking into account the simulation⁽⁵⁾ effects which 
-                sometimes unconsciously infiltrated the debates. In this regard, people were much more concerned with the content of the films than 
-                with the cinematographic techniques.</h1>
+                sometimes unconsciously infiltrated the debates. In this regard, <span class="hover-trigger8">people were much more concerned with the 
+                content of the films</span> than with the cinematographic techniques.</h1>
                 <h2>
                 Ciné-club Al Azaim was founded in 1973 by Saâd Chraïbi, Moroccan director and screenwriter born July 27, 1952 in Fez. 
                 From 1968 to 1970, Saâd Chraïbi studied medicine at the Faculty of Medicine in Casablanca. In the 1970s, he became a member of 
                 the National Federation of Film Clubs of Morocco, and in 1973 founded the film club “Al Azaim”, which he managed until 1983.
+                <br>
+                <a href="https://www.youtube.com/watch?v=DHWPDnFsePg&t=15s" id="link" target="_blank">https://www.youtube.com/watch?v=DHWPDnFsePg&t=15s</a>
+                <br>
+                <a href="https://cinima3.com/5-3-A-NEW-KIND-OF-CRITICISM-FOR-A-NEW-KIND-OF-CINEMA" id="link" target="_blank">https://cinima3.com/5-3-A-NEW-KIND-OF-CRITICISM-FOR-A-NEW-KIND-OF-CINEMA</a>
                 </h2>
                 <br>
                 <div class="image-container">
@@ -585,6 +628,9 @@ html, body {
                 studying film directing: Mohamed Ben Soude arrived in 1961, Abdellah Drissi arrived in 1964, Mostafa Derkaoui and his brother Abdelkrim 
                 (studying cinematography) in 1965, Abdelkader Lagtaa in 1966, as well as Idriss Karim and Hamid Bensaïd.
                 </h1>
+                <h2>
+                <a href="https://opencitylondon.com/non-fiction/issue-3-space/non-aligned-film-archives/" id="link" target="_blank">https://opencitylondon.com/non-fiction/issue-3-space/non-aligned-film-archives/</a>
+                </h2>
                 <br>
                 <div class="image-container">
                     <img src="images/Cine_6.png" alt="Image">
@@ -635,9 +681,16 @@ html, body {
                 </h1>
                 <h3>
                 The avant-garde cultural publication Souffles offers in its second issue (1966) a Debate on Moroccan cinema. 
-                This is an excerpt from the latter citing Karim Idrissi, Abdallah Zerouali and Ahmed Bouanani.</h3>
+                This is an excerpt from the latter citing Karim Idrissi, Abdallah Zerouali and Ahmed Bouanani.
+                </h3>
+                <h2>
+                <a href="http://clicnet.swarthmore.edu/souffles/s2/8.html" id="link" target="_blank">http://clicnet.swarthmore.edu/souffles/s2/8.html</a>
+                </h2>
                 
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -663,6 +716,7 @@ html, body {
         { triggerElement: '.hover-trigger3', imagePath: 'images/caption_15.jpg', caption: 'Poster for the lifting of the dissolution of the UNEM. [Text in Arabic: Long live the National Union of Moroccan Students]. Courtesy of Odysseo.' },
         { triggerElement: '.hover-trigger4', imagePath: 'images/caption_16.jpeg', caption: 'During a press conference on September 9, 1959, in Casablanca, Mehdi Ben Barka announces the formation of the left-wing National Union of Popular Forces (UNFP). Courtesy of AFP.' },
         { triggerElement: '.hover-trigger5', imagePath: 'images/caption_17.png', caption: 'Screenshot of a digital file from the film On Some Meaningless Events (Mostafa Derkaoui, 1974). Courtesy of Filmoteca de Catalunya.' },
+        { triggerElement: '.hover-trigger8', imagePath: 'images/caption_31.jpg', caption: 'A bilingual review (French and Arabic) launched in 1976 in France by a group of critics and filmmakers based in France and advocating the emergence of Arab, as well as Asian, African and Latin American cinema. It was mainly edited by Khemais Khayati and Abdou Achouba.' },
     ];
 
    // Function to show the hover image and caption
@@ -686,7 +740,7 @@ html, body {
     }
 
     // Add event listeners to all hover-trigger elements
-    const hoverTriggerElements = document.querySelectorAll('.hover-trigger1, .hover-trigger2, .hover-trigger3, .hover-trigger4, .hover-trigger5');
+    const hoverTriggerElements = document.querySelectorAll('.hover-trigger1, .hover-trigger2, .hover-trigger3, .hover-trigger4, .hover-trigger5, .hover-trigger8');
     hoverTriggerElements.forEach(element => {
         element.addEventListener('mouseover', showImageOnHover);
         element.addEventListener('mouseout', hideImageOnLeave);

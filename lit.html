@@ -23,7 +23,7 @@
 }
 
 html, body {
-    height:100%;
+    height: 100%;
     margin: 0; /* Reset margin */
     padding: 0; /* Reset padding */
     position: relative; /* Set positioning context for the glossary */
@@ -32,20 +32,22 @@ html, body {
 
 .container {
     display: flex;
-    height: 100%;
 }
 
  /* COLUMNS */
- .one-column {
-        width: 20%;
-        background-color: white;
-        padding: 15px;
+ .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px;
     }
-    .two-column {
+
+    .right-column {
     width: 400%;
     background-color: white;
     padding: 15px;
     overflow-y: auto; /* Add scrollbars when content overflows */
+    margin-left: 90px;
     }
 
     .text-container, .video-container {
@@ -230,6 +232,32 @@ html, body {
         overflow-y: auto; /* Enable vertical scrolling for glossary content */
         height: 100%; /* Set height to 100% to allow scrolling */
     }
+
+
+          /* LINK */
+          a#link:link {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+      overflow-wrap: break-word;
+	  }
+
+	  a#link:visited {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+      overflow-wrap: break-word;
+	  }
+
+	  a#link:hover {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+      overflow-wrap: break-word;
+      font-style: italic
+	  }
+
+
 
          /* HOVER IMAGES */
          #hoverImageContainer {
@@ -520,8 +548,8 @@ html, body {
 </div>
 
 
-    <div class="container">
-        <div class="one-column">
+
+        <div class="menu">
             <h1><a href="index.html" id="menu">Index</a></h1>
             
             <h1><a href="preface.html" id="menu">Preface</a>
@@ -538,7 +566,8 @@ html, body {
         <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 80%;" onmouseover="showDotTitle(this, 'Female prison literature')" onmouseout="hideDotTitle(this)"></div></a>
 
 
-        <div class="two-column">
+    <div class="container">
+        <div class="right-column">
             <div class="text-container">
                 <h1>
                 Since the late 1990s, following the conclusion of the period referred to as "<span class="hover-trigger1">Les années de plomb (the Years of Lead)</span>"⁽¹⁾, 
@@ -551,6 +580,8 @@ html, body {
                 process, also resulted from the struggle of human rights activists, former prisoners and their families. Beginning in the 1970s, Moroccans residing
                 abroad (MRE)⁽³⁾ created associations to denounce state repression and abuses. In Morocco in the 1970s and the 1980s, activists founded human rights 
                 associations.
+                <br>
+                <a href="https://www.iemed.org/publication/la-memoire-feminine-des-annees-de-plomb/" id="link" target="_blank">https://www.iemed.org/publication/la-memoire-feminine-des-annees-de-plomb/</a>
                 </h2>
                 <br>
                 <div class="image-container">
@@ -569,6 +600,9 @@ html, body {
                 Additionally, Hadit al-‘atama by Fatna El Bouih was translated into French as <i>Une femme nommée Rachid</i> (A woman named Rachid, 2002) 
                 and affirms the resistance of women even as they were tortured in prisons across Morocco.
                 </h1>
+                <h2>
+                <a href="https://dicodoc.blog/2023/08/21/les-annees-de-plomb-du-maroc/" id="link" target="_blank">https://dicodoc.blog/2023/08/21/les-annees-de-plomb-du-maroc/</a>
+                </h2>
                 <br>
                 <div class="image-container">
                     <img src="images/lit_2.jpg" alt="Image">
@@ -678,6 +712,9 @@ html, body {
                 <h3>
                 This Time I Choose When to Leave, An Interview with Fatna El Bouih, Middle East Report, Spring 2001.
                 </h3>
+                <h2>
+                <a href="https://www.mafhoum.com/press/bouhapr21.htm" id="link" target="_blank">https://www.mafhoum.com/press/bouhapr21.htm</a>
+                </h2>
                 <br>
                 <div class="image-container">
                     <img src="images/lit_6.jpg" alt="Image">
@@ -693,6 +730,9 @@ html, body {
                 especially in relation to sexuality 
                 (<i>see Namaane-Guessous 1991</i>). 
                 </h1>
+                <h2>
+                <a href="https://digitalcollections.sit.edu/cgi/viewcontent.cgi?article=2228&context=isp_collection" id="link" target="_blank">https://digitalcollections.sit.edu/cgi/viewcontent.cgi?article=2228&context=isp_collection</a>
+                </h2>
                 <br>
                 <div class="image-container">
                     <img src="images/lit_7.jpg" alt="Image">
@@ -709,6 +749,9 @@ html, body {
                 and domestic, but political, state violence is a silent violence, nobody talks about it.</i>” To break the silence surrounding political 
                 violence against women, since 1994 El Bouih has been sharing her personal experience in newspaper articles and television interviews.
                 </h1>
+                <h2>
+                <a href="https://www.jadaliyya.com/Details/29183" id="link" target="_blank">https://www.jadaliyya.com/Details/29183</a>
+                </h2>
                 <br>
                 <div class="image-container">
                     <img src="images/lit_8.jpg" alt="Image">
@@ -739,6 +782,7 @@ html, body {
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
             </div>
+        </div>
         </div>
 
 

@@ -23,7 +23,7 @@
 }
 
 html, body {
-    height:100%;
+    height: 100%;
     margin: 0; /* Reset margin */
     padding: 0; /* Reset padding */
     position: relative; /* Set positioning context for the glossary */
@@ -32,21 +32,24 @@ html, body {
 
 .container {
     display: flex;
-    height: 100%;
 }
 
   /* COLUMNS */
-  .one-column {
-        width: 20%;
-        background-color: white;
-        padding: 15px;
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px;
     }
-    .two-column {
+
+    .right-column {
     width: 400%;
     background-color: white;
     padding: 15px;
     overflow-y: auto; /* Add scrollbars when content overflows */
+    margin-left: 90px;
     }
+
 
     .text-container, .video-container {
         max-width: 600px; /* Set maximum width for the content container */
@@ -220,6 +223,29 @@ html, body {
         overflow-y: auto; /* Enable vertical scrolling for glossary content */
         height: 100%; /* Set height to 100% to allow scrolling */
     }
+
+          /* LINK */
+          a#link:link {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+      overflow-wrap: break-word;
+	  }
+
+	  a#link:visited {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+      overflow-wrap: break-word;
+	  }
+
+	  a#link:hover {
+	  text-decoration: underline;
+	  color: #333533;	
+	  cursor: pointer;
+      overflow-wrap: break-word;
+      font-style: italic
+	  }
 
 
      /* HOVER IMAGES */
@@ -534,8 +560,8 @@ html, body {
         </div>
      </div>
 
-    <div class="container">
-        <div class="one-column">
+
+        <div class="menu">
             <h1><a href="index.html" id="menu">Index</a></h1>
 
             <h1><a href="preface.html" id="menu">Preface</a>
@@ -552,13 +578,18 @@ html, body {
         <a href="lit.html" id="dot"><div class="dot"style="top: 80%; left: 80%;" onmouseover="showDotTitle(this, 'Female prison literature')" onmouseout="hideDotTitle(this)"></div></a>
 
 
-
-        <div class="two-column">
+    <div class="container">
+        <div class="right-column">
             <div class="text-container">
                 <h1>The Arab Workers Movement (MTA) was founded in 1972 by Maghrebi immigrant workers⁽¹⁾ and students from the Maghreb 
-                    who found themselves in the <span class="hover-trigger1">Comités Palestine (CSRP)</span>⁽²⁾ founded after the war in 1967 to support the Palestinian people.
-                    The Committee was close to the Proletarian Left and brought together left activists, <span class="hover-trigger2">Arab students and immigrant workers.</span>
+                    who found themselves in the <span class="hover-trigger1">Comités Palestine (CSRP)</span>⁽²⁾ founded after the war in 1967 to support the 
+                    Palestinian people.
+                    The Committee was close to the Proletarian Left and brought together left activists, <span class="hover-trigger2">Arab students and immigrant 
+                    workers.</span>
                 </h1>
+                <h2>
+                <a href="https://www.unioncommunistelibertaire.org/?1970-naissance-des-premiers-comites-Palestine-en-France" id="link" target="_blank">https://www.unioncommunistelibertaire.org/?1970-naissance-des-premiers-comites-Palestine-en-France</a>
+                </h2>
                 <br>
                 <div class="image-container">
                     <img src="images/assifa_1.jpeg" alt="Image">
@@ -573,6 +604,9 @@ html, body {
                 fight against racism
                 and for the rights of immigrant workers</span> but was also one of the first organizations in France in support of the Palestinian people.
                 </h1>
+                <h2>
+                <a href="https://orientxxi.info/magazine/in-marseille-the-gaza-tragedy-calls-to-mind-the-history-of-anti-arab-racism,7073" id="link" target="_blank">https://orientxxi.info/magazine/in-marseille-the-gaza-tragedy-calls-to-mind-the-history-of-anti-arab-racism,7073</a>
+                </h2>
                 <br>
                 <div class="image-container">
                     <img src="images/assifa_2.jpeg" alt="Image">
@@ -607,6 +641,9 @@ html, body {
                 and militant group Fatah</span>⁽⁴⁾. 
                 Al-Asifa was jointly led by Yasser Arafat⁽⁵⁾ and Khalil Wazir⁽⁶⁾.
                 </h1>
+                <h2>
+                <a href="https://www.palestineposterproject.org/publisher/al-asifah-the-storm" id="link" target="_blank">https://www.palestineposterproject.org/publisher/al-asifah-the-storm</a>
+                </h2>
                 <br>
                 <div class="image-container">
                     <img src="images/assifa_4.jpg" alt="Image">
@@ -638,6 +675,8 @@ html, body {
                     The cassette was rediscovered with the message: 
                     "Radio Assifa produced by the Arab workers of the Assifa Theater Troupe and all Arab musicians and journalists grouped together 
                     against racism. Radio Assifa gives the right to speech and expression to Arab workers. Radio Assifa is the radio for all Arabs."
+                    <br>
+                    <a href="https://www.radiofrance.fr/franceculture/podcasts/lsd-la-serie-documentaire/ici-radio-assifa-la-cassette-retrouvee-9550683" id="link" target="_blank">https://www.radiofrance.fr/franceculture/podcasts/lsd-la-serie-documentaire/ici-radio-assifa-la-cassette-retrouvee-9550683</a>
                     </h2>
                     <br>
                     <div class="image-container">
@@ -665,6 +704,9 @@ html, body {
                     Poster announcing the opening of Al Assifa theater piece "La vie de château". Courtesy of Odysséo.
                     </h3>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
 
     
 
