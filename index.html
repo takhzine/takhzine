@@ -268,6 +268,40 @@
     draggableImg.addEventListener('touchstart', startDrag);
     document.addEventListener('touchmove', drag);
     document.addEventListener('touchend', endDrag);
+
+
+
+
+
+
+
+    
+
+       // Function to randomly position dots on page load
+    window.addEventListener('load', function() {
+        let dots = document.querySelectorAll('.dot');
+        dots.forEach(dot => {
+            // Calculate random positions within the viewport
+            let randomX = Math.random() * (window.innerWidth - dot.offsetWidth);
+            let randomY = Math.random() * (window.innerHeight - dot.offsetHeight);
+            
+            dot.style.top = randomY + 'px';
+            dot.style.left = randomX + 'px';
+        });
+    });
+
+    // Function to reposition dots on window resize
+    window.addEventListener('resize', function() {
+        let dots = document.querySelectorAll('.dot');
+        dots.forEach(dot => {
+            // Calculate random positions within the updated viewport
+            let randomX = Math.random() * (window.innerWidth - dot.offsetWidth);
+            let randomY = Math.random() * (window.innerHeight - dot.offsetHeight);
+            
+            dot.style.top = randomY + 'px';
+            dot.style.left = randomX + 'px';
+        });
+    });
     </script>
 </body>
 </html>

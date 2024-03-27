@@ -837,6 +837,33 @@ html, body {
 element.addEventListener('touchend', showImageOnHover);
 element.addEventListener('touchcancel', hideImageOnLeave); // Add touchcancel to handle if touch is interrupted
     });
+
+
+           // Function to randomly position dots on page load
+           window.addEventListener('load', function() {
+        let dots = document.querySelectorAll('.dot');
+        dots.forEach(dot => {
+            // Calculate random positions within the viewport
+            let randomX = Math.random() * (window.innerWidth - dot.offsetWidth);
+            let randomY = Math.random() * (window.innerHeight - dot.offsetHeight);
+            
+            dot.style.top = randomY + 'px';
+            dot.style.left = randomX + 'px';
+        });
+    });
+
+    // Function to reposition dots on window resize
+    window.addEventListener('resize', function() {
+        let dots = document.querySelectorAll('.dot');
+        dots.forEach(dot => {
+            // Calculate random positions within the updated viewport
+            let randomX = Math.random() * (window.innerWidth - dot.offsetWidth);
+            let randomY = Math.random() * (window.innerHeight - dot.offsetHeight);
+            
+            dot.style.top = randomY + 'px';
+            dot.style.left = randomX + 'px';
+        });
+    });
     </script>
 </body>
 </html>
