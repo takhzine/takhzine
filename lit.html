@@ -858,9 +858,9 @@ html, body {
     hoverTriggerElements.forEach(element => {
         element.addEventListener('mouseover', showImageOnHover);
         element.addEventListener('mouseout', hideImageOnLeave);
-        // Add touch event listeners for mobile devices
-        element.addEventListener('touchstart', showImageOnHover);
-        element.addEventListener('touchend', hideImageOnLeave);
+// Add touch event listeners for mobile devices
+element.addEventListener('touchend', showImageOnHover);
+element.addEventListener('touchcancel', hideImageOnLeave); // Add touchcancel to handle if touch is interrupted
     });
     </script>
 </body>
