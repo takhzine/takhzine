@@ -414,18 +414,13 @@ html, body {
 
 
 
-
-
-
-
-
-    /* MOBILE */
-    @media screen and (max-width: 600px) {
+   /* MOBILE */
+   @media screen and (max-width: 600px) {
         .dot {
             left: calc(0% - 10px); 
         }
 
-        p {
+        h5 {
         margin-top: 0.5px;
         font-family: 'HAL Timezone';
         font-weight: normal;
@@ -479,38 +474,9 @@ html, body {
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
     }
-
     }
     
     /* MOBILE */
-    @media screen and (max-width: 599px) {
-        /* For screens narrower than 600px (mobile) */
-        #hoverImageContainer {
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
-        }
-
-        #hoverImageContainer img {
-        width: 100%;
-    }
-
-    #caption{
-        font-family: 'HAL Timezone';
-        font-weight: normal;
-        font-style: normal;
-        font-size: 13px;
-        margin-top: 5px;
-        background-color: rgba(255, 255, 255); /* Background color with transparency */
-        box-sizing: border-box; /* Include padding and border in element's total width and height */
-    position: relative; /* Ensure the caption stays within the hover image container */
-       }
-
-       .glossary {
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-    }
-    }
-
     @media screen and (max-width: 1300px) {
         #hoverImageContainer {
             left: 75%;
@@ -553,6 +519,34 @@ html, body {
         #hoverImageContainer img {
         width: 100%;
         }
+    }
+
+    @media screen and (max-width: 599px) {
+        /* For screens narrower than 600px (mobile) */
+        #hoverImageContainer {
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        #hoverImageContainer img {
+        width: 100%;
+    }
+
+    #caption{
+        font-family: 'HAL Timezone';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255); /* Background color with transparency */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Ensure the caption stays within the hover image container */
+       }
+
+       .glossary {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
     }
 
     
@@ -617,7 +611,7 @@ html, body {
                 <h1>
                 <a href="preface.html" id="menu">Preface</a>
                 <br>
-            <a href="mailto:timaelkhammas@gmail.com" id="menu">E-mail</a>
+            <a href="mailto:email@takhzine.com" id="menu">E-mail</a>
             <br>
             <a href="https://www.instagram.com/ta5zine/" id="menu" target="_blank">Other</a>
             </h1>
