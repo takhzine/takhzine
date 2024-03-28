@@ -40,19 +40,19 @@
     .right-column {
         width: 400%;
         padding: 15px;
-        overflow-y: auto; /* Add scrollbars when content overflows */
+        overflow-y: auto; 
     }
     .text-container {
-        max-width: 500px; /* Set maximum width for the text container */
+        max-width: 500px; 
     }
 
     .image-container {
-        text-align: center; /* Center the image horizontally */
-        margin-bottom: 20px; /* Add some space below the image */
+        text-align: center; 
+        margin-bottom: 20px; 
     }
     .image-container img {
         width: 400px;
-        max-width: 100%; /* Make sure the image doesn't exceed its container */
+        max-width: 100%; 
     }
 
      /* BIG TEXT */
@@ -86,10 +86,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 500px; /* Adjust the width of the image as needed */
+        width: 500px; 
         cursor: grab;
         user-select: none;
-        touch-action: none; /* Prevent mobile browsers from handling touch events */
+        touch-action: none; 
     }
 
     a#menu:link {
@@ -119,7 +119,7 @@
         background-color: #DAC062;
         border-radius: 0%;
         cursor: pointer;
-        z-index: 999; /* Ensure dots appear above the glossary */
+        z-index: 999; 
     }
     .dot-title {
         position: fixed;
@@ -129,8 +129,8 @@
         font-size: 15px;
         color: #DAC062;
         display: none;
-        transform: rotate(-6deg); /* Rotate the text */
-        z-index: 999; /* Ensure dots appear above the glossary */
+        transform: rotate(-6deg); 
+        z-index: 999; 
     }
     .dot:hover + .dot-title {
         display: block;
@@ -157,7 +157,7 @@
       
     @media screen and (max-width: 600px) {
         .dot {
-            left: calc(0% - 10px); /* Adjust the percentage value as needed */
+            left: calc(0% - 10px); 
         }
 
         h1 {
@@ -174,10 +174,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 300px; /* Adjust the width of the image as needed */
+        width: 300px; 
         cursor: grab;
         user-select: none;
-        touch-action: none; /* Prevent mobile browsers from handling touch events */
+        touch-action: none; 
     }
     }
 
@@ -224,7 +224,7 @@
         let draggableImg = document.querySelector('.draggable-img');
     let initialX, initialY, offsetX = 0, offsetY = 0, isDragging = false;
 
-    // Function to handle mouse/touch down event
+ 
     function startDrag(e) {
         isDragging = true;
         if (e.type === 'mousedown') {
@@ -236,9 +236,9 @@
         }
     }
 
-    // Function to handle mouse/touch move event
+
     function drag(e) {
-        e.preventDefault(); // Prevent default browser behavior
+        e.preventDefault(); 
         if (isDragging) {
             let x, y;
             if (e.type === 'mousemove') {
@@ -254,17 +254,17 @@
         }
     }
 
-    // Function to handle mouse/touch up event
+
     function endDrag() {
         isDragging = false;
     }
 
-    // Event listeners for mouse events
+
     draggableImg.addEventListener('mousedown', startDrag);
     document.addEventListener('mousemove', drag);
     document.addEventListener('mouseup', endDrag);
 
-    // Event listeners for touch events
+
     draggableImg.addEventListener('touchstart', startDrag);
     document.addEventListener('touchmove', drag);
     document.addEventListener('touchend', endDrag);
@@ -272,16 +272,10 @@
 
 
 
-
-
-
-
-
-       // Function to randomly position dots on page load
     window.addEventListener('load', function() {
         let dots = document.querySelectorAll('.dot');
         dots.forEach(dot => {
-            // Calculate random positions within the viewport
+
             let randomX = Math.random() * (window.innerWidth - dot.offsetWidth);
             let randomY = Math.random() * (window.innerHeight - dot.offsetHeight);
             
@@ -290,11 +284,11 @@
         });
     });
 
-    // Function to reposition dots on window resize
+
     window.addEventListener('resize', function() {
         let dots = document.querySelectorAll('.dot');
         dots.forEach(dot => {
-            // Calculate random positions within the updated viewport
+
             let randomX = Math.random() * (window.innerWidth - dot.offsetWidth);
             let randomY = Math.random() * (window.innerHeight - dot.offsetHeight);
             

@@ -6,7 +6,7 @@
 <title>ta[kh]zine</title>
 <link rel="icon" type="image/x-icon" href="images/favicon.png">
 <style>
-    @font-face {
+@font-face {
   font-family: 'HAL Timezone';
   src: url("fonts/HALTimezone-Regular.ttf") format("truetype"),
   url("fonts/HALTimezone-Regular.woff2") format("woff2");
@@ -25,9 +25,9 @@
 
 html, body {
     height: 100%;
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
-    position: relative; /* Set positioning context for the glossary */
+    margin: 0; 
+    padding: 0; 
+    position: relative; 
     color: #333533;
 }
 
@@ -46,24 +46,24 @@ html, body {
     width: 400%;
     background-color: white;
     padding: 15px;
-    overflow-y: auto; /* Add scrollbars when content overflows */
+    overflow-y: auto; 
     margin-left: 90px;
     }
 
 .text-container {
-        max-width: 600px; /* Set maximum width for the text container */
+        max-width: 600px; 
     }
 
     .image-container {
-        text-align: center; /* Center the image horizontally */
-        margin-bottom: 20px; /* Add some space below the image */
+        text-align: center; 
+        margin-bottom: 20px; 
     }
     .image-container img {
         width: 600px;
-        max-width: 100%; /* Make sure the image doesn't exceed its container */
+        max-width: 100%; 
     }
 
-     /* BIG TEXT */
+    /* BIG TEXT */
     h1 {
         margin-top: 0.5px;
         font-family: 'HAL Timezone';
@@ -158,7 +158,7 @@ html, body {
         background-color: #DAC062;
         border-radius: 0%;
         cursor: pointer;
-        z-index: 999; /* Ensure dots appear above the glossary */
+        z-index: 999; 
     }
     .dot-title {
         position: fixed;
@@ -168,8 +168,8 @@ html, body {
         font-size: 15px;
         color: #DAC062;
         display: none;
-        transform: rotate(-6deg); /* Rotate the text */
-        z-index: 999; /* Ensure dots appear above the glossary */
+        transform: rotate(-6deg); 
+        z-index: 999; 
     }
     .dot:hover + .dot-title {
         display: block;
@@ -194,7 +194,7 @@ html, body {
 	  cursor: pointer;
 	  }
 
-    /* Adjust hover image positioning */
+ 
     #hoverImageContainer {
         display: none;
         position: fixed;
@@ -219,15 +219,15 @@ html, body {
     }
 
     .hover-trigger {
-        font-size: 20px; /* Increase font size on hover */
-        color: #DAC062; /* Change text color on hover */
+        font-size: 20px; 
+        color: #DAC062; 
         text-decoration: none;
 }
 
     .hover-trigger:hover {
-        font-size: 25px; /* Increase font size on hover */
-        transition: font-size 0.3s ease; /* Smooth transition */
-        color: #DAC062; /* Change text color on hover */
+        font-size: 25px; 
+        transition: font-size 0.3s ease; 
+        color: #DAC062; 
         text-decoration: none;
     }
 
@@ -244,7 +244,7 @@ html, body {
     }
     
     @media screen and (min-width: 600px) {
-        /* For screens wider than 600px (desktop) */
+       
         #hoverImageContainer {
             right: 250px;
             transform: translateY(-50%);
@@ -260,16 +260,16 @@ html, body {
         font-style: normal;
         font-size: 13px;
         margin-top: 5px;
-        background-color: rgba(255, 255, 255); /* Background color with transparency */
+        background-color: rgba(255, 255, 255); 
         
-        box-sizing: border-box; /* Include padding and border in element's total width and height */
-    position: relative; /* Ensure the caption stays within the hover image container */
+        box-sizing: border-box; 
+    position: relative; 
        }
     }
     
 
     @media screen and (max-width: 599px) {
-        /* For screens narrower than 600px (mobile) */
+       
         #hoverImageContainer {
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
@@ -285,9 +285,9 @@ html, body {
         font-style: normal;
         font-size: 13px;
         margin-top: 5px;
-        background-color: rgba(255, 255, 255); /* Background color with transparency */
-        box-sizing: border-box; /* Include padding and border in element's total width and height */
-    position: relative; /* Ensure the caption stays within the hover image container */
+        background-color: rgba(255, 255, 255); 
+        box-sizing: border-box; 
+    position: relative; 
        }
     }
     
@@ -393,7 +393,7 @@ html, body {
 
 
     <script>
-        /* TOPIC DOTS */
+
        function showDotTitle(dot, title) {
             dot.insertAdjacentHTML('afterend', '<div class="dot-title" style="top:' + (dot.offsetTop + 15) +  'px; left:' + (dot.offsetLeft + 20) + 'px;">' + title + '</div>');
         }
@@ -404,7 +404,7 @@ html, body {
 
 
 
- // Function to show the hover image and caption
+
 function showImageOnHover(event) {
     let hoveredElement = event.target;
     let hoverData = hoverImages.find(item => hoveredElement.matches(item.triggerElement));
@@ -419,27 +419,27 @@ function showImageOnHover(event) {
     }
 }
 
-// Function to hide the hover image and caption
+
 function hideImageOnLeave() {
     document.getElementById('hoverImageContainer').style.display = 'none';
 }
 
-// Add event listeners to the text-container for hovering over words
+
 const textContainer = document.querySelector('.text-container');
 textContainer.addEventListener('mouseover', showImageOnHover);
 textContainer.addEventListener('mouseout', hideImageOnLeave);
 
-// Add touch event listeners for mobile devices
+
 textContainer.addEventListener('touchstart', showImageOnHover);
 textContainer.addEventListener('touchend', hideImageOnLeave);
     
 
 
-           // Function to randomly position dots on page load
+
            window.addEventListener('load', function() {
         let dots = document.querySelectorAll('.dot');
         dots.forEach(dot => {
-            // Calculate random positions within the viewport
+
             let randomX = Math.random() * (window.innerWidth - dot.offsetWidth);
             let randomY = Math.random() * (window.innerHeight - dot.offsetHeight);
             
@@ -448,11 +448,11 @@ textContainer.addEventListener('touchend', hideImageOnLeave);
         });
     });
 
-    // Function to reposition dots on window resize
+
     window.addEventListener('resize', function() {
         let dots = document.querySelectorAll('.dot');
         dots.forEach(dot => {
-            // Calculate random positions within the updated viewport
+
             let randomX = Math.random() * (window.innerWidth - dot.offsetWidth);
             let randomY = Math.random() * (window.innerHeight - dot.offsetHeight);
             
