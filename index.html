@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/ibs5ryl.css">
+    <link href="https://fonts.cdnfonts.com/css/arial-mono-mt-pro" rel="stylesheet">
+    <title>ta[kh]zine – research on political publishing in Morocco</title>
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .business-card {
+            position: fixed;
+            top: 300px;
+            right: 100px;
+            width: 300px; 
+            height: 200px; 
+            z-index: 5; 
+            box-sizing: border-box;
+            transform: rotate(-5deg);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+  
+        .card-content {
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+  
+        .card-content p {
+            margin: 10px;
+            font-size: 16px; 
+            color: black;
+        }
+
+        .card-content hr {
+            width: 100%; 
+            margin: 20px 0; 
+            border: none;
+            border-top: 1px solid black; 
+        }
+        .container {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 10px;
+            flex-direction: column; /* Ensure vertical stacking of elements */
+        }
+        .fixed-text {
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 10px;
+            font-family: "AUTHENTIC Sans 130";
+            font-size: 18px;
+        }
+        .inline-text {
+            margin-left: 100px; /* Adjust this value to position the text as needed */
+            font-family: "AUTHENTIC Sans 130";
+            font-size: 18px;
+        }
+        .arabic {
+            font-family: "Amiri", serif;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.1em;
+        }
+        .indented {
+            text-indent: -100px; /* Negative value to align with the first line's start */
+            padding-left: 1px; /* Matches the margin-left value */
+            line-height: 1.1em; /* Adjust line height for readability */
+            margin-bottom: 10px; /* Adjust the space between main content and [..] */
+            text-underline-offset: 0.2em;
+        }
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+            box-sizing: border-box;
+            font-family: "AUTHENTIC Sans 130";
+            font-size: 18px;
+        }
+        .footer-left {
+            text-align: left;
+        }
+        .footer-center {
+            text-align: center;
+        }
+        .footer-right {
+            text-align: right;
+        }
+        .letter-container {
+            margin-left: 15px; /* Adjust to align with previous content */
+            font-family: "AUTHENTIC Sans 130";
+            font-size: 60px; /* Adjust the size as needed */
+            margin-top: 10px; /* Add some spacing before the new text */
+            line-height: 1;
+        }
+        .explanation {
+            margin-right: 15px;
+            margin-left: 15px; /* Adjust to align with previous content */
+            font-family: "AUTHENTIC Sans 130";
+            font-size: 18px; /* Adjust the size as needed */
+            margin-top: 10px; /* Add some spacing before the new text */
+            line-height: 1.1;
+            max-width: 800px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-right: 15px;
+            margin-left: 15px; /* Adjust to align with previous content */
+            margin-top: 10px; /* Add some spacing before the image */
+            text-align: center; /* Center the image */
+        }
+        .image-container img {
+            max-width: 100%; /* Ensure the image doesn't exceed its container */
+            height: auto; /* Maintain aspect ratio */
+            width: 500px;
+        }
+        .img-description {
+            margin-right: 15px;
+            margin-left: 15px; /* Adjust to align with previous content */
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 40px; /* Adjust the size as needed */
+            line-height: 1.1;
+            width: 500px;
+        }
+        .img-info-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 5px; /* Add margin between each info */
+        }
+        .img-info {
+            margin-left: 15px;
+            font-family: 'Arial Mono MT Pro', sans-serif;
+            font-size: 11px; /* Adjust the size as needed */
+            line-height: 1.1;
+        }
+        .red-letter {
+            color: #ff3e00;
+        }
+        .green-letter {
+            color: #66c062;
+        }
+        #more-link {
+            cursor: pointer; 
+        }
+        .more-content {
+            display: none;
+            margin-left: 100px;
+            font-family: "AUTHENTIC Sans 130";
+            font-size: 18px;
+            line-height: 1.1;
+            max-width: 999px;
+            margin-right: 15px;
+        }
+        .more-content img {
+            margin-top: 10px; /* Add some spacing before the image */
+            max-width: 100%;
+            width: 200px;
+            height: auto;
+            display: block; /* Ensure it appears on a new line */
+        }
+
+
+        @media only screen and (max-width: 768px) {
+
+        }
+    </style>
+</head>
+<body>
+    <div class="business-card" onclick="this.style.display='none';">
+        <svg width="300" height="200">
+            <defs>
+                <mask id="hole">
+                    <rect width="100%" height="100%" fill="white"/>
+                    <circle cx="280" cy="20" r="10" fill="black"/>
+                </mask>
+                <filter id="drop-shadow">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/>
+                    <feOffset dx="2" dy="2" result="offsetblur"/>
+                    <feFlood flood-color="rgba(0,0,0,0.5)"/>
+                    <feComposite in2="offsetblur" operator="in"/>
+                    <feMerge>
+                        <feMergeNode/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            <rect width="100%" height="100%" fill="white" mask="url(#hole)" filter="url(#drop-shadow)"/>
+            <foreignObject x="0" y="0" width="300" height="200">
+                <div class="card-content" xmlns="http://www.w3.org/1999/xhtml">
+                    <p>
+                    Publishing:
+                    <br>
+                    Issue #1 – Ciné-Clubs and the UNEM
+                    <br><br>
+                    Events:
+                    <br>
+                    <sup>26.04.2024</sup> &nbsp;Giveaway of Issue #1 at <i>Libros Mutantes Madrid Art Book Fair</i>
+                    <br>
+                    <sup>18.05.2024</sup> &nbsp;Talk at the <i>Fair Enough Book Fair</i> in Tallinn, Estonia
+                </p>
+                </div>
+            </foreignObject>
+        </svg>
+    </div>
+
+    <div class="footer">
+        <div class="footer-left">
+            Print
+        </div>
+        <div class="footer-center">
+            Index
+        </div>
+        <div class="footer-right">
+            Bibliography
+        </div>
+    </div>
+
+    <div class="fixed-text">
+        ta[kh]zine
+    </div>
+
+    <div class="container">
+        <div class="inline-text">
+            or <span class="arabic">تخزين,</span>
+            <span class="indented">
+            is a research and publishing project on archives of political publishing practices in the context of Morocco.
+            <br>
+            as in
+            <u id="more-link">?</u>
+            </span>
+        </div>
+
+        <div class="more-content" id="more-content">
+            archiving, collecting, accumulating, piling, storing, saving, memorizing...
+            <br><br>
+            ta[kh]zine researches the history and presence of publishing and its entanglement in socio-political 
+            and cultural sphere in Morocco, in order to use it as a tool for creating, translating and collecting
+            knowledge. 
+            <br><br>
+            The project came about from the question of why almost all the political revolutions and 
+            protests that happened in Morocco were never followed suit or paralleled with a visual/graphic design 
+            support compared to other MENA countries, or, looking back now, why they were obscured. 
+            This prompted a research on political image-making and publishing that took place in the country. 
+            The first diggings were mainly focused on literary and cultural magazine publishing. 
+            <br><br>
+            In 1966, a group of avant-garde Moroccan poets, led by Abdellatif Laâbi, had launched the quarterly Souffles 
+            (literally, breaths; figuratively, spirits) as a literary journal. The early issues of Souffles 
+            published experimental poetry, essays on Moroccan literature and art, but the publication gradually 
+            turned into a venue for anti-colonial thought and Third Word solidarity.  In 1968, the publication 
+            became more politically militant, expanded its readership, and launched an Arabic version (Anfas) 
+            in 1971. Between 1966 and 1973, Souffles/Anfas published a stunning array of texts – tracts, opens 
+            letters, interviews, abstract art, essays on Brazilian cinema novo, the Palestinian struggle, 
+            Russian futurism and the Black Power movement, speeches by anti-colonial leaders like Amical Cabral, 
+            poetry by Syrian bard Adonis, and the proceedings of Pan-African festivals and anti-colonial conferences. 
+            <br><br>
+            ta[kh]zine is a tool to work on the construction of memory.
+            <br> 
+            ta[kh]zine lives when it is used, but it is only valid when the material it holds 
+            reaches the public space – an idea grounded in a desire to encourage public 
+            access to information, an access that frees the past from the dominion of memories 
+            built by those who have either political, economic, or social power. 
+            <br>
+            ta[kh]zine hopes to be used to think and investigate memory and history in its 
+            different dimensions and overlaps.
+            <br><br>
+            [kh] (خ) is a posterior sound as it happens in the back of the mouth.
+            If we take a look at the history of political publishing in Morocco,
+            a lot of it happened in the underground, in the back of things. 
+           <!--
+            <img src="images/001_intro_kh.jpg" alt="More Content Image">
+            -->
+        </div>
+
+        <br>
+
+        <div class="letter-container">
+            <span class="red-letter">A</span>
+            <br>
+            Archiving
+        </div>
+
+        <div class="explanation">
+            In Crossing the Seventh G<span class="red-letter">a</span>te <span class="arabic">("عبور الباب السابع")</span> 
+            by <span class="red-letter">A</span>li Ess<span class="red-letter">a</span>fi, Morocc<span class="red-letter">a</span>n filmm<span class="red-letter">a</span>ker 
+            <span class="red-letter">A</span>hmed Bou<span class="red-letter">a</span>n<span class="red-letter">a</span>ni s<span class="red-letter">a</span>id: 
+            "For them, <span class="red-letter">a</span>rchives should not exist. There doesn't h<span class="red-letter">a</span>ve to be 
+            <span class="red-letter">a</span> memory. They were <span class="red-letter">a</span>fr<span class="red-letter">a</span>id, 
+            <span class="red-letter">a</span>ll the time, of memory." 
+        </div>
+
+        <div class="image-container">
+            <img src="images/001_takhzine_A.jpeg" alt="ID Photo of Moroccan Man">
+        </div>
+
+        <div class="img-description">
+            Before the Dying of the Light,
+            Ali Essafi, 2020
+        </div>
+
+        <div class="img-info-container">
+            <div class="img-info">
+                type:<br>
+                ID Photo
+            </div>
+            <div class="img-info">
+                location:<br>
+                Morocco
+            </div>
+            <div class="img-info">
+                author:<br>
+                Ali Essafi
+            </div>
+            <div class="img-info">
+                year:<br>
+                unknown
+            </div>
+            <div class="img-info">
+                source:<br>
+                Feature documentary
+            </div>
+        </div>
+
+        <br>
+        
+        <div class="letter-container">
+            Accumulating
+        </div>
+
+
+
+
+        <br>
+
+        <div class="letter-container">
+            B
+        </div>
+
+        <div class="letter-container">
+            <span class="green-letter">C</span>
+            <br>
+            Collecting
+        </div>
+
+        <div class="explanation">
+        The <span class="green-letter">c</span>olle<span class="green-letter">c</span>tion of photos of photographer Ahmad Al Almi is the tangible, but fragile, palimpsest 
+        of a bustling history, <span class="green-letter">c</span>arried by Arab, Jewish, Amazigh, Fren<span class="green-letter">c</span>h and European artists 
+        linked to <span class="green-letter">c</span>olonial times, but also to the <span class="green-letter">c</span>razy dreams of 
+        independen<span class="green-letter">c</span>e and the taste for restored dignity.
+        </div>
+
+        <div class="image-container">
+            <img src="images/002_takhzine_C.png" alt="ID Photo of Moroccan Man">
+        </div>
+
+        <div class="img-description">
+            Studio Imperial, Ahmad Al Almi,
+            Unknown
+        </div>
+
+        <div class="img-info-container">
+            <div class="img-info">
+                type:<br>
+                Business card
+            </div>
+            <div class="img-info">
+                location:<br>
+                Morocco
+            </div>
+            <div class="img-info">
+                author:<br>
+                Ahmad Al Almi
+            </div>
+            <div class="img-info">
+                year:<br>
+                unknown
+            </div>
+            <div class="img-info">
+                source:<br>
+                Abdelmajid Arrif
+            </div>
+        </div>
+
+        <br>
+    </div>
+    <br>
+    <br>
+
+    <script>
+        document.getElementById('more-link').addEventListener('click', function() {
+            var moreContent = document.getElementById('more-content');
+            if (moreContent.style.display === 'none' || moreContent.style.display === '') {
+                moreContent.style.display = 'block';
+                this.textContent = '?';
+            } else {
+                moreContent.style.display = 'none';
+                this.textContent = '?';
+            }
+        });
+    </script>
+</body>
+</html>
