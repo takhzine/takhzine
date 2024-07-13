@@ -18,7 +18,7 @@
         .business-card {
             position: fixed;
             top: 300px;
-            right: 50px;
+            left: 60%;
             width: 300px; 
             height: 200px; 
             z-index: 5; 
@@ -58,7 +58,7 @@
             flex-direction: column; /* Ensure vertical stacking of elements */
         }
         .fixed-text {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             margin: 10px;
@@ -183,7 +183,7 @@
             margin-left: 20px;
             margin-top: 20px; 
             max-width: 100%;
-            width: 200px;
+            width: 150px;
             height: auto;
             display: block; 
         }
@@ -211,20 +211,43 @@
             text-align: right;
         }
 
+        .alphabetical-index {
+            position: fixed;
+            top: 49%;
+            right: 10px;
+            transform: translateY(-50%);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.2;
+            z-index: 10;
+            text-align: center;
+        }
+        .alphabetical-index a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .alphabetical-index a:hover {
+            text-decoration: underline;
+        }
+
 
         @media only screen and (max-width: 768px) {
             .more-content {
-                font-size: 15px;
+                font-size: 16px;
                 line-height: 1.2;
                 margin-left: 10px;
             }
 
             .fixed-text {
-                font-size: 15px;
+                position:absolute;
+                font-size: 16px;
             }
 
             .inline-text {
-                font-size: 15px;
+                font-size: 16px;
                 margin-left: 10px;
                 margin-top: 20px;
             }
@@ -238,7 +261,7 @@
             }
 
             .explanation {
-            font-size: 15px; 
+            font-size: 16px; 
             }
 
             .img-description {
@@ -249,10 +272,23 @@
             .img-info {
             font-size: 9px; 
             }
-        }
+
+            .footer {
+            font-size: 16px;
+            }
+
+            .alphabetical-index {
+            display: none;
+            }
+
+            .business-card {
+            left: 15%;
+            }
     </style>
 </head>
 <body>
+    <!--  START OF POP UP CARD -->
+
     <div class="business-card" onclick="this.style.display='none';">
         <svg width="300" height="200">
             <defs>
@@ -290,6 +326,11 @@
         </svg>
     </div>
 
+    <!--  END OF POP UP CARD -->
+
+
+    <!--  START OF FOOTER -->
+
     <div class="footer">
         <div class="footer-left">
             Print
@@ -301,6 +342,45 @@
             Bibliography
         </div>
     </div>
+
+    <!--  END OF FOOTER -->
+
+    
+    <!--  START OF ABC INDEX -->
+    
+    <div class="alphabetical-index">
+        <a href="#A">A</a>
+        <a href="#B">B</a>
+        <a href="#C">C</a>
+        <a href="#D">D</a>
+        <a href="#E">E</a>
+        <a href="#F">F</a>
+        <a href="#G">G</a>
+        <a href="#H">H</a>
+        <a href="#I">I</a>
+        <a href="#J">J</a>
+        <a href="#K">K</a>
+        <a href="#L">L</a>
+        <a href="#M">M</a>
+        <a href="#N">N</a>
+        <a href="#O">O</a>
+        <a href="#P">P</a>
+        <a href="#Q">Q</a>
+        <a href="#R">R</a>
+        <a href="#S">S</a>
+        <a href="#T">T</a>
+        <a href="#U">U</a>
+        <a href="#V">V</a>
+        <a href="#W">W</a>
+        <a href="#X">X</a>
+        <a href="#Y">Y</a>
+        <a href="#Z">Z</a>
+    </div>
+
+    <!--  END OF ABC INDEX -->
+
+
+    <!--  START OF BIO -->
 
     <div class="fixed-text">
         ta[kh]zine
@@ -316,6 +396,11 @@
             <u id="more-link">?</u>
             </span>
         </div>
+
+    <!--  END OF BIO -->
+
+
+    <!--  START OF ADDITIONAL BIO -->
 
         <div class="more-content" id="more-content">
             <i>archiving, collecting, accumulating, piling, storing, saving, memorizing...</i>
@@ -388,9 +473,14 @@
         </div>
         </div>
 
+        <!--  END OF ADDITIONAL BIO -->
+
         <br>
 
-        <div class="letter-container">
+
+        <!--  START OF ABC -->
+
+        <div id="A" class="letter-container">
             <span class="red-letter">A</span>
             <br>
             Archiving
@@ -406,7 +496,7 @@
         </div>
 
         <div class="image-container">
-            <img src="images/001_takhzine_A.jpeg" alt="ID Photo of Moroccan Man">
+            <img src="images/001_takhzine_A.jpeg" alt="ID Photo">
         </div>
 
         <div class="img-description">
@@ -417,7 +507,7 @@
         <div class="img-info-container">
             <div class="img-info">
                 type:<br>
-                ID Photo
+                Documentary
             </div>
             <div class="img-info">
                 location:<br>
@@ -429,11 +519,11 @@
             </div>
             <div class="img-info">
                 year:<br>
-                unknown
+                2020
             </div>
             <div class="img-info">
                 source:<br>
-                Feature documentary
+                Wanted (2011)
             </div>
         </div>
 
@@ -443,64 +533,77 @@
             Accumulating
         </div>
 
+        <div class="explanation">
+
+        </div>
+
+
+
+
+
+
+
+
+
 
 
 
         <br>
-
-        <div class="letter-container">
-            B
+        <div id="B" class="letter-container"> 
+        B
         </div>
 
-        <div class="letter-container">
-            <span class="green-letter">C</span>
+        <div id="C" class="letter-container">
+        <span class="green-letter">C</span>
             <br>
             Collecting
         </div>
 
         <div class="explanation">
-        The <span class="green-letter">c</span>olle<span class="green-letter">c</span>tion of photos of photographer Ahmad Al Almi is the tangible, but fragile, palimpsest 
-        of a bustling history, <span class="green-letter">c</span>arried by Arab, Jewish, Amazigh, Fren<span class="green-letter">c</span>h and European artists 
-        linked to <span class="green-letter">c</span>olonial times, but also to the <span class="green-letter">c</span>razy dreams of 
-        independen<span class="green-letter">c</span>e and the taste for restored dignity.
+        In 16th and 17th <span class="green-letter">c</span>entury Europe, 
+        a unique mode of <span class="green-letter">c</span>olle<span class="green-letter">c</span>ting 
+        and organizing <span class="green-letter">c</span>olle<span class="green-letter">c</span>tions 
+        was developed. This was the kunst- or wunderkammer literally translating as art- or wonder-room, 
+        or as it is mostly known in English, the <span class="green-letter">c</span>abinet of <span class="green-letter">c</span>uriosities.
         </div>
 
         <div class="image-container">
-            <img src="images/002_takhzine_C.png" alt="ID Photo of Moroccan Man">
+            <img src="images/002_takhzine_C.jpg" alt="ID Photo of Moroccan Man">
         </div>
 
         <div class="img-description">
-            Studio Imperial, Ahmad Al Almi,
-            Unknown
+            Dell’Historia Naturale, Ferrante Imperato, the earliest illustration of a natural history cabinet, 1599
         </div>
 
         <div class="img-info-container">
             <div class="img-info">
                 type:<br>
-                Business card
+                Illustration
             </div>
             <div class="img-info">
                 location:<br>
-                Morocco
+                Naples
             </div>
             <div class="img-info">
                 author:<br>
-                Ahmad Al Almi
+                Ferrante Imperato
             </div>
             <div class="img-info">
                 year:<br>
-                unknown
+                1599
             </div>
             <div class="img-info">
                 source:<br>
-                Abdelmajid Arrif
+                Smithsonian Libraries
             </div>
         </div>
-
         <br>
     </div>
     <br>
     <br>
+        <!--  END OF ABC -->
+
+
 
     <script>
         document.getElementById('more-link').addEventListener('click', function() {
