@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/ibs5ryl.css">
+    <link href="https://fonts.cdnfonts.com/css/arial-mono-mt-pro" rel="stylesheet">
+    <title>ta[kh]zine – research on political publishing in Morocco</title>
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .business-card {
+            position: fixed;
+            top: 300px;
+            right: 100px;
+            width: 300px; 
+            height: 200px; 
+            z-index: 5; 
+            box-sizing: border-box;
+            transform: rotate(-5deg);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+  
+        .card-content {
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+  
+        .card-content p {
+            margin: 10px;
+            font-size: 16px; 
+            color: black;
+        }
+
+        .card-content hr {
+            width: 100%; 
+            margin: 20px 0; 
+            border: none;
+            border-top: 1px solid black; 
+        }
+        .container {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 10px;
+            flex-direction: column; /* Ensure vertical stacking of elements */
+        }
+        .fixed-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 10px;
+            font-family: "AUTHENTIC Sans 130";
+            font-size: 18px;
+        }
+        .inline-text {
+            margin-left: 100px; /* Adjust this value to position the text as needed */
+            font-family: "AUTHENTIC Sans 130";
+            font-size: 18px;
+        }
+        .arabic {
+            font-family: "Amiri", serif;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.1em;
+        }
+        .indented {
+            text-indent: -100px; /* Negative value to align with the first line's start */
+            padding-left: 1px; /* Matches the margin-left value */
+            line-height: 1.1em; /* Adjust line height for readability */
+            margin-bottom: 10px; /* Adjust the space between main content and [..] */
+            text-underline-offset: 0.2em;
+        }
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+            box-sizing: border-box;
+            font-family: "AUTHENTIC Sans 130";
+            font-size: 18px;
+        }
+        .footer-left {
+            text-align: left;
+        }
+        .footer-center {
+            text-align: center;
+        }
+        .footer-right {
+            text-align: right;
+        }
+        .letter-container {
+            margin-left: 15px; /* Adjust to align with previous content */
+            font-family: "AUTHENTIC Sans 130";
+            font-size: 60px; /* Adjust the size as needed */
+            margin-top: 10px; /* Add some spacing before the new text */
+            line-height: 1;
+        }
+        .explanation {
+            margin-right: 15px;
+            margin-left: 15px; /* Adjust to align with previous content */
+            font-family: "AUTHENTIC Sans 130";
+            font-size: 18px; /* Adjust the size as needed */
+            margin-top: 10px; /* Add some spacing before the new text */
+            line-height: 1.1;
+            max-width: 800px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-right: 15px;
+            margin-left: 15px; /* Adjust to align with previous content */
+            margin-top: 10px; /* Add some spacing before the image */
+            text-align: center; /* Center the image */
+        }
+        .image-container img {
+            max-width: 100%; /* Ensure the image doesn't exceed its container */
+            height: auto; /* Maintain aspect ratio */
+            width: 500px;
+        }
+        .img-description {
+            margin-right: 15px;
+            margin-left: 15px; /* Adjust to align with previous content */
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 40px; /* Adjust the size as needed */
+            line-height: 1.1;
+            width: 500px;
+        }
+        .img-info-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 5px; /* Add margin between each info */
+        }
+        .img-info {
+            margin-left: 15px;
+            font-family: 'Arial Mono MT Pro', sans-serif;
+            font-size: 11px; /* Adjust the size as needed */
+            line-height: 1.1;
+        }
+        .red-letter {
+            color: #ff3e00;
+        }
+        .green-letter {
+            color: #66c062;
+        }
+        .more-content {
+            display: none;
+            margin-left: 100px;
+            font-family: "AUTHENTIC Sans 130";
+            font-size: 18px;
+            line-height: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="business-card" onclick="this.style.display='none';">
+        <svg width="300" height="200">
+            <defs>
+                <mask id="hole">
+                    <rect width="100%" height="100%" fill="white"/>
+                    <circle cx="280" cy="20" r="10" fill="black"/>
+                </mask>
+                <filter id="drop-shadow">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/>
+                    <feOffset dx="2" dy="2" result="offsetblur"/>
+                    <feFlood flood-color="rgba(0,0,0,0.5)"/>
+                    <feComposite in2="offsetblur" operator="in"/>
+                    <feMerge>
+                        <feMergeNode/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            <rect width="100%" height="100%" fill="white" mask="url(#hole)" filter="url(#drop-shadow)"/>
+            <foreignObject x="0" y="0" width="300" height="200">
+                <div class="card-content" xmlns="http://www.w3.org/1999/xhtml">
+                    <p>
+                    Publishing:
+                    <br>
+                    Issue #1 – Ciné-Clubs and the UNEM
+                    <br><br>
+                    Events:
+                    <br>
+                    <sup>26.04.2024</sup> &nbsp;Giveaway of Issue #1 at <i>Libros Mutantes Madrid Art Book Fair</i>
+                    <br>
+                    <sup>18.05.2024</sup> &nbsp;Talk at the <i>Fair Enough Book Fair</i> in Tallinn, Estonia
+                </p>
+                </div>
+            </foreignObject>
+        </svg>
+    </div>
+
+    <div class="footer">
+        <div class="footer-left">
+            Print
+        </div>
+        <div class="footer-center">
+            Index
+        </div>
+        <div class="footer-right">
+            Bibliography
+        </div>
+    </div>
+
+    <div class="fixed-text">
+        ta[kh]zine
+    </div>
+
+    <div class="container">
+        <div class="inline-text">
+            or <span class="arabic">تخزين,</span>
+            <span class="indented">
+            is a research and publishing project on archives of political publishing practices in the context of Morocco.
+            <br>
+            as in
+            <u id="more-link">?</u>
+            </span>
+        </div>
+
+        <div class="more-content" id="more-content">
+            archiving, collecting, accumulating, piling, storing, saving, memorizing
+            <br><br>
+            [kh] is a posterior sound that happens in the back of the mouth. 
+        </div>
+
+        <br>
+
+        <div class="letter-container">
+            <span class="red-letter">A</span>
+            <br>
+            Archiving
+        </div>
+
+        <div class="explanation">
+            In Crossing the Seventh G<span class="red-letter">a</span>te <span class="arabic">("عبور الباب السابع")</span> 
+            by <span class="red-letter">A</span>li Ess<span class="red-letter">a</span>fi, Morocc<span class="red-letter">a</span>n filmm<span class="red-letter">a</span>ker 
+            <span class="red-letter">A</span>hmed Bou<span class="red-letter">a</span>n<span class="red-letter">a</span>ni s<span class="red-letter">a</span>id: 
+            "For them, <span class="red-letter">a</span>rchives should not exist. There doesn't h<span class="red-letter">a</span>ve to be 
+            <span class="red-letter">a</span> memory. They were <span class="red-letter">a</span>fr<span class="red-letter">a</span>id, 
+            <span class="red-letter">a</span>ll the time, of memory." 
+        </div>
+
+        <div class="image-container">
+            <img src="images/001_takhzine_A.jpeg" alt="ID Photo of Moroccan Man">
+        </div>
+
+        <div class="img-description">
+            Before the Dying of the Light,
+            Ali Essafi, 2020
+        </div>
+
+        <div class="img-info-container">
+            <div class="img-info">
+                type:<br>
+                ID Photo
+            </div>
+            <div class="img-info">
+                location:<br>
+                Morocco
+            </div>
+            <div class="img-info">
+                author:<br>
+                Ali Essafi
+            </div>
+            <div class="img-info">
+                year:<br>
+                unknown
+            </div>
+            <div class="img-info">
+                source:<br>
+                Feature documentary
+            </div>
+        </div>
+
+        <br>
+
+        <div class="letter-container">
+            B
+        </div>
+
+        <div class="letter-container">
+            <span class="green-letter">C</span>
+            <br>
+            Collecting
+        </div>
+
+        <br>
+    </div>
+    <br>
+    <br>
+
+    <script>
+        document.getElementById('more-link').addEventListener('click', function() {
+            var moreContent = document.getElementById('more-content');
+            if (moreContent.style.display === 'none' || moreContent.style.display === '') {
+                moreContent.style.display = 'block';
+                this.textContent = '?';
+            } else {
+                moreContent.style.display = 'none';
+                this.textContent = '?';
+            }
+        });
+    </script>
+</body>
+</html>
