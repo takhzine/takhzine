@@ -109,19 +109,21 @@
             margin-left: 15px; /* Adjust to align with previous content */
             font-family: Arial, Helvetica, sans-serif;
             font-weight: 700;
-            font-size: 60px; /* Adjust the size as needed */
+            font-size: 100px; /* Adjust the size as needed */
             margin-top: 10px; /* Add some spacing before the new text */
             line-height: 1;
+            padding-left: 80px;
         }
         .explanation {
             margin-right: 15px;
             margin-left: 15px; /* Adjust to align with previous content */
             font-family: Arial, Helvetica, sans-serif;
             font-weight: 700;
-            font-size: 18px; /* Adjust the size as needed */
+            font-size: 20px; /* Adjust the size as needed */
             margin-top: 10px; /* Add some spacing before the new text */
             line-height: 1.1;
             max-width: 800px;
+            padding-left: 80px;
         }
         .image-container {
             display: flex;
@@ -132,6 +134,7 @@
             margin-left: 15px; /* Adjust to align with previous content */
             margin-top: 10px; /* Add some spacing before the image */
             text-align: center; /* Center the image */
+            padding-left: 80px;
         }
         .image-container img {
             max-width: 100%; /* Ensure the image doesn't exceed its container */
@@ -146,12 +149,14 @@
             line-height: 1.1;
             width: 500px;
             max-width: 100%;
+            padding-left: 80px;
         }
         .img-info-container {
             display: flex;
             justify-content: left;
             flex-wrap: wrap;
             margin-top: 5px; /* Add margin between each info */
+            padding-left: 80px;
         }
         .img-info {
             margin-left: 15px;
@@ -248,8 +253,8 @@
 
             .inline-text {
                 font-size: 16px;
-                margin-left: 10px;
-                margin-top: 20px;
+                padding-left: 0;
+                margin-left: 90px;
             }
 
             .indented {
@@ -258,15 +263,26 @@
 
             .letter-container {
             font-size: 45px; 
+            padding-left: 0;
+            }
+
+            .image-container {
+            padding-left: 0;
+            }
+
+            .img-info-container {
+            padding-left: 0;
             }
 
             .explanation {
             font-size: 16px; 
+            padding-left: 0;
             }
 
             .img-description {
             font-size: 35px; 
             max-width: 400px;
+            padding-left: 0;
             }
 
             .img-info {
@@ -284,49 +300,11 @@
             .business-card {
             left: 15%;
             }
+        }
     </style>
 </head>
 <body>
-    <!--  START OF POP UP CARD -->
-
-    <div class="business-card" onclick="this.style.display='none';">
-        <svg width="300" height="200">
-            <defs>
-                <mask id="hole">
-                    <rect width="100%" height="100%" fill="white"/>
-                    <circle cx="280" cy="20" r="10" fill="black"/>
-                </mask>
-                <filter id="drop-shadow">
-                    <feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/>
-                    <feOffset dx="2" dy="2" result="offsetblur"/>
-                    <feFlood flood-color="rgba(0,0,0,0.5)"/>
-                    <feComposite in2="offsetblur" operator="in"/>
-                    <feMerge>
-                        <feMergeNode/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                </filter>
-            </defs>
-            <rect width="100%" height="100%" fill="white" mask="url(#hole)" filter="url(#drop-shadow)"/>
-            <foreignObject x="0" y="0" width="300" height="200">
-                <div class="card-content" xmlns="http://www.w3.org/1999/xhtml">
-                    <p>
-                    Publishing:
-                    <br>
-                    Issue #1 – Ciné-Clubs and the UNEM
-                    <br><br>
-                    Events:
-                    <br>
-                    <sup>26.04.2024</sup> &nbsp;Giveaway of Issue #1 at <i>Libros Mutantes Madrid Art Book Fair</i>
-                    <br>
-                    <sup>18.05.2024</sup> &nbsp;Talk at the <i>Fair Enough Book Fair</i> in Tallinn, Estonia
-                </p>
-                </div>
-            </foreignObject>
-        </svg>
-    </div>
-
-    <!--  END OF POP UP CARD -->
+    
 
 
     <!--  START OF FOOTER -->
@@ -400,82 +378,7 @@
     <!--  END OF BIO -->
 
 
-    <!--  START OF ADDITIONAL BIO -->
-
-        <div class="more-content" id="more-content">
-            <i>archiving, collecting, accumulating, piling, storing, saving, memorizing...</i>
-            <br><br>
-            "All the Arab countries that I know don't themselves have proper state archives, public record
-            offices, or official libraries any more than they have a decent control over their monuments,
-            antiquities, the history of their cities, individual works of architectural art like mosques,
-            palaces, schools. This realisation [gives rise to] a sense of a sprawling, teeming history off the
-            page, out of sight and hearing, beyond reach, largely irrecoverable... Our history is mostly
-            written by foreigners, visiting scholars, intelligence agents, while we do the living, relying on
-            personal and disorganised collective memory, gossip almost, plus the embrace of a family or
-            knowable community to carry us forward in time."
-            <br><br>
-            <div class="justified-right">Edward Said, "Farewell to Tahia", Al-Ahram Weekly, 7-13 October 1999, Issue No.450</div>
-            <br><br>
-            [kh] (خ) is a posterior sound as it happens in the back of the mouth.
-            If we take a look at the history of political publishing in Morocco,
-            a lot of it happened in the underground, in the back of things. 
-            The Moroccan liberation movements and the early phases of nation-building in the country, intertwined with global student movements, 
-            left behind an array of textual, visual, and sonic traces that circulated through underground and clandestine networks beyond borders. 
-            These cultural products, which include materials in French and Arabic, remain obscured, inaccessible and marginalized in studies of 
-            Moroccan history and arts.
-            <br><br>
-            Having to research and write in a language that is not one's own about histories that are deeply personal comes with many questions. 
-            While building ta[kh]zine, it was important to see it as a type of activation of a physical site and collection of objects. 
-            Iman Mersel, in Archives & Crimes, says that to enter an archive is to carry an anonymous corpse on your shoulders. 
-            You are not investigating how this corpse met its death so much as feeling impelled, somehow, to fill in the gaps that render it anonymous. 
-            Whether or not you are hoping to tell the story and share it with others, you might be able to give this corpse a name and lend a meaning 
-            to its life. This idea was crucial, particularly when we consider the history of archives in Morocco.
-            <br><br>
-            ta[kh]zine researches these histories as well as their involvement in cultural and socio-political 
-            spaces in Morocco, in order to use them as a tool for creating, translating, collecting and distributing knowledge. 
-            <br>
-            ta[kh]zine is a tool to work on the construction of a collective memory.
-            <br> 
-            ta[kh]zine lives when it is used, but it is only valid when the material it holds 
-            reaches the public space – an idea grounded in a desire to encourage public 
-            access to information, an access that frees the past from the dominion of memories 
-            built by those who have either political, economic, or social power. 
-            <br>
-            ta[kh]zine hopes to be used to think and investigate memory and history in its 
-            different dimensions and overlaps.
-            <br><br><br>
-            If you want to contribute to upcoming issues or collaborate, please <u>contact</u>
-            <br><br>
-            Project initiated and edited by <u>Fatima-Ezzahra El Khammas</u>
-            <br>
-            Website designed and developed by <u>Fatima-Ezzahra El Khammas</u>
-            
-            <br><br>
-
-            <img src="images/000_takhzine_logo.svg" alt="More Content Image">
-
-        <div class="notes-container">
-            <div class="notes">
-                Copyright:
-                <br><br>
-                Every effort has been made to trace copyright holders and to obtain their permission for the use of copyright material.
-                <br>
-                Special thanks to ©coll. Génériques / www.lesamisdegeneriques.org.
-            </div>
-
-            <div class="notes">
-                Sources:
-                <br><br>
-                Edward Said, <i>Farewell to Tahia</i> at Al Ahram Weekly Online. Accessed on 10.7.24.
-                <br>
-                Iman Mersel, <i>Archives & Crimes</i>, Kayfa ta & Archive Books.
-            </div>
-        </div>
-        </div>
-
-        <!--  END OF ADDITIONAL BIO -->
-
-        <br>
+    
 
 
         <!--  START OF ABC -->
@@ -496,12 +399,11 @@
         </div>
 
         <div class="image-container">
-            <img src="images/001_takhzine_A.jpeg" alt="ID Photo">
+            <img src="images/001_takhzine_A.jpeg" alt="Photogram from Wanted, Ali Essafi, 2011: torn identity photograph of the protagonist Abdelaziz Tribak.">
         </div>
 
         <div class="img-description">
-            Before the Dying of the Light,
-            Ali Essafi, 2020
+            Photogram of Abdelaziz Tribak from Ali Essafi's Wanted
         </div>
 
         <div class="img-info-container">
@@ -519,7 +421,7 @@
             </div>
             <div class="img-info">
                 year:<br>
-                2020
+                2011
             </div>
             <div class="img-info">
                 source:<br>
@@ -545,7 +447,7 @@
         </div>
 
         <div class="image-container">
-            <img src="images/002_takhzine_C.jpg" alt="ID Photo of Moroccan Man">
+            <img src="images/002_takhzine_A2.jpeg" alt="ID Photo of Moroccan Man">
         </div>
 
         <div class="img-description">
@@ -576,17 +478,9 @@
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
         <br>
+
+
         <div id="B" class="letter-container"> 
         B
         </div>
@@ -641,6 +535,52 @@
     <br>
         <!--  END OF ABC -->
 
+
+
+
+
+
+
+
+
+        <!--  START OF POP UP CARD -->
+
+    <div class="business-card" onclick="this.style.display='none';">
+        <svg width="300" height="200">
+            <defs>
+                <mask id="hole">
+                    <rect width="100%" height="100%" fill="white"/>
+                    <circle cx="280" cy="20" r="10" fill="black"/>
+                </mask>
+                <filter id="drop-shadow">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/>
+                    <feOffset dx="2" dy="2" result="offsetblur"/>
+                    <feFlood flood-color="rgba(0,0,0,0.5)"/>
+                    <feComposite in2="offsetblur" operator="in"/>
+                    <feMerge>
+                        <feMergeNode/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            <rect width="100%" height="100%" fill="white" mask="url(#hole)" filter="url(#drop-shadow)"/>
+            <foreignObject x="0" y="0" width="300" height="200">
+                <div class="card-content" xmlns="http://www.w3.org/1999/xhtml">
+                    <p>
+                    Publications:
+                    <br>
+                    Issue #1 – Ciné-Clubs and the UNEM
+                    <br><br>
+                    Events:
+                    <br>
+                    <sup>26.04.2024</sup> &nbsp;Giveaway of Issue #1 at <i>Libros Mutantes Madrid Art Book Fair</i>
+                    <br>
+                    <sup>18.05.2024</sup> &nbsp;Talk at the <i>Fair Enough Book Fair</i> in Tallinn, Estonia
+                </p>
+                </div>
+            </foreignObject>
+        </svg>
+    </div>
 
 
     <script>
