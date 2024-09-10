@@ -170,6 +170,10 @@ html, body {
         bottom: 155px; 
     }
 
+    .footer {
+        padding: 5px 10px; /* Add padding for some spacing from the sides */
+    }
+
     .footer-column {
         font-size: 0.1em; /* Smaller text in the footer */
     }
