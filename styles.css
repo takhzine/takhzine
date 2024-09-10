@@ -150,19 +150,20 @@ html, body {
 @media (max-width: 768px) {
     .top-left-text,
     .top-right-text {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 
     .top-left-subtext {
-        font-size: 1.5em; 
+        font-size: 1.4em; 
+        right: 15px;
     }
 
     .above-footer-left {
-        font-size: 1.5em; /* Smaller text above the footer */
+        font-size: 1.4em; /* Smaller text above the footer */
     }
 
     .above-footer-right {
-        font-size: 1.5em; /* Smaller text above the footer */
+        font-size: 1.4em; /* Smaller text above the footer */
         bottom: 210px; 
     }
 
