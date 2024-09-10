@@ -156,21 +156,23 @@ html, body {
     .top-left-subtext {
         font-size: 1.4em; 
         right: 15px;
+        top: 40px;
     }
 
     .above-footer-left {
         font-size: 1.4em; /* Smaller text above the footer */
+        bottom: 100px; /* Adjust this value to be just above the footer */
+
     }
 
     .above-footer-right {
         font-size: 1.4em; /* Smaller text above the footer */
-        bottom: 210px; 
+        bottom: 150px; 
     }
 
     .footer-column {
         font-size: 0.5em; /* Smaller text in the footer */
     }
-
 
     .centered-image {
         width: 90%; /* Increase image size on mobile */
