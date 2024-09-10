@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Ensure body takes the full height */
+    background-color: white;
+}
+
+.top-left-text {
+    position: fixed; /* Fixed ensures it's relative to the viewport */
+    top: 5px;
+    left: 15px;
+    margin: 0; /* No margin */
+    padding: 0; /* No padding */
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+}
+
+.top-right-text {
+    position: fixed; /* Fixed ensures it's relative to the viewport */
+    top: 1px;
+    right: 15px;
+    margin: 0; /* No margin */
+    padding: 0; /* No padding */
+    font-family: "Amiri", serif;
+    font-weight: 500;
+    font-size: 2.5em;
+}
+
+.top-left-subtext {
+    position: fixed; 
+    top: 60px; 
+    left: 15px;
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+}
+
+/* New Text Above the Footer */
+.above-footer-left {
+    position: fixed;
+    bottom: 140px; /* Adjust this value to be just above the footer */
+    left: 15px; /* Align to the left of the page */
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+    padding: 0; /* No padding */
+}
+
+.above-footer-left a {
+    text-decoration: none;
+    color: black;
+}
+
+.above-footer-left a:hover {
+    text-decoration: underline;
+}
+
+.above-footer-right {
+    position: fixed;
+    bottom: 140px; /* Adjust this value to be just above the footer */
+    right: 15px; /* Align to the left of the page */
+    font-family: "Amiri", serif;
+    font-size: 2.5em;
+    line-height: 1.1em;
+    padding: 0; /* No padding */
+    text-align: right;
+}
+
+.above-footer-right a {
+    text-decoration: none;
+    color: black;
+}
+
+.above-footer-right a:hover {
+    text-decoration: underline;
+}
+
+/* Footer section */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Full width of the page */
+    display: flex;
+    justify-content: space-between; /* Space out the columns to the edges */
+    padding: 10px 10px; /* Add padding for some spacing from the sides */
+}
+
+.footer-column {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.6em;
+    padding: 0 10px; /* Left and right padding inside each column */
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin-bottom: 5px;
+}
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+
+/* Align the left column to the far left, center column stays centered, right column aligns to the far right */
+.footer-column:nth-child(1) {
+    text-align: left; /* Aligns text to the left for the first column */
+}
+
+.footer-column:nth-child(2) {
+    text-align: left; /* Keep the text left-aligned */
+    margin: 0 auto; /* Center the second column */
+    flex-grow: 0; /* Prevent the column from growing */
+}
+
+.footer-column:nth-child(3) {
+    text-align: left; /* Aligns text to the right for the third column */
+}
+
+
+.arabic {
+    font-family: "Amiri", serif;
+    font-weight: 500;
+    line-height: 0.3em;
+}
+
+
+.centered-image {
+    position: absolute;
+    cursor: grab;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centered-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.centered-image:active {
+    cursor: grabbing;
+}
+
+@media (max-width: 768px) {
+    .top-left-text,
+    .top-right-text {
+        font-size: 1.8em;
+    }
+
+    .top-left-subtext {
+        font-size: 1.8em; 
+    }
+
+    .above-footer-left {
+        font-size: 1.8em; /* Smaller text above the footer */
+    }
+
+    .above-footer-right {
+        font-size: 1.8em; /* Smaller text above the footer */
+        bottom: 210px; 
+    }
+
+    .footer-column {
+        font-size: 0.66em; /* Smaller text in the footer */
+    }
+
+
+    .centered-image {
+        width: 90%; /* Increase image size on mobile */
+        top: 50%; /* Adjust positioning if needed */
+    }
+
+    .centered-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
